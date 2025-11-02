@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+
+    <!-- ================================================ -->
+    <!-- PROPERTIES -->
+    <!-- ================================================ -->
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+        </Property>
+        <Property name="LOG_DIR">logs</Property>
+    </Properties>
+
+    <!-- ================================================ -->
+    <!-- APPENDERS -->
+    <!-- ================================================ -->
+    <Appenders>
+
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+
+        <!-- Main Application Log File -->
+        <RollingFile name="FileAppender"
+                     fileName="${LOG_DIR}/neurasys.log"
+                     filePattern="${LOG_DIR}/neurasys-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!-- Error Log File -->
+        <RollingFile name="ErrorAppender"
+                     fileName="${LOG_DIR}/neurasys-error.log"
+                     filePattern="${LOG_DIR}/neurasys-error-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!-- Backup Activity Log -->
+        <RollingFile name="BackupAppender"
+                     fileName="${LOG_DIR}/neurasys-backups.log"
+                     filePattern="${LOG_DIR}/neurasys-backups-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="60"/>
+        </RollingFile>
+
+        <!-- Performance Log -->
+        <RollingFile name="PerformanceAppender"
+                     fileName="${LOG_DIR}/neurasys-performance.log"
+                     filePattern="${LOG_DIR}/neurasys-performance-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+
+        <!-- NEW: Hybrid Events Log -->
+        <RollingFile name="HybridEventAppender"
+                     fileName="${LOG_DIR}/neurasys-hybrid-events.log"
+                     filePattern="${LOG_DIR}/neurasys-hybrid-events-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!-- NEW: Native Events Log -->
+        <RollingFile name="NativeEventAppender"
+                     fileName="${LOG_DIR}/neurasys-native-events.log"
+                     filePattern="${LOG_DIR}/neurasys-native-events-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [NATIVE] %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!-- NEW: Java Events Log -->
+        <RollingFile name="JavaEventAppender"
+                     fileName="${LOG_DIR}/neurasys-java-events.log"
+                     filePattern="${LOG_DIR}/neurasys-java-events-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [JAVA_WATCH] %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!-- NEW: Backup Metadata Log -->
+        <RollingFile name="BackupMetadataAppender"
+                     fileName="${LOG_DIR}/neurasys-backup-metadata.log"
+                     filePattern="${LOG_DIR}/neurasys-backup-metadata-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="90"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <!-- ================================================ -->
+    <!-- LOGGERS -->
+    <!-- ================================================ -->
+    <Loggers>
+
+        <!-- NeuraSys Application Logger -->
+        <Logger name="com.neurasys" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+            <AppenderRef ref="ErrorAppender"/>
+        </Logger>
+
+        <!-- Backup Manager Logger -->
+        <Logger name="com.neurasys.service.BackupManager" level="INFO" additivity="false">
+            <AppenderRef ref="BackupAppender"/>
+            <AppenderRef ref="ErrorAppender"/>
+        </Logger>
+
+        <!-- Database Logger -->
+        <Logger name="com.neurasys.service.DatabaseManager" level="INFO" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+            <AppenderRef ref="ErrorAppender"/>
+        </Logger>
+
+        <!-- Multi-Path Monitor Logger -->
+        <Logger name="com.neurasys.service.MultiPathMonitor" level="INFO" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+            <AppenderRef ref="BackupAppender"/>
+        </Logger>
+
+        <!-- NEW: Native File Monitor Logger (C Code) -->
+        <Logger name="com.neurasys.bridge.NativeFileMonitor" level="INFO" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+            <AppenderRef ref="ErrorAppender"/>
+        </Logger>
+
+        <!-- NEW: Hybrid Event Tracking Logger -->
+        <Logger name="com.neurasys.hybrid.events" level="INFO" additivity="false">
+            <AppenderRef ref="HybridEventAppender"/>
+        </Logger>
+
+        <!-- NEW: Native Events Logger -->
+        <Logger name="com.neurasys.native.events" level="INFO" additivity="false">
+            <AppenderRef ref="NativeEventAppender"/>
+        </Logger>
+
+        <!-- NEW: Java Events Logger -->
+        <Logger name="com.neurasys.java.events" level="INFO" additivity="false">
+            <AppenderRef ref="JavaEventAppender"/>
+        </Logger>
+
+        <!-- NEW: Backup Metadata Logger -->
+        <Logger name="com.neurasys.backup.metadata" level="INFO" additivity="false">
+            <AppenderRef ref="BackupMetadataAppender"/>
+        </Logger>
+
+        <!-- HikariCP Connection Pool -->
+        <Logger name="com.zaxxer.hikari" level="WARN" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <!-- JavaFX UI -->
+        <Logger name="javafx" level="WARN" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <!-- Root Logger -->
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+
+    </Loggers>
+</Configuration>

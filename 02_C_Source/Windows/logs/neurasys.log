@@ -1,0 +1,78 @@
+2025-11-01 19:11:09.654 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 19:11:09.663 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 19:11:09.664 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 19:11:09.666 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 19:14:56.021 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 19:14:56.030 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 19:14:56.031 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 19:14:56.034 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 19:14:56.064 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not initialize database early: Failed to get driver instance for jdbcUrl=jdbc:mysql://localhost:3306/NeuraSysDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2025-11-01 19:14:56.076 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Cannot refresh logs - dbManager is null
+2025-11-01 19:14:56.076 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-01 19:28:07.684 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 19:28:07.694 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 19:28:07.695 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 19:28:07.697 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 19:28:08.092 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-01 19:28:08.101 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-01 19:28:08.101 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-01 19:28:08.216 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-01 19:28:08.217 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-01 19:30:27.470 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 19:30:27.479 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 19:30:27.481 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 19:30:27.482 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 19:30:27.827 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-01 19:30:27.835 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-01 19:30:27.835 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-01 19:30:27.933 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-01 19:30:27.934 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-01 20:07:15.519 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 20:07:15.529 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 20:07:15.530 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 20:07:15.532 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 20:10:26.357 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 20:10:26.363 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 20:10:26.364 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 20:10:26.367 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 20:10:26.777 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-01 20:10:26.786 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-01 20:10:26.786 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-01 20:10:26.904 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-01 20:10:26.905 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-01 20:11:38.327 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 20:11:38.334 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 20:11:38.335 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 20:11:38.336 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 20:11:38.643 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-01 20:11:38.650 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-01 20:11:38.651 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-01 20:11:38.730 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-01 20:11:38.731 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-01 20:18:26.196 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 20:18:26.204 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 20:18:26.205 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 20:18:26.207 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 20:18:26.505 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-01 20:18:26.514 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-01 20:18:26.515 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-01 20:18:26.587 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-01 20:18:26.588 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-01 20:21:16.508 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 20:21:16.515 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 20:21:16.516 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 20:21:16.518 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 20:21:16.811 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-01 20:21:16.819 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-01 20:21:16.819 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-01 20:21:16.890 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-01 20:21:16.891 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-01 20:22:14.128 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-01 20:22:14.135 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-01 20:22:14.136 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-01 20:22:14.138 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-01 20:22:14.435 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-01 20:22:14.444 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-01 20:22:14.444 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-01 20:22:14.511 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-01 20:22:14.512 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)

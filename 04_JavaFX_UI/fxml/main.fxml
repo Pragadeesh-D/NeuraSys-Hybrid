@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.neurasys.controller.MainController"
+            stylesheets="@../css/application.css">
+
+    <!-- ================================================ -->
+    <!-- TOP BAR -->
+    <!-- ================================================ -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="18" styleClass="top-bar" style="-fx-padding: 12 16 12 18;">
+            <VBox alignment="CENTER_LEFT" spacing="2">
+                <Label text="NeuraSys" styleClass="app-title"/>
+                <Label text="Intelligent Backup System • 98% Space Savings" styleClass="app-subtitle"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblMonitorStatus" text="● STOPPED" styleClass="status-label"/>
+            <Button fx:id="btnStartStop" text="Start Monitoring" onAction="#handleStartStop" styleClass="btn-primary"/>
+        </HBox>
+    </top>
+
+    <!-- ================================================ -->
+    <!-- MAIN CONTENT AREA -->
+    <!-- ================================================ -->
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE" styleClass="main-tabs">
+
+            <!-- ========================================== -->
+            <!-- DASHBOARD TAB -->
+            <!-- ========================================== -->
+            <Tab text="📊 Dashboard">
+                <ScrollPane fitToWidth="true" fitToHeight="true">
+                    <VBox spacing="20" styleClass="dashboard-container">
+                        <padding>
+                            <Insets top="20" right="20" bottom="20" left="20"/>
+                        </padding>
+
+                        <!-- Statistics Cards -->
+                        <Label text="Statistics Overview" styleClass="section-header">
+                            <font>
+                                <Font name="System Bold" size="18"/>
+                            </font>
+                        </Label>
+
+                        <GridPane hgap="20" vgap="20">
+                            <!-- Total Backups Card -->
+                            <VBox styleClass="stat-card" GridPane.columnIndex="0">
+                                <padding>
+                                    <Insets top="20" right="20" bottom="20" left="20"/>
+                                </padding>
+                                <Label text="Total Backups" styleClass="stat-label"/>
+                                <Label fx:id="lblTotalBackups" text="0" styleClass="stat-value"/>
+                                <Label text="backup files created" styleClass="stat-subtitle"/>
+                            </VBox>
+
+                            <!-- Space Saved Card -->
+                            <VBox styleClass="stat-card stat-card-primary" GridPane.columnIndex="1">
+                                <padding>
+                                    <Insets top="20" right="20" bottom="20" left="20"/>
+                                </padding>
+                                <Label text="Space Saved" styleClass="stat-label"/>
+                                <Label fx:id="lblSpaceSaved" text="0%" styleClass="stat-value"/>
+                                <Label fx:id="lblSpaceSavedDetails" text="0 GB saved" styleClass="stat-subtitle"/>
+                            </VBox>
+
+                            <!-- Files Monitored Card -->
+                            <VBox styleClass="stat-card" GridPane.columnIndex="2">
+                                <padding>
+                                    <Insets top="20" right="20" bottom="20" left="20"/>
+                                </padding>
+                                <Label text="Files Monitored" styleClass="stat-label"/>
+                                <Label fx:id="lblFilesMonitored" text="0" styleClass="stat-value"/>
+                                <Label text="unique files tracked" styleClass="stat-subtitle"/>
+                            </VBox>
+
+                            <!-- Monitor Paths Card -->
+                            <VBox styleClass="stat-card" GridPane.columnIndex="3">
+                                <padding>
+                                    <Insets top="20" right="20" bottom="20" left="20"/>
+                                </padding>
+                                <Label text="Monitor Paths" styleClass="stat-label"/>
+                                <Label fx:id="lblMonitorPaths" text="0" styleClass="stat-value"/>
+                                <Label text="folders being watched" styleClass="stat-subtitle"/>
+                            </VBox>
+                        </GridPane>
+
+                        <!-- Activity Feed -->
+                        <VBox styleClass="activity-container" VBox.vgrow="ALWAYS">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <padding>
+                                    <Insets bottom="10"/>
+                                </padding>
+                                <Label text="Recent Activity" styleClass="section-header">
+                                    <font>
+                                        <Font name="System Bold" size="16"/>
+                                    </font>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Button text="Clear" onAction="#handleClearActivity" styleClass="btn-small"/>
+                            </HBox>
+
+                            <TextArea fx:id="txtActivityFeed" editable="false"
+                                      wrapText="true" prefHeight="350"
+                                      styleClass="activity-feed" VBox.vgrow="ALWAYS"/>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <!-- ========================================== -->
+            <!-- MONITOR PATHS TAB -->
+            <!-- ========================================== -->
+            <Tab text="📁 Monitor Paths">
+                <VBox spacing="15" styleClass="paths-container">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="Configured Monitor Paths" styleClass="section-header">
+                            <font>
+                                <Font name="System Bold" size="18"/>
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="➕ Add Path" onAction="#handleAddPath" styleClass="btn-success"/>
+                        <Button text="🔄 Refresh" onAction="#handleRefreshPaths" styleClass="btn-secondary"/>
+                    </HBox>
+
+                    <!-- Paths Table -->
+                    <TableView fx:id="tblMonitorPaths" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colPathName" text="Name" prefWidth="120"/>
+                            <TableColumn fx:id="colPathLocation" text="Monitor Location" prefWidth="200"/>
+                            <TableColumn fx:id="colBackupLocation" text="Backup Location" prefWidth="180"/>
+                            <TableColumn fx:id="colPathType" text="Type" prefWidth="80"/>
+
+                            <!-- NEW: Monitor Method for Hybrid -->
+                            <TableColumn fx:id="colMonitorMethod" text="Method" prefWidth="100">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="monitorMethod"/>
+                                </cellValueFactory>
+                            </TableColumn>
+
+                            <TableColumn fx:id="colPathEnabled" text="Enabled" prefWidth="60"/>
+                        </columns>
+                    </TableView>
+
+                </VBox>
+            </Tab>
+
+            <!-- ========================================== -->
+            <!-- SETTINGS TAB -->
+            <!-- ========================================== -->
+            <Tab text="⚙️ Settings">
+                <ScrollPane fitToWidth="true" fitToHeight="true">
+                    <VBox spacing="20" styleClass="settings-container">
+                        <padding>
+                            <Insets top="20" right="20" bottom="20" left="20"/>
+                        </padding>
+
+                        <!-- Database Settings -->
+                        <VBox spacing="10" styleClass="settings-section">
+                            <Label text="Database Configuration" styleClass="section-header">
+                                <font>
+                                    <Font name="System Bold" size="16"/>
+                                </font>
+                            </Label>
+
+                            <GridPane hgap="15" vgap="10">
+                                <Label text="Host:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                                <TextField fx:id="txtDbHost" promptText="localhost"
+                                           GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="300"/>
+
+                                <Label text="Database:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <TextField fx:id="txtDbName" promptText="neurasys_db"
+                                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                                <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <TextField fx:id="txtDbUser" promptText="neurasys_app"
+                                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                                <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                <PasswordField fx:id="txtDbPassword"
+                                               GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                            </GridPane>
+
+                            <HBox spacing="10">
+                                <Button text="Test Connection" onAction="#handleTestConnection"
+                                        styleClass="btn-secondary"/>
+                                <Label fx:id="lblConnectionStatus" text=""/>
+                            </HBox>
+                        </VBox>
+
+                        <!-- Space Optimization Settings -->
+                        <VBox spacing="10" styleClass="settings-section">
+                            <Label text="Space Optimization (98% Savings)" styleClass="section-header">
+                                <font>
+                                    <Font name="System Bold" size="16"/>
+                                </font>
+                            </Label>
+
+                            <CheckBox fx:id="chkCompression" text="Enable Compression (ZSTD)" selected="true"/>
+                            <CheckBox fx:id="chkDeduplication" text="Enable Deduplication (SHA-256)" selected="true"/>
+                            <CheckBox fx:id="chkIncremental" text="Enable Incremental Backups" selected="true"/>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Compression Level (1-9):"/>
+                                <Spinner fx:id="spinCompressionLevel" editable="true"
+                                         prefWidth="100" initialValue="9" min="1" max="9"/>
+                            </HBox>
+                        </VBox>
+
+                        <!-- Retention Policy -->
+                        <VBox spacing="10" styleClass="settings-section">
+                            <Label text="Backup Retention Policy" styleClass="section-header">
+                                <font>
+                                    <Font name="System Bold" size="16"/>
+                                </font>
+                            </Label>
+
+                            <CheckBox fx:id="chkRetentionEnabled" text="Enable automatic cleanup" selected="true"/>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Keep backups for (days):"/>
+                                <Spinner fx:id="spinRetentionDays" editable="true"
+                                         prefWidth="100" initialValue="90" min="1" max="365"/>
+                            </HBox>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Minimum versions to keep:"/>
+                                <Spinner fx:id="spinMinVersions" editable="true"
+                                         prefWidth="100" initialValue="5" min="1" max="100"/>
+                            </HBox>
+                        </VBox>
+
+                        <!-- Save Button -->
+                        <HBox spacing="15">
+                            <Button text="💾 Save Settings" onAction="#handleSaveSettings"
+                                    styleClass="btn-primary"/>
+                            <Button text="↺ Reset to Defaults" onAction="#handleResetSettings"
+                                    styleClass="btn-secondary"/>
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <!-- ========================================== -->
+            <!-- LOGS TAB -->
+            <!-- ========================================== -->
+            <Tab text="📋 Logs">
+                <VBox spacing="10" styleClass="logs-container">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+
+                    <!-- Toolbar -->
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="txtSearchLogs" promptText="Search logs..."
+                                   HBox.hgrow="ALWAYS"/>
+                        <ComboBox fx:id="cmbFilterAction" promptText="Filter by action" prefWidth="120"/>
+
+                        <!-- NEW: Event Source Filter for Hybrid -->
+                        <Label text="Source:" style="-fx-font-weight: bold;"/>
+                        <ComboBox fx:id="cmbFilterEventSource" promptText="NATIVE/JAVA/POLLING" prefWidth="130"/>
+
+                        <Button text="🔄 Refresh" onAction="#handleRefreshLogs"/>
+                        <Button text="🗑️ Clear All" onAction="#handleClearLogs" styleClass="btn-danger"/>
+                    </HBox>
+
+
+                    <!-- Logs Table -->
+                    <TableView fx:id="tblLogs" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colLogId" text="ID" prefWidth="40"/>
+                            <TableColumn fx:id="colLogFile" text="File" prefWidth="200"/>
+                            <TableColumn fx:id="colLogAction" text="Action" prefWidth="80"/>
+
+                            <!-- NEW: Event Source Column -->
+                            <TableColumn fx:id="colLogSource" text="Source" prefWidth="80">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="eventSource"/>
+                                </cellValueFactory>
+                            </TableColumn>
+
+                            <TableColumn fx:id="colLogSize" text="Size" prefWidth="80"/>
+                            <TableColumn fx:id="colLogTime" text="Time" prefWidth="140"/>
+                        </columns>
+                    </TableView>
+
+
+                    <!-- Status Bar -->
+                    <HBox spacing="15" alignment="CENTER_LEFT" styleClass="status-bar">
+                        <Label text="Total Logs:"/>
+                        <Label fx:id="lblTotalLogs" text="0"/>
+                        <Separator orientation="VERTICAL"/>
+                        <Label text="Last Update:"/>
+                        <Label fx:id="lblLastUpdate" text="Never"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <!-- ========================================== -->
+            <!-- ANALYTICS TAB -->
+            <!-- ========================================== -->
+            <Tab text="📈 Analytics">
+                <ScrollPane fitToWidth="true" fitToHeight="true">
+                    <VBox spacing="20" styleClass="analytics-container">
+                        <padding>
+                            <Insets top="20" right="20" bottom="20" left="20"/>
+                        </padding>
+
+                        <Label text="Space Optimization Analytics" styleClass="section-header">
+                            <font>
+                                <Font name="System Bold" size="18"/>
+                            </font>
+                        </Label>
+
+                        <!-- Space Savings Breakdown -->
+                        <GridPane hgap="20" vgap="15">
+                            <VBox styleClass="analytics-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <padding>
+                                    <Insets top="15" right="15" bottom="15" left="15"/>
+                                </padding>
+                                <Label text="Compression Savings" styleClass="analytics-label"/>
+                                <Label fx:id="lblCompressionSavings" text="0 GB" styleClass="analytics-value"/>
+                                <ProgressBar fx:id="pbCompression" progress="0" prefWidth="200"/>
+                            </VBox>
+
+                            <VBox styleClass="analytics-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                <padding>
+                                    <Insets top="15" right="15" bottom="15" left="15"/>
+                                </padding>
+                                <Label text="Deduplication Savings" styleClass="analytics-label"/>
+                                <Label fx:id="lblDeduplicationSavings" text="0 GB" styleClass="analytics-value"/>
+                                <ProgressBar fx:id="pbDeduplication" progress="0" prefWidth="200"/>
+                            </VBox>
+
+                            <VBox styleClass="analytics-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <padding>
+                                    <Insets top="15" right="15" bottom="15" left="15"/>
+                                </padding>
+                                <Label text="Incremental Savings" styleClass="analytics-label"/>
+                                <Label fx:id="lblIncrementalSavings" text="0 GB" styleClass="analytics-value"/>
+                                <ProgressBar fx:id="pbIncremental" progress="0" prefWidth="200"/>
+                            </VBox>
+
+                            <VBox styleClass="analytics-card analytics-card-total" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <padding>
+                                    <Insets top="15" right="15" bottom="15" left="15"/>
+                                </padding>
+                                <Label text="Total Savings" styleClass="analytics-label"/>
+                                <Label fx:id="lblTotalSavings" text="98.0%" styleClass="analytics-value-large"/>
+                                <Label fx:id="lblTotalSavingsDetails" text="0 GB saved from 0 GB" styleClass="analytics-subtitle"/>
+                            </VBox>
+                        </GridPane>
+
+                        <!-- Restore Backup Section -->
+                        <Separator/>
+
+                        <Label text="Restore Backup" styleClass="section-header">
+                            <font>
+                                <Font name="System Bold" size="18"/>
+                            </font>
+                        </Label>
+
+                        <VBox styleClass="analytics-card" spacing="10">
+                            <padding>
+                                <Insets top="15" right="15" bottom="15" left="15"/>
+                            </padding>
+
+                            <Label text="Select Backup File" styleClass="analytics-label"/>
+                            <HBox spacing="10">
+                                <TextField fx:id="txtBackupFilePath" promptText="Select backup file..."
+                                           style="-fx-pref-width: 400;" />
+                                <Button fx:id="btnBrowseBackup" text="Browse" onAction="#handleBrowseBackup"
+                                        styleClass="btn-secondary" />
+                            </HBox>
+
+                            <Label text="Select Restore Location" styleClass="analytics-label"/>
+                            <HBox spacing="10">
+                                <TextField fx:id="txtRestoreLocation" promptText="Restore to location..."
+                                           style="-fx-pref-width: 400;" />
+                                <Button fx:id="btnBrowseRestore" text="Browse" onAction="#handleBrowseRestore"
+                                        styleClass="btn-secondary" />
+                            </HBox>
+
+                            <Button fx:id="btnRestoreBackup" text="✓ Restore Backup" onAction="#handleRestoreBackup"
+                                    styleClass="btn-success" style="-fx-font-size: 14; -fx-padding: 10;" />
+
+                            <Label fx:id="lblRestoreStatus" text="" style="-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 12;" />
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+    <!-- ================================================ -->
+    <!-- BOTTOM STATUS BAR -->
+    <!-- ================================================ -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="status-bar-bottom">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <Label text="Status:"/>
+            <Label fx:id="lblStatus" text="Ready" styleClass="status-text"/>
+
+            <Separator orientation="VERTICAL"/>
+
+            <Label text="Database:"/>
+            <Label fx:id="lblDbStatus" text="●" styleClass="status-indicator-inactive"/>
+
+            <Separator orientation="VERTICAL"/>
+
+            <Label text="C Monitor:"/>
+            <Label fx:id="lblCMonitorStatus" text="●" styleClass="status-indicator-inactive"/>
+
+            <!-- NEW: Hybrid Method Indicator -->
+            <Separator orientation="VERTICAL"/>
+            <Label fx:id="lblMonitorMethod" text="Method: Inactive" style="-fx-font-size: 11; -fx-text-fill: #3498db;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="Hybrid v1.0.0"/>
+            <Separator orientation="VERTICAL"/>
+            <Label text="© 2025 Pragadeesh D"/>
+        </HBox>
+    </bottom>
+</BorderPane>

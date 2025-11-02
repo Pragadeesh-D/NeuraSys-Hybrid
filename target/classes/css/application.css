@@ -1,0 +1,548 @@
+/* ================================================
+   NeuraSys Application Stylesheet
+   Modern, Professional Design with Space Theme
+   ================================================ */
+
+/* ================================================
+   GLOBAL STYLES
+   ================================================ */
+.root {
+    -fx-font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f6fa;
+}
+
+/* ================================================
+   TOP BAR & HEADER
+   ================================================ */
+.top-bar {
+    -fx-background-color: linear-gradient(to bottom, #2c3e50, #34495e);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 2);
+}
+
+.header {
+    -fx-background-color: transparent;
+}
+
+.app-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.app-subtitle {
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+.status-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* ================================================
+   BUTTONS
+   ================================================ */
+.btn-primary {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25 10 25;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.btn-primary:hover {
+    -fx-background-color: #229954;
+    -fx-scale-y: 1.05;
+    -fx-scale-x: 1.05;
+}
+
+.btn-secondary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #2980b9;
+}
+
+.btn-success {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-success:hover {
+    -fx-background-color: #27ae60;
+}
+
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.btn-small {
+    -fx-font-size: 11px;
+    -fx-padding: 5 10 5 10;
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+}
+
+.btn-small:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* ================================================
+   DASHBOARD
+   ================================================ */
+.dashboard-container {
+    -fx-background-color: #f5f6fa;
+}
+
+.section-header {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-pref-width: 250;
+    -fx-pref-height: 150;
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 3);
+    -fx-scale-y: 1.02;
+    -fx-scale-x: 1.02;
+}
+
+.stat-card-primary {
+    -fx-background-color: linear-gradient(to bottom right, #3498db, #2980b9);
+}
+
+.stat-card-primary .stat-label,
+.stat-card-primary .stat-value,
+.stat-card-primary .stat-subtitle {
+    -fx-text-fill: white;
+}
+
+.stat-label {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.stat-value {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 42px;
+    -fx-font-weight: bold;
+}
+
+.stat-subtitle {
+    -fx-text-fill: #95a5a6;
+    -fx-font-size: 12px;
+}
+
+/* Activity Container */
+.activity-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+.activity-feed {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 12px;
+    -fx-control-inner-background: #2c3e50;
+}
+
+.activity-feed .content {
+    -fx-background-color: #2c3e50;
+}
+
+/* ================================================
+   SETTINGS
+   ================================================ */
+.settings-container {
+    -fx-background-color: #f5f6fa;
+}
+
+.settings-section {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* ================================================
+   ANALYTICS
+   ================================================ */
+.analytics-container {
+    -fx-background-color: #f5f6fa;
+}
+
+.analytics-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-pref-width: 300;
+}
+
+.analytics-card-total {
+    -fx-background-color: linear-gradient(to bottom right, #27ae60, #229954);
+}
+
+.analytics-card-total .analytics-label,
+.analytics-card-total .analytics-value-large,
+.analytics-card-total .analytics-subtitle {
+    -fx-text-fill: white;
+}
+
+.analytics-label {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.analytics-value {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.analytics-value-large {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+}
+
+.analytics-subtitle {
+    -fx-text-fill: #95a5a6;
+    -fx-font-size: 11px;
+}
+
+/* ================================================
+   TABLES
+   ================================================ */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 12 10 12 10;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2c3e50;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: #2c3e50;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.table-view .column-header:hover {
+    -fx-background-color: #1a252f;
+}
+
+.table-row-cell {
+    -fx-cell-size: 35px;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #ecf0f1;
+}
+
+.table-cell {
+    -fx-padding: 5 10 5 10;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Editable cell styling */
+.table-cell:editing {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* Text field in editable cells */
+.table-view .text-field {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-radius: 3;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ComboBox in editable cells */
+.table-view .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-radius: 3;
+    -fx-border-width: 1;
+}
+
+/* ComboBox text color */
+.table-view .combo-box-popup .list-view .list-cell {
+    -fx-text-fill: #2c3e50;
+}
+
+/* CheckBox in editable cells */
+.table-view .check-box {
+    -fx-text-fill: #2c3e50;
+}
+
+/* ================================================
+   TABS
+   ================================================ */
+.main-tabs {
+    -fx-background-color: #f5f6fa;
+}
+
+.tab {
+    -fx-background-color: #ecf0f1;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: #ecf0f1;
+}
+
+.tab-content-area {
+    -fx-background-color: #f5f6fa;
+}
+
+/* ================================================
+   INPUT FIELDS
+   ================================================ */
+.text-field, .password-field, .text-area {
+    -fx-background-radius: 5;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+}
+
+.combo-box {
+    -fx-background-radius: 5;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+.spinner {
+    -fx-background-radius: 5;
+}
+
+/* ================================================
+   PROGRESS BAR
+   ================================================ */
+.progress-bar {
+    -fx-background-radius: 10;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #27ae60;
+    -fx-background-radius: 10;
+}
+
+/* ================================================
+   STATUS BAR
+   ================================================ */
+.status-bar-bottom {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-text {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.status-indicator-success {
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 16px;
+}
+
+.status-indicator-inactive {
+    -fx-text-fill: #95a5a6;
+    -fx-font-size: 16px;
+}
+
+.status-indicator-error {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 16px;
+}
+
+/* ================================================
+   SCROLLBAR
+   ================================================ */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #95a5a6;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #ecf0f1;
+}
+
+/* ================================================
+   CHECKBOX
+   ================================================ */
+.check-box {
+    -fx-font-size: 13px;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #27ae60;
+}
+
+/* ================================================
+   SEPARATOR
+   ================================================ */
+.separator {
+    -fx-background-color: #bdc3c7;
+}
+
+/* ================================================
+   PATHS & LOGS CONTAINERS
+   ================================================ */
+.paths-container, .logs-container {
+    -fx-background-color: #f5f6fa;
+}
+
+.status-bar {
+    -fx-padding: 10;
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 0 0 5 5;
+}
+
+/* ================================================
+   HYBRID STATUS INDICATORS (NEW)
+   ================================================ */
+
+/* Indicator for Native C Monitor */
+.status-indicator-native {
+    -fx-text-fill: #27ae60;  /* Green for Native */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Indicator for Java Monitoring */
+.status-indicator-java {
+    -fx-text-fill: #3498db;  /* Blue for Java */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Indicator for Polling */
+.status-indicator-polling {
+    -fx-text-fill: #f39c12;  /* Orange for Polling */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Hybrid Method Label */
+.hybrid-method-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+}
+
+/* Event Source Badge */
+.event-source-native {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 3;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.event-source-java {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 3;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.event-source-polling {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 3;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+

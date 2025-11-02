@@ -1,0 +1,34 @@
+2025-11-02 09:18:24.014 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-02 09:18:24.029 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-02 09:18:24.030 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-02 09:18:24.032 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-02 09:18:24.436 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-02 09:18:24.444 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-02 09:18:24.445 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-02 09:18:24.542 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-02 09:18:24.543 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-02 09:48:19.732 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-02 09:49:02.809 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-02 09:49:02.842 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-02 09:49:02.843 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-02 09:59:27.377 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-02 09:59:27.401 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-02 09:59:27.402 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-02 09:59:27.416 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized (Hybrid mode with C DLL support)
+2025-11-02 09:59:27.508 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path added: Project Backup (ID: 1, Method: NATIVE)
+2025-11-02 09:59:27.513 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Adding monitor path: Project Backup (Type: LOCAL, Method: NATIVE)
+2025-11-02 09:59:27.517 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting NATIVE monitoring: Project Backup (Local path with C DLL)
+2025-11-02 09:59:27.522 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ NATIVE monitor started for: Project Backup
+2025-11-02 09:59:27.522 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-02 09:59:27.542 [pool-3-thread-1] ERROR com.neurasys.service.MultiPathMonitor - ✗ Native DLL error for Project Backup
+java.lang.UnsatisfiedLinkError: 'void com.neurasys.bridge.NativeFileMonitor.startMonitoring(int, java.lang.String, com.neurasys.bridge.NativeFileMonitor$NativeFileEventCallback)'
+	at com.neurasys.bridge.NativeFileMonitor.startMonitoring(Native Method) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.lambda$startNativeMonitoring$1(MultiPathMonitor.java:116) ~[classes/:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-02 12:42:23.944 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=2h20m59s222ms83µs900ns).
+2025-11-02 12:42:26.732 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=2h20m59s223ms36µs800ns).
+2025-11-02 12:42:32.199 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=2h20m59s223ms13µs900ns).
