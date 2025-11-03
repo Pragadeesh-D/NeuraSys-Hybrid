@@ -26,6 +26,7 @@ import java.util.concurrent.*;
  */
 public class MultiPathMonitor {
     private static final Logger logger = Logger.getLogger(MultiPathMonitor.class);
+    private String globalMonitorMethod = "JAVA_WATCH";
 
     private final DatabaseManager dbManager;
     private final NativeFileMonitor nativeMonitor;  // NEW: C DLL integration
@@ -39,16 +40,17 @@ public class MultiPathMonitor {
     }
 
     // NEW: Constructor with NativeFileMonitor
-    public MultiPathMonitor(DatabaseManager dbManager, NativeFileMonitor nativeMonitor, FileEventListener listener) {
+    public MultiPathMonitor(DatabaseManager dbManager, NativeFileMonitor nativeMonitor, FileEventListener listener, String globalMethod) {
         this.dbManager = dbManager;
         this.nativeMonitor = nativeMonitor;
         this.eventListener = listener;
-        logger.info("✓ MultiPathMonitor initialized (Hybrid mode with C DLL support)");
+        this.globalMonitorMethod = globalMethod;
+        logger.info("✓ MultiPathMonitor initialized with global method: " + globalMethod);
     }
 
     // BACKWARD COMPATIBILITY: Old constructor
-    public MultiPathMonitor(DatabaseManager dbManager, FileEventListener listener) {
-        this(dbManager, new NativeFileMonitor(), listener);
+    public MultiPathMonitor(DatabaseManager dbManager, NativeFileMonitor nativeMonitor, FileEventListener listener) {
+        this(dbManager, nativeMonitor, listener, "JAVA_WATCH");
     }
 
     /**
@@ -62,35 +64,46 @@ public class MultiPathMonitor {
         }
 
         String pathType = config.getPathType();
-        String monitorMethod = config.getMonitorMethod();  // NEW: From config
+        String monitorMethod = config.getMonitorMethod();
 
-        logger.info("Adding monitor path: " + config.getPathName() +
-                " (Type: " + pathType + ", Method: " + monitorMethod + ")");
+        logger.info("=== ADDING MONITOR PATH ===");
+        logger.info("  Name: " + config.getPathName());
+        logger.info("  Location: " + config.getPathLocation());
+        logger.info("  Type: " + pathType);
+        logger.info("  Method: " + monitorMethod);
+        logger.info("===========================");
 
-        // Route based on monitor method (NEW: explicit method vs implicit type-based)
+        // Resolve DEFAULT
+        if ("DEFAULT".equalsIgnoreCase(monitorMethod)) {
+            monitorMethod = globalMonitorMethod;
+            logger.info("  → Resolved DEFAULT to: " + monitorMethod);
+        }
+
+        // Route based on monitor method
         switch (monitorMethod) {
             case "NATIVE":
+                logger.info("  → Starting NATIVE monitoring...");
                 startNativeMonitoring(config);
                 break;
             case "JAVA_WATCH":
+                logger.info("  → Starting JAVA_WATCH monitoring...");
                 startJavaWatchMonitoring(config);
                 break;
             case "POLLING":
+                logger.info("  → Starting POLLING monitoring...");
                 startPollingMonitoring(config);
                 break;
             default:
-                // Fallback: determine method from pathType
+                logger.warn("Unknown monitor method: " + monitorMethod + ", using fallback");
+                // Fallback
                 if ("LOCAL".equals(pathType)) {
                     startNativeMonitoring(config);
-                } else if ("NETWORK".equals(pathType)) {
-                    startJavaWatchMonitoring(config);
-                } else if ("ONEDRIVE".equals(pathType) || "CLOUD".equals(pathType)) {
-                    startPollingMonitoring(config);
                 } else {
-                    logger.warn("Unknown path type and method: " + pathType + " / " + monitorMethod);
+                    startJavaWatchMonitoring(config);
                 }
         }
     }
+
 
     /**
      * ✅ NATIVE MONITORING (C DLL with Windows API)
@@ -356,6 +369,27 @@ public class MultiPathMonitor {
         logger.info("✓ All monitors stopped");
     }
 
+    public void restartWithMethod(String newMethod) {
+        logger.info("Restarting monitors with method: " + newMethod);
+
+        // Stop all currently running monitoring tasks
+        stopAll();
+
+        activeTasks.clear();
+
+        try {
+            List<MonitorConfig> configs = dbManager.getAllActiveMonitorPaths();
+
+            for (MonitorConfig config : configs) {
+                config.setMonitorMethod(newMethod);
+                addMonitorPath(config);
+            }
+
+            logger.info("✓ Restarted all monitoring paths with method: " + newMethod);
+        } catch (Exception e) {
+            logger.error("Failed to restart monitoring paths", e);
+        }
+    }
     /**
      * ✅ HYBRID FileEventData - Complete file event information
      * Includes event_source for tracking monitoring method

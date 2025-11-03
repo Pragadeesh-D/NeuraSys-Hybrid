@@ -110,16 +110,21 @@ public class MainController {
     @FXML private Button btnBrowseBackup;
     @FXML private Button btnBrowseRestore;
     @FXML private Button btnRestoreBackup;
+    @FXML
+    private ComboBox<String> cmbMonitorMethod;
 
     // ==================== Service Components ====================
 
     private DatabaseManager dbManager;
     private BackupManager backupManager;
     private MultiPathMonitor multiPathMonitor;
+    private long monitoringStartTime = 0; // Track when monitoring began
+
     private NativeFileMonitor nativeMonitor;  // NEW: C DLL monitor
 
     private boolean isMonitoring = false;
 
+    private String globalMonitorMethod = "JAVA_WATCH";
     // Data
     private ObservableList<MonitorConfig> monitorPaths;
     private ObservableList<FileEvent> logsList;
@@ -142,6 +147,18 @@ public class MainController {
             dbManager = new DatabaseManager("localhost", "NeuraSysDB", "neurasys_app", "NeuraSys@2025!");
             logger.info("✓ Initial database connection successful");
             lblDbStatus.setStyle("-fx-text-fill: #27ae60;");
+
+            try {
+                ObservableList<MonitorConfig> loadedPaths = dbManager.getAllMonitorPaths();
+                if (loadedPaths != null && !loadedPaths.isEmpty()) {
+                    monitorPaths.addAll(loadedPaths);
+                    logger.info("✓ Loaded " + loadedPaths.size() + " monitor paths from database");
+                } else {
+                    logger.info("No monitor paths found in database");
+                }
+            } catch (Exception e) {
+                logger.warn("Could not load monitor paths: " + e.getMessage());
+            }
         } catch (Exception e) {
             logger.warn("Could not initialize database early: " + e.getMessage());
             dbManager = null;
@@ -161,12 +178,46 @@ public class MainController {
         setupLogsTable();
         setupSettings();
 
+        // ============================================================
+        // CRITICAL: Setup Monitor Method ComboBox (Settings Tab)
+        // ============================================================
+        cmbMonitorMethod.getItems().clear();
+        cmbMonitorMethod.getItems().addAll("JAVA_WATCH", "NATIVE", "POLLING");
+        cmbMonitorMethod.setValue(globalMonitorMethod); // Default: JAVA_WATCH
+        logger.info("✓ Monitoring method set to default: " + globalMonitorMethod);
+
+        /// Listen for changes to monitoring method in Settings tab
+        cmbMonitorMethod.setOnAction(event -> {
+            String newMethod = cmbMonitorMethod.getValue();
+            if (newMethod != null && !newMethod.equals(globalMonitorMethod)) {
+                logger.info("=== SETTINGS TAB: Monitoring method changed ===");
+                logger.info("Old: " + globalMonitorMethod + " | New: " + newMethod);
+                globalMonitorMethod = newMethod;
+
+                // Update label
+                lblMonitorMethod.setText("Method: " + newMethod);
+                lblMonitorMethod.setStyle("-fx-text-fill: #3498db;");
+
+                addActivityLog("✓ Global monitoring method changed to: " + newMethod, "INFO");
+                logger.info("Global method is now: " + globalMonitorMethod);
+
+                // CRITICAL: If monitoring is running, restart it with the new method
+                if (isMonitoring) {
+                    logger.info("Monitoring is active, restarting with new method...");
+                    restartMonitoringWithCurrentMethods();
+                }
+            }
+        });
+
+
         // Setup filter ComboBox
+        cmbFilterAction.getItems().clear();
         cmbFilterAction.getItems().addAll("All", "CREATE", "MODIFY", "DELETE", "RENAME");
         cmbFilterAction.setValue("All");
         cmbFilterAction.setOnAction(e -> handleFilterChange());
 
-        // Setup event source filter (NEW)
+        // Setup event source filter
+        cmbFilterEventSource.getItems().clear();
         cmbFilterEventSource.getItems().addAll("All", "NATIVE", "JAVA_WATCH", "POLLING");
         cmbFilterEventSource.setValue("All");
         cmbFilterEventSource.setOnAction(e -> handleFilterChange());
@@ -180,6 +231,84 @@ public class MainController {
         updateStatus("Ready");
         logger.info("✓ MainController initialized (Hybrid mode)");
     }
+
+
+    // ============================
+    // 🔧 FIXED MONITOR METHOD UPDATE
+    // ============================
+    private void updateMonitoringMethod(String newMethod) {
+        logger.info("=== UPDATING MONITORING METHOD TO: " + newMethod + " ===");
+
+        if (multiPathMonitor == null || !isMonitoring) {
+            logger.warn("Monitoring not active. Method will apply on next monitoring start.");
+            globalMonitorMethod = newMethod;
+            cmbMonitorMethod.setValue(newMethod);
+            lblMonitorMethod.setText("Method: " + newMethod);
+            lblMonitorMethod.setStyle("-fx-text-fill: #3498db;");
+            addActivityLog("Monitoring method set to: " + newMethod + " (will apply on next start)", "INFO");
+            return;
+        }
+
+        try {
+            logger.info("Stopping all active monitors...");
+            multiPathMonitor.stopAll();
+
+            globalMonitorMethod = newMethod;
+            logger.info("✓ Stopped all monitors. Global method is now: " + globalMonitorMethod);
+
+            // Re-add all paths with the NEW method
+            logger.info("Re-starting monitors with method: " + newMethod);
+            for (MonitorConfig config : monitorPaths) {
+                if (config.isEnabled()) {
+                    String methodToUse = config.getMonitorMethod();
+
+                    // If path uses DEFAULT, resolve to the NEW global method
+                    if ("DEFAULT".equalsIgnoreCase(methodToUse)) {
+                        methodToUse = newMethod;
+                    }
+
+                    MonitorConfig updatedConfig = new MonitorConfig();
+                    updatedConfig.setId(config.getId());
+                    updatedConfig.setPathName(config.getPathName());
+                    updatedConfig.setPathLocation(config.getPathLocation());
+                    updatedConfig.setBackupLocation(config.getBackupLocation());
+                    updatedConfig.setPathType(config.getPathType());
+                    updatedConfig.setMonitorMethod(methodToUse);
+                    updatedConfig.setEnabled(true);
+
+                    multiPathMonitor.addMonitorPath(updatedConfig);
+                    logger.info("  ✓ Re-added path with method: " + methodToUse);
+                }
+            }
+
+            // Start all monitors with NEW method
+            multiPathMonitor.startAll();
+
+            // Update UI
+            globalMonitorMethod = newMethod;
+            cmbMonitorMethod.setValue(newMethod);
+            lblMonitorMethod.setText("Method: " + newMethod);
+            lblMonitorMethod.setStyle("-fx-text-fill: #27ae60;");
+
+            updateStatus("Monitoring method updated: " + newMethod);
+            addActivityLog("✓ Monitoring method changed to: " + newMethod + " (Active on " +
+                    monitorPaths.stream().filter(MonitorConfig::isEnabled).count() + " paths)", "SUCCESS");
+
+            logger.info("=== MONITORING METHOD UPDATE COMPLETE ===");
+
+        } catch (Exception e) {
+            logger.error("Failed to update monitoring method", e);
+            addActivityLog("✗ Failed to update monitoring method: " + e.getMessage(), "ERROR");
+            showError("Failed to update monitoring method: " + e.getMessage());
+        }
+    }
+
+
+    // Placeholder method to get current monitoring method (can retrieve from config or DB)
+    private String getCurrentMonitoringMethod() {
+        return "NATIVE"; // For now default to NATIVE
+    }
+
 
     // ==================== Filter & Search ====================
 
@@ -260,21 +389,40 @@ public class MainController {
             addActivityLog("Updated path type to: " + event.getNewValue(), "INFO");
         });
 
-        // NEW: Monitor method column (NATIVE, JAVA_WATCH, POLLING)
+        // CRITICAL: Monitor method column with DEFAULT option
         colMonitorMethod.setCellValueFactory(new PropertyValueFactory<>("monitorMethod"));
         colMonitorMethod.setCellFactory(javafx.scene.control.cell.ComboBoxTableCell.forTableColumn(
-                "NATIVE", "JAVA_WATCH", "POLLING"
+                "DEFAULT", "NATIVE", "JAVA_WATCH", "POLLING"
         ));
         colMonitorMethod.setOnEditCommit(event -> {
-            event.getRowValue().setMonitorMethod(event.getNewValue());
-            addActivityLog("Changed monitor method to: " + event.getNewValue(), "INFO");
+            String newMethod = event.getNewValue();
+            MonitorConfig config = event.getRowValue();
+            String oldMethod = config.getMonitorMethod();
+
+            config.setMonitorMethod(newMethod);
+
+            if ("DEFAULT".equalsIgnoreCase(newMethod)) {
+                addActivityLog("Path '" + config.getPathName() + "' set to: DEFAULT (using global: " + globalMonitorMethod + ")", "INFO");
+                logger.info("Path '" + config.getPathName() + "' method changed to DEFAULT");
+            } else {
+                addActivityLog("Path '" + config.getPathName() + "' method changed to: " + newMethod, "INFO");
+                logger.info("Path '" + config.getPathName() + "' method changed from " + oldMethod + " to " + newMethod);
+            }
+
+            // CRITICAL: If monitoring is running, restart with the new method
+            if (isMonitoring) {
+                logger.info("Monitoring is active, restarting to apply path method change...");
+                restartMonitoringWithCurrentMethods();
+            }
         });
+
 
         colPathEnabled.setCellValueFactory(new PropertyValueFactory<>("enabled"));
         colPathEnabled.setCellFactory(javafx.scene.control.cell.CheckBoxTableCell.forTableColumn(colPathEnabled));
 
         tblMonitorPaths.setItems(monitorPaths);
     }
+
 
     private void setupLogsTable() {
         colLogId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -375,23 +523,94 @@ public class MainController {
             // Initialize backup manager
             backupManager = new BackupManager(dbManager);
 
-            // Initialize multi-path monitor (hybrid: native + Java fallback)
-            multiPathMonitor = new MultiPathMonitor(dbManager, nativeMonitor, this::onFileEvent);
+            // Initialize multi-path monitor with global method
+            multiPathMonitor = new MultiPathMonitor(dbManager, nativeMonitor, this::onFileEvent, globalMonitorMethod);
+
+            // CRITICAL: Record the moment monitoring starts
+            monitoringStartTime = System.currentTimeMillis();
+            logger.info("✓ Monitoring start timestamp recorded: " + monitoringStartTime);
 
             // Add monitor paths to database and start monitoring
+            int pathsAdded = 0;
             for (MonitorConfig config : monitorPaths) {
                 if (config.isEnabled()) {
                     try {
+                        // Validate paths exist
+                        String pathLocation = config.getPathLocation();
+                        String backupLocation = config.getBackupLocation();
+
+                        if (pathLocation == null || pathLocation.isEmpty() || pathLocation.equals("Select folder...")) {
+                            logger.warn("✗ Path location is invalid: " + pathLocation);
+                            addActivityLog("✗ Invalid path location for: " + config.getPathName(), "ERROR");
+                            continue;
+                        }
+
+                        if (backupLocation == null || backupLocation.isEmpty() || backupLocation.equals("Select backup folder...")) {
+                            logger.warn("✗ Backup location is invalid: " + backupLocation);
+                            addActivityLog("✗ Invalid backup location for: " + config.getPathName(), "ERROR");
+                            continue;
+                        }
+
+                        File pathDir = new File(pathLocation);
+                        File backupDir = new File(backupLocation);
+
+                        if (!pathDir.exists()) {
+                            logger.warn("✗ Monitor path does not exist: " + pathLocation);
+                            addActivityLog("✗ Monitor path does not exist: " + pathLocation, "ERROR");
+                            continue;
+                        }
+
+                        if (!backupDir.exists()) {
+                            if (backupDir.mkdirs()) {
+                                logger.info("✓ Backup directory created");
+                            } else {
+                                logger.warn("✗ Failed to create backup directory");
+                                addActivityLog("✗ Could not create backup directory: " + backupLocation, "ERROR");
+                                continue;
+                            }
+                        }
+
+                        // CRITICAL: Resolve DEFAULT to the current global method
+                        String methodToUse = config.getMonitorMethod();
+                        if ("DEFAULT".equalsIgnoreCase(methodToUse)) {
+                            methodToUse = globalMonitorMethod;
+                            logger.info("  → Path '" + config.getPathName() + "': DEFAULT resolved to " + methodToUse);
+                        }
+
+                        // Add to database
                         int pathId = dbManager.addMonitorPath(config);
                         config.setId(pathId);
-                        multiPathMonitor.addMonitorPath(config);
+                        logger.info("✓ Path added to database with ID: " + pathId);
+
+                        // Create resolved config for monitoring
+                        MonitorConfig resolvedConfig = new MonitorConfig();
+                        resolvedConfig.setId(config.getId());
+                        resolvedConfig.setPathName(config.getPathName());
+                        resolvedConfig.setPathLocation(config.getPathLocation());
+                        resolvedConfig.setBackupLocation(config.getBackupLocation());
+                        resolvedConfig.setPathType(config.getPathType());
+                        resolvedConfig.setMonitorMethod(methodToUse); // Use resolved method
+                        resolvedConfig.setEnabled(true);
+
+                        multiPathMonitor.addMonitorPath(resolvedConfig);
+                        pathsAdded++;
+                        logger.info("✓ Monitoring enabled for: " + config.getPathName() + " (Method: " + methodToUse + ")");
+                        addActivityLog("✓ Monitoring enabled for: " + config.getPathName() + " (Method: " + methodToUse + ")", "SUCCESS");
+
                     } catch (Exception e) {
                         logger.error("Failed to add monitor path: " + config.getPathName(), e);
+                        addActivityLog("✗ Failed to add: " + config.getPathName() + " - " + e.getMessage(), "ERROR");
                     }
                 }
             }
 
-            // Start monitoring (hybrid mode)
+            if (pathsAdded == 0) {
+                showError("No enabled monitor paths to start! Check path locations and backup locations.");
+                updateStatus("No valid paths to monitor");
+                return;
+            }
+
+            // Start monitoring
             multiPathMonitor.startAll();
 
             isMonitoring = true;
@@ -401,11 +620,11 @@ public class MainController {
             lblMonitorStatus.setStyle("-fx-text-fill: #27ae60; -fx-font-weight: bold;");
             lblCMonitorStatus.setStyle("-fx-text-fill: #27ae60;");
             lblDbStatus.setStyle("-fx-text-fill: #27ae60;");
-            lblMonitorMethod.setText("Method: NATIVE + JAVA_WATCH");
+            lblMonitorMethod.setText("Method: " + globalMonitorMethod);
             lblMonitorMethod.setStyle("-fx-text-fill: #3498db;");
 
-            updateStatus("Monitoring started (Hybrid mode)");
-            addActivityLog("✓ Hybrid monitoring started with " + monitorPaths.size() + " paths", "SUCCESS");
+            updateStatus("Monitoring started (" + pathsAdded + " paths)");
+            addActivityLog("✓ Monitoring started with " + pathsAdded + " paths (Global Method: " + globalMonitorMethod + ")", "SUCCESS");
 
         } catch (Exception e) {
             showError("Failed to start monitoring: " + e.getMessage());
@@ -413,6 +632,8 @@ public class MainController {
             updateStatus("Error: " + e.getMessage());
         }
     }
+
+
 
     private void stopMonitoring() {
         if (multiPathMonitor != null) {
@@ -440,6 +661,17 @@ public class MainController {
      */
     private void onFileEvent(MultiPathMonitor.FileEventData event) {
         Platform.runLater(() -> {
+
+            // NEW: IGNORE events that occurred BEFORE or VERY CLOSE TO monitoring start
+            // (within 2 seconds to account for system delays)
+            long eventTime = System.currentTimeMillis();
+            long timeSinceStart = eventTime - monitoringStartTime;
+
+            if (timeSinceStart < 2000) {
+                logger.info("✓ Ignoring pre-startup event (age: " + timeSinceStart + "ms): " + event.getFileName());
+                return; // SKIP THIS EVENT
+            }
+
             if (!shouldBackupFile(event.getFileName())) {
                 logger.info("File filtered out: " + event.getFileName());
                 return;
@@ -493,6 +725,7 @@ public class MainController {
         });
     }
 
+
     // ==================== Activity & Status Management ====================
 
     @FXML
@@ -507,12 +740,14 @@ public class MainController {
         config.setPathLocation("Select folder...");
         config.setBackupLocation("Select backup folder...");
         config.setPathType("LOCAL");
-        config.setMonitorMethod("NATIVE");  // Default to native for local paths
+        config.setMonitorMethod("DEFAULT"); // CRITICAL: Use DEFAULT, will resolve to globalMonitorMethod
         config.setEnabled(true);
 
         monitorPaths.add(config);
-        addActivityLog("Added new monitor path (default method: NATIVE)", "INFO");
+        logger.info("✓ New monitor path added with method: DEFAULT (will use: " + globalMonitorMethod + ")");
+        addActivityLog("✓ Added new monitor path (method: DEFAULT → " + globalMonitorMethod + ")", "INFO");
     }
+
 
     @FXML
     private void handleTestConnection() {
@@ -618,7 +853,8 @@ public class MainController {
         if (dbManager == null) return;
 
         try {
-            BackupStats stats = dbManager.getBackupStats();
+            // Use the new method that queries space_optimization_stats correctly
+            BackupStats stats = dbManager.getBackupStatsFromOptimization();
 
             lblTotalBackups.setText(String.valueOf(stats.getTotalBackups()));
             lblSpaceSaved.setText(String.format("%.1f%%", stats.getSavingsPercent()));
@@ -631,6 +867,7 @@ public class MainController {
                     stats.getSpaceSavedFormatted(),
                     stats.getOriginalSizeFormatted()));
 
+            logger.info("Dashboard updated with latest backup stats");
         } catch (Exception e) {
             logger.error("Failed to update dashboard", e);
         }
@@ -684,6 +921,68 @@ public class MainController {
                 && !fileName.endsWith(".tmp")
                 && !fileName.endsWith(".temp")
                 && !fileName.equals("Thumbs.db");
+    }
+
+    /**
+     * Restarts monitoring with the current path configurations
+     * Used when monitoring is running and you change a path's method or global method
+     */
+    private void restartMonitoringWithCurrentMethods() {
+        if (!isMonitoring || multiPathMonitor == null) {
+            logger.warn("Monitoring is not active, cannot restart");
+            return;
+        }
+
+        try {
+            logger.info("=== RESTARTING MONITORING WITH UPDATED METHODS ===");
+
+            // Stop current monitoring
+            multiPathMonitor.stopAll();
+            logger.info("✓ Stopped all monitors");
+
+            // Clear all paths from the monitor
+            multiPathMonitor = new MultiPathMonitor(dbManager, nativeMonitor, this::onFileEvent, globalMonitorMethod);
+            logger.info("✓ Created new monitor instance");
+
+            // Re-add all enabled paths with their CURRENT methods
+            int pathsReAdded = 0;
+            for (MonitorConfig config : monitorPaths) {
+                if (config.isEnabled()) {
+                    String methodToUse = config.getMonitorMethod();
+
+                    // Resolve DEFAULT to current global method
+                    if ("DEFAULT".equalsIgnoreCase(methodToUse)) {
+                        methodToUse = globalMonitorMethod;
+                    }
+
+                    logger.info("  → Re-adding path: " + config.getPathName() + " with method: " + methodToUse);
+
+                    MonitorConfig resolvedConfig = new MonitorConfig();
+                    resolvedConfig.setId(config.getId());
+                    resolvedConfig.setPathName(config.getPathName());
+                    resolvedConfig.setPathLocation(config.getPathLocation());
+                    resolvedConfig.setBackupLocation(config.getBackupLocation());
+                    resolvedConfig.setPathType(config.getPathType());
+                    resolvedConfig.setMonitorMethod(methodToUse);
+                    resolvedConfig.setEnabled(true);
+
+                    multiPathMonitor.addMonitorPath(resolvedConfig);
+                    pathsReAdded++;
+                }
+            }
+
+            // Start all monitors
+            multiPathMonitor.startAll();
+
+            updateStatus("Monitoring restarted with updated methods (" + pathsReAdded + " paths)");
+            addActivityLog("✓ Monitoring restarted with updated methods (" + pathsReAdded + " paths)", "SUCCESS");
+            logger.info("=== MONITORING RESTART COMPLETE ===");
+
+        } catch (Exception e) {
+            logger.error("Failed to restart monitoring", e);
+            addActivityLog("✗ Failed to restart monitoring: " + e.getMessage(), "ERROR");
+            showError("Failed to restart monitoring: " + e.getMessage());
+        }
     }
 
     // ==================== Backup/Restore ====================

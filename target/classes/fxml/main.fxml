@@ -166,6 +166,20 @@
                             <Insets top="20" right="20" bottom="20" left="20"/>
                         </padding>
 
+                        <!-- Monitoring Method Selection -->
+                        <VBox spacing="10" styleClass="settings-section">
+                            <Label text="Monitoring Method" styleClass="section-header">
+                                <font>
+                                    <Font name="System Bold" size="16"/>
+                                </font>
+                            </Label>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Select Monitoring Method:"/>
+                                <ComboBox fx:id="cmbMonitorMethod" prefWidth="200"/>
+                            </HBox>
+                        </VBox>
+
                         <!-- Database Settings -->
                         <VBox spacing="10" styleClass="settings-section">
                             <Label text="Database Configuration" styleClass="section-header">

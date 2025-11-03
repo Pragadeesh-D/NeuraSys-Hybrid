@@ -10,6 +10,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ✅ HYBRID DatabaseManager - Database operations for NeuraSys
@@ -24,6 +26,7 @@ import java.sql.*;
 public class DatabaseManager {
     private static final Logger logger = Logger.getLogger(DatabaseManager.class);
 
+    private Connection connection;
     private final HikariDataSource dataSource;
 
     public DatabaseManager(String host, String database, String username, String password) {
@@ -66,41 +69,129 @@ public class DatabaseManager {
         return dataSource.getConnection();
     }
 
+    public List<MonitorConfig> getAllActiveMonitorPaths() throws SQLException {
+        List<MonitorConfig> activePaths = new ArrayList<>();
+
+        String sql = "SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled " +
+                "FROM monitor_paths WHERE enabled = true";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                MonitorConfig config = new MonitorConfig();
+                config.setId(rs.getInt("id"));
+                config.setPathName(rs.getString("path_name"));
+                config.setPathLocation(rs.getString("path_location"));
+                config.setBackupLocation(rs.getString("backup_location"));
+                config.setPathType(rs.getString("path_type"));
+                config.setMonitorMethod(rs.getString("monitor_method"));
+                config.setEnabled(rs.getBoolean("enabled"));
+                activePaths.add(config);
+            }
+        }
+        return activePaths;
+    }
+
+    public ObservableList<MonitorConfig> getAllMonitorPaths() throws SQLException {
+        ObservableList<MonitorConfig> paths = FXCollections.observableArrayList();
+
+        String sql = "SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled " +
+                "FROM monitor_paths";
+
+        logger.info("Executing query: " + sql);
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            int count = 0;
+            while (rs.next()) {
+                MonitorConfig config = new MonitorConfig();
+                config.setId(rs.getInt("id"));
+                config.setPathName(rs.getString("path_name"));
+                config.setPathLocation(rs.getString("path_location"));
+                config.setBackupLocation(rs.getString("backup_location"));
+                config.setPathType(rs.getString("path_type"));
+                config.setMonitorMethod(rs.getString("monitor_method"));
+                config.setEnabled(rs.getBoolean("enabled"));
+
+                logger.info("Loaded path #" + (count + 1) + ": " + config.getPathName());
+                paths.add(config);
+                count++;
+            }
+            logger.info("✓ Total paths loaded: " + count);
+        } catch (SQLException e) {
+            logger.error("Failed to load monitor paths from database", e);
+            throw e;
+        }
+
+        return paths;
+    }
+
     // ============================================================
     // NEW: Add Monitor Path and return database ID
     // ============================================================
     public int addMonitorPath(MonitorConfig config) throws SQLException {
-        String sql = "INSERT INTO monitor_paths (path_name, path_location, path_type, " +
-                "monitor_method, is_enabled, enable_compression, enable_deduplication, " +
-                "enable_incremental) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        // Check if path already exists and update instead
+        String selectSql = "SELECT id FROM monitor_paths WHERE path_name = ?";
 
         try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement selectStmt = conn.prepareStatement(selectSql)) {
 
-            stmt.setString(1, config.getPathName());
-            stmt.setString(2, config.getPathLocation());
-            stmt.setString(3, config.getPathType());
-            stmt.setString(4, config.getMonitorMethod());  // NEW: NATIVE, JAVA_WATCH, POLLING
-            stmt.setBoolean(5, config.isEnabled());
-            stmt.setBoolean(6, config.isCompressionEnabled());
-            stmt.setBoolean(7, config.isDeduplicationEnabled());
-            stmt.setBoolean(8, config.isIncrementalEnabled());
+            selectStmt.setString(1, config.getPathName());
+            ResultSet rs = selectStmt.executeQuery();
 
-            stmt.executeUpdate();
-
-            ResultSet rs = stmt.getGeneratedKeys();
+            // If path already exists, update it
             if (rs.next()) {
-                int pathId = rs.getInt(1);
-                logger.info("✓ Monitor path added: {} (ID: {}, Method: {})",
-                        config.getPathName(), pathId, config.getMonitorMethod());
-                return pathId;
+                int existingId = rs.getInt("id");
+                logger.info("Path '" + config.getPathName() + "' already exists (ID: " + existingId + "). Updating...");
+
+                // Update only the columns that exist in your table
+                String updateSql = "UPDATE monitor_paths SET path_location = ?, path_type = ?, " +
+                        "monitor_method = ?, is_enabled = ? WHERE id = ?";
+
+                try (PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
+                    updateStmt.setString(1, config.getPathLocation());
+                    updateStmt.setString(2, config.getPathType());
+                    updateStmt.setString(3, config.getMonitorMethod());
+                    updateStmt.setBoolean(4, config.isEnabled());
+                    updateStmt.setInt(5, existingId);
+
+                    updateStmt.executeUpdate();
+                    logger.info("✓ Monitor path updated successfully (ID: " + existingId + ")");
+                    return existingId;
+                }
+            }
+
+            // If path doesn't exist, insert it (WITHOUT backup_location)
+            String insertSql = "INSERT INTO monitor_paths (path_name, path_location, path_type, " +
+                    "monitor_method, is_enabled) VALUES (?, ?, ?, ?, ?)";
+
+            try (PreparedStatement insertStmt = conn.prepareStatement(insertSql, Statement.RETURN_GENERATED_KEYS)) {
+                insertStmt.setString(1, config.getPathName());
+                insertStmt.setString(2, config.getPathLocation());
+                insertStmt.setString(3, config.getPathType());
+                insertStmt.setString(4, config.getMonitorMethod());
+                insertStmt.setBoolean(5, config.isEnabled());
+
+                insertStmt.executeUpdate();
+
+                ResultSet generatedKeys = insertStmt.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    int pathId = generatedKeys.getInt(1);
+                    logger.info("✓ Monitor path added: {} (ID: {}, Method: {})",
+                            config.getPathName(), pathId, config.getMonitorMethod());
+                    return pathId;
+                }
             }
         } catch (SQLException e) {
-            logger.error("Failed to add monitor path", e);
+            logger.error("Failed to add/update monitor path", e);
             throw e;
         }
         return -1;
     }
+
+
 
     // ============================================================
     // NEW: Log File Event with event_source (NATIVE, JAVA_WATCH, POLLING)
@@ -420,6 +511,66 @@ public class DatabaseManager {
         }
 
         return events;
+    }
+
+    // ============================================================
+// NEW: Get Backup Statistics from space_optimization_stats
+// ============================================================
+    public BackupStats getBackupStatsFromOptimization() {
+        String sql = "SELECT " +
+                "COUNT(*) as total_records, " +
+                "SUM(total_files_backed_up) as total_files, " +
+                "SUM(total_original_size) as total_original, " +
+                "SUM(total_compressed_size) as total_compressed, " +
+                "SUM(compression_saved) as compression_saved, " +
+                "SUM(deduplication_saved) as deduplication_saved, " +
+                "SUM(incremental_saved) as incremental_saved, " +
+                "SUM(total_space_saved) as total_space_saved, " +
+                "AVG(overall_savings_percent) as avg_savings_percent, " +
+                "MAX(stat_date) as last_date " +
+                "FROM space_optimization_stats " +
+                "WHERE stat_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)";
+
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            if (rs.next()) {
+                long totalOriginal = rs.getLong("total_original");
+                long totalCompressed = rs.getLong("total_compressed");
+                long totalSaved = rs.getLong("total_space_saved");
+                double savingsPercent = rs.getDouble("avg_savings_percent");
+
+                if (savingsPercent < 0) savingsPercent = 0;
+                if (savingsPercent > 100) savingsPercent = 100;
+
+                logger.info("✓ Backup stats loaded: {} files, {} original, {}% savings",
+                        rs.getLong("total_files"),
+                        formatBytes(totalOriginal),
+                        savingsPercent);
+
+                return new BackupStats(
+                        rs.getInt("total_records"),
+                        totalOriginal,
+                        totalCompressed,
+                        savingsPercent,
+                        rs.getInt("total_files"),
+                        rs.getString("last_date") != null ? rs.getString("last_date") : "Never"
+                );
+            }
+        } catch (SQLException e) {
+            logger.error("Failed to get backup stats from optimization table", e);
+        }
+
+        return new BackupStats(0, 0, 0, 0, 0, "Never");
+    }
+
+    // Helper method to format bytes
+    private String formatBytes(long bytes) {
+        if (bytes < 1024) return bytes + " B";
+        if (bytes < 1024 * 1024) return String.format("%.2f KB", bytes / 1024.0);
+        if (bytes < 1024 * 1024 * 1024) return String.format("%.2f MB", bytes / (1024.0 * 1024));
+        return String.format("%.2f GB", bytes / (1024.0 * 1024 * 1024));
     }
 
     // ============================================================

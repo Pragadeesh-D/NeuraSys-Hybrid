@@ -1,0 +1,659 @@
+2025-11-02 09:59:27.402 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 09:59:27.416 - ✓ MultiPathMonitor initialized (Hybrid mode with C DLL support)
+2025-11-02 09:59:27.513 - Adding monitor path: Project Backup (Type: LOCAL, Method: NATIVE)
+2025-11-02 09:59:27.517 - Starting NATIVE monitoring: Project Backup (Local path with C DLL)
+2025-11-02 09:59:27.522 - ✓ NATIVE monitor started for: Project Backup
+2025-11-02 09:59:27.522 - Starting all monitors (1 paths)
+2025-11-02 09:59:27.542 - ✗ Native DLL error for Project Backup
+java.lang.UnsatisfiedLinkError: 'void com.neurasys.bridge.NativeFileMonitor.startMonitoring(int, java.lang.String, com.neurasys.bridge.NativeFileMonitor$NativeFileEventCallback)'
+	at com.neurasys.bridge.NativeFileMonitor.startMonitoring(Native Method) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.lambda$startNativeMonitoring$1(MultiPathMonitor.java:116) ~[classes/:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-02 14:41:55.277 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 14:41:55.336 - ✓ MultiPathMonitor initialized (Hybrid mode with C DLL support)
+2025-11-02 14:41:55.429 - Starting all monitors (0 paths)
+2025-11-02 14:43:04.768 - Stopping all monitors...
+2025-11-02 14:43:04.768 - ✓ All monitors stopped
+2025-11-02 14:43:04.769 - Restarting monitors with method: JAVA_WATCH
+2025-11-02 14:43:04.769 - Stopping all monitors...
+2025-11-02 14:43:04.769 - ✓ All monitors stopped
+2025-11-02 14:43:04.769 - Failed to restart monitoring paths
+java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+	at com.neurasys.service.DatabaseManager.getAllActiveMonitorPaths(DatabaseManager.java:78) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.restartWithMethod(MultiPathMonitor.java:368) ~[classes/:?]
+	at com.neurasys.controller.MainController.updateMonitoringMethod(MainController.java:207) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$initialize$0(MainController.java:171) ~[classes/:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:106) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:151) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox.updateValue(ComboBox.java:516) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$3.changed(ComboBox.java:499) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectPropertyBase.fireValueChangedEvent(ReadOnlyObjectPropertyBase.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:105) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$0(ComboBox.java:556) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:136) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.updateSelectedIndex(SingleSelectionModel.java:215) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.select(SingleSelectionModel.java:149) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.skin.ComboBoxListViewSkin.lambda$createListView$10(ComboBoxListViewSkin.java:558) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:348) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.select(MultipleSelectionModelBase.java:414) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.clearAndSelect(MultipleSelectionModelBase.java:361) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ListView$ListViewBitSetSelectionModel.clearAndSelect(ListView.java:1451) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.simpleSelect(CellBehaviorBase.java:287) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.doSelect(CellBehaviorBase.java:246) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.mousePressed(CellBehaviorBase.java:176) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx.base.jar:?]
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198) ~[javafx.base.jar:?]
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-02 14:43:43.760 - Stopping all monitors...
+2025-11-02 14:43:43.760 - ✓ All monitors stopped
+2025-11-02 14:43:43.760 - Restarting monitors with method: POLLING
+2025-11-02 14:43:43.760 - Stopping all monitors...
+2025-11-02 14:43:43.761 - ✓ All monitors stopped
+2025-11-02 14:43:43.761 - Failed to restart monitoring paths
+java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+	at com.neurasys.service.DatabaseManager.getAllActiveMonitorPaths(DatabaseManager.java:78) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.restartWithMethod(MultiPathMonitor.java:368) ~[classes/:?]
+	at com.neurasys.controller.MainController.updateMonitoringMethod(MainController.java:207) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$initialize$0(MainController.java:171) ~[classes/:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:106) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:151) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox.updateValue(ComboBox.java:516) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$3.changed(ComboBox.java:499) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectPropertyBase.fireValueChangedEvent(ReadOnlyObjectPropertyBase.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:105) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$0(ComboBox.java:556) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:136) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.updateSelectedIndex(SingleSelectionModel.java:215) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.select(SingleSelectionModel.java:149) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.skin.ComboBoxListViewSkin.lambda$createListView$10(ComboBoxListViewSkin.java:558) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:348) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.select(MultipleSelectionModelBase.java:414) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.clearAndSelect(MultipleSelectionModelBase.java:361) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ListView$ListViewBitSetSelectionModel.clearAndSelect(ListView.java:1451) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.simpleSelect(CellBehaviorBase.java:287) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.doSelect(CellBehaviorBase.java:246) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.mousePressed(CellBehaviorBase.java:176) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx.base.jar:?]
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198) ~[javafx.base.jar:?]
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-02 14:43:57.410 - Stopping all monitors...
+2025-11-02 14:43:57.410 - ✓ All monitors stopped
+2025-11-02 14:43:57.410 - Restarting monitors with method: NATIVE
+2025-11-02 14:43:57.410 - Stopping all monitors...
+2025-11-02 14:43:57.410 - ✓ All monitors stopped
+2025-11-02 14:43:57.411 - Failed to restart monitoring paths
+java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+	at com.neurasys.service.DatabaseManager.getAllActiveMonitorPaths(DatabaseManager.java:78) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.restartWithMethod(MultiPathMonitor.java:368) ~[classes/:?]
+	at com.neurasys.controller.MainController.updateMonitoringMethod(MainController.java:207) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$initialize$0(MainController.java:171) ~[classes/:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:106) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:151) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox.updateValue(ComboBox.java:516) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$3.changed(ComboBox.java:499) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectPropertyBase.fireValueChangedEvent(ReadOnlyObjectPropertyBase.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:105) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$0(ComboBox.java:556) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:136) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.updateSelectedIndex(SingleSelectionModel.java:215) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.select(SingleSelectionModel.java:149) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.skin.ComboBoxListViewSkin.lambda$createListView$10(ComboBoxListViewSkin.java:558) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:348) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.select(MultipleSelectionModelBase.java:414) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.clearAndSelect(MultipleSelectionModelBase.java:361) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ListView$ListViewBitSetSelectionModel.clearAndSelect(ListView.java:1451) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.simpleSelect(CellBehaviorBase.java:287) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.doSelect(CellBehaviorBase.java:246) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.mousePressed(CellBehaviorBase.java:176) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx.base.jar:?]
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198) ~[javafx.base.jar:?]
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-02 14:44:08.325 - Stopping all monitors...
+2025-11-02 14:44:08.325 - ✓ All monitors stopped
+2025-11-02 14:44:08.325 - Restarting monitors with method: POLLING
+2025-11-02 14:44:08.325 - Stopping all monitors...
+2025-11-02 14:44:08.325 - ✓ All monitors stopped
+2025-11-02 14:44:08.326 - Failed to restart monitoring paths
+java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+	at com.neurasys.service.DatabaseManager.getAllActiveMonitorPaths(DatabaseManager.java:78) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.restartWithMethod(MultiPathMonitor.java:368) ~[classes/:?]
+	at com.neurasys.controller.MainController.updateMonitoringMethod(MainController.java:207) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$initialize$0(MainController.java:171) ~[classes/:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:106) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:151) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox.updateValue(ComboBox.java:516) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$3.changed(ComboBox.java:499) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectPropertyBase.fireValueChangedEvent(ReadOnlyObjectPropertyBase.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:105) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$0(ComboBox.java:556) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:136) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.updateSelectedIndex(SingleSelectionModel.java:215) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.select(SingleSelectionModel.java:149) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.skin.ComboBoxListViewSkin.lambda$createListView$10(ComboBoxListViewSkin.java:558) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:348) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.select(MultipleSelectionModelBase.java:414) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.clearAndSelect(MultipleSelectionModelBase.java:361) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ListView$ListViewBitSetSelectionModel.clearAndSelect(ListView.java:1451) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.simpleSelect(CellBehaviorBase.java:287) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.doSelect(CellBehaviorBase.java:246) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.mousePressed(CellBehaviorBase.java:176) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx.base.jar:?]
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198) ~[javafx.base.jar:?]
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-02 14:51:10.641 - Stopping all monitors...
+2025-11-02 14:51:10.641 - ✓ All monitors stopped
+2025-11-02 14:51:10.641 - Restarting monitors with method: JAVA_WATCH
+2025-11-02 14:51:10.641 - Stopping all monitors...
+2025-11-02 14:51:10.642 - ✓ All monitors stopped
+2025-11-02 14:51:10.642 - Failed to restart monitoring paths
+java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+	at com.neurasys.service.DatabaseManager.getAllActiveMonitorPaths(DatabaseManager.java:78) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.restartWithMethod(MultiPathMonitor.java:368) ~[classes/:?]
+	at com.neurasys.controller.MainController.updateMonitoringMethod(MainController.java:207) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$initialize$0(MainController.java:171) ~[classes/:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:106) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:151) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox.updateValue(ComboBox.java:516) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$3.changed(ComboBox.java:499) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectPropertyBase.fireValueChangedEvent(ReadOnlyObjectPropertyBase.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:105) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$0(ComboBox.java:556) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:136) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.updateSelectedIndex(SingleSelectionModel.java:215) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.select(SingleSelectionModel.java:149) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.skin.ComboBoxListViewSkin.lambda$createListView$10(ComboBoxListViewSkin.java:558) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:348) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.select(MultipleSelectionModelBase.java:414) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.clearAndSelect(MultipleSelectionModelBase.java:361) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ListView$ListViewBitSetSelectionModel.clearAndSelect(ListView.java:1451) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.simpleSelect(CellBehaviorBase.java:287) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.doSelect(CellBehaviorBase.java:246) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.mousePressed(CellBehaviorBase.java:176) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx.base.jar:?]
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198) ~[javafx.base.jar:?]
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-02 14:51:31.809 - Stopping all monitors...
+2025-11-02 14:51:31.809 - ✓ All monitors stopped
+2025-11-02 14:51:31.809 - Restarting monitors with method: NATIVE
+2025-11-02 14:51:31.809 - Stopping all monitors...
+2025-11-02 14:51:31.809 - ✓ All monitors stopped
+2025-11-02 14:51:31.810 - Failed to restart monitoring paths
+java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+	at com.neurasys.service.DatabaseManager.getAllActiveMonitorPaths(DatabaseManager.java:78) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.restartWithMethod(MultiPathMonitor.java:368) ~[classes/:?]
+	at com.neurasys.controller.MainController.updateMonitoringMethod(MainController.java:207) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$initialize$0(MainController.java:171) ~[classes/:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:106) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:151) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox.updateValue(ComboBox.java:516) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$3.changed(ComboBox.java:499) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:360) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectPropertyBase.fireValueChangedEvent(ReadOnlyObjectPropertyBase.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:105) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$0(ComboBox.java:556) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:136) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.updateSelectedIndex(SingleSelectionModel.java:215) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.SingleSelectionModel.select(SingleSelectionModel.java:149) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.skin.ComboBoxListViewSkin.lambda$createListView$10(ComboBoxListViewSkin.java:558) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:348) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114) ~[javafx.base.jar:?]
+	at javafx.base/javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148) ~[javafx.base.jar:?]
+	at javafx.controls/javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.select(MultipleSelectionModelBase.java:414) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.MultipleSelectionModelBase.clearAndSelect(MultipleSelectionModelBase.java:361) ~[javafx.controls.jar:?]
+	at javafx.controls/javafx.scene.control.ListView$ListViewBitSetSelectionModel.clearAndSelect(ListView.java:1451) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.simpleSelect(CellBehaviorBase.java:287) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.doSelect(CellBehaviorBase.java:246) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.behavior.CellBehaviorBase.mousePressed(CellBehaviorBase.java:176) ~[javafx.controls.jar:?]
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx.controls.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx.base.jar:?]
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx.base.jar:?]
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198) ~[javafx.base.jar:?]
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878) ~[javafx.graphics.jar:?]
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-02 17:24:26.966 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 17:24:26.979 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 17:24:46.296 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 17:24:46.296 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 17:25:35.309 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 17:25:35.309 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 17:40:13.415 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 17:40:13.420 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 18:46:49.411 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 18:46:49.434 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 18:46:49.488 - === ADDING MONITOR PATH ===
+2025-11-02 18:46:49.489 -   Name: Project Backup
+2025-11-02 18:46:49.489 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-02 18:46:49.489 -   Type: LOCAL
+2025-11-02 18:46:49.489 -   Method: JAVA_WATCH
+2025-11-02 18:46:49.489 - ===========================
+2025-11-02 18:46:49.489 -   → Starting JAVA_WATCH monitoring...
+2025-11-02 18:46:49.490 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-02 18:46:49.509 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-02 18:46:49.510 - Starting all monitors (1 paths)
+2025-11-02 18:46:49.537 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-02 18:46:49.563 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-02 18:46:49.582 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-02 18:46:49.780 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Phase_2_Data_Wrangling_and_Analysis.docx, Destination=D:\Pragadeesh_D\TestBackup\Phase_2_Data_Wrangling_and_Analysis_20251102_184649.docx.gz
+2025-11-02 18:46:49.780 - FULL: Creating compressed backup
+2025-11-02 18:46:49.896 - ✓ Backup completed: Type=FULL, File=Phase_2_Data_Wrangling_and_Analysis_20251102_184649.docx.gz, Original=458.56 KB, Compressed=406.02 KB, Saved=52.53 KB, Efficiency=11.5%, Duration=240ms
+2025-11-02 18:46:50.015 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\sample3.ppt, Destination=D:\Pragadeesh_D\TestBackup\sample3_20251102_184649.ppt.gz
+2025-11-02 18:46:50.015 - FULL: Creating compressed backup
+2025-11-02 18:46:50.075 - ✓ Backup completed: Type=FULL, File=sample3_20251102_184649.ppt.gz, Original=991.50 KB, Compressed=735.17 KB, Saved=256.33 KB, Efficiency=25.9%, Duration=120ms
+2025-11-02 18:46:50.099 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\test.txt, Destination=D:\Pragadeesh_D\TestBackup\test_20251102_184650.txt.gz
+2025-11-02 18:46:50.100 - FULL: Creating compressed backup
+2025-11-02 18:46:50.110 - ✓ Backup completed: Type=FULL, File=test_20251102_184650.txt.gz, Original=10 B, Compressed=30 B, Saved=-20 B, Efficiency=-200.0%, Duration=18ms
+2025-11-02 18:49:14.636 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-02 18:49:14.704 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251102_184914.txt.gz
+2025-11-02 18:49:14.705 - FULL: Creating compressed backup
+2025-11-02 18:49:14.739 - ✓ Backup completed: Type=FULL, File=New Text Document_20251102_184914.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=7ms
+2025-11-02 18:49:24.699 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-02 18:49:24.713 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-02 18:49:24.718 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 18:49:29.717 - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (6 B)
+2025-11-02 18:49:29.752 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Hello.txt, Destination=D:\Pragadeesh_D\TestBackup\Hello_20251102_184929.txt.gz
+2025-11-02 18:49:29.753 - INCREMENTAL: Creating delta backup for modified file
+2025-11-02 18:49:29.765 - ✓ Backup completed: Type=INCREMENTAL, File=Hello_20251102_184929.txt.gz, Original=6 B, Compressed=26 B, Saved=-20 B, Efficiency=-333.3%, Duration=18ms
+2025-11-02 18:50:04.744 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-02 18:50:04.762 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 18:50:09.757 - [Project Backup] [JAVA_WATCH] CREATE → Bye.txt (0 B)
+2025-11-02 18:50:09.764 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-02 18:50:09.769 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 18:50:19.771 - [Project Backup] [JAVA_WATCH] MODIFY → Bye.txt (4 B)
+2025-11-02 18:50:19.779 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Bye.txt, Destination=D:\Pragadeesh_D\TestBackup\Bye_20251102_185019.txt.gz
+2025-11-02 18:50:19.779 - INCREMENTAL: Creating delta backup for modified file
+2025-11-02 18:50:19.789 - ✓ Backup completed: Type=INCREMENTAL, File=Bye_20251102_185019.txt.gz, Original=4 B, Compressed=24 B, Saved=-20 B, Efficiency=-500.0%, Duration=2ms
+2025-11-02 18:50:24.776 - [Project Backup] [JAVA_WATCH] DELETE → Bye.txt (0 B)
+2025-11-02 19:03:05.051 - [Project Backup] [JAVA_WATCH] CREATE → hi.txt (0 B)
+2025-11-02 19:03:05.073 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 19:03:50.084 - [Project Backup] [JAVA_WATCH] MODIFY → hi.txt (3 B)
+2025-11-02 19:03:50.105 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\hi.txt, Destination=D:\Pragadeesh_D\TestBackup\hi_20251102_190350.txt.gz
+2025-11-02 19:03:50.105 - INCREMENTAL: Creating delta backup for modified file
+2025-11-02 19:03:50.116 - ✓ Backup completed: Type=INCREMENTAL, File=hi_20251102_190350.txt.gz, Original=3 B, Compressed=23 B, Saved=-20 B, Efficiency=-666.7%, Duration=3ms
+2025-11-02 19:04:35.115 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-02 19:04:35.138 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 19:04:40.132 - [Project Backup] [JAVA_WATCH] CREATE → tata.txt (0 B)
+2025-11-02 19:04:40.147 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-02 19:04:40.153 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 19:04:50.155 - [Project Backup] [JAVA_WATCH] MODIFY → tata.txt (5 B)
+2025-11-02 19:04:50.190 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\tata.txt, Destination=D:\Pragadeesh_D\TestBackup\tata_20251102_190450.txt.gz
+2025-11-02 19:04:50.190 - INCREMENTAL: Creating delta backup for modified file
+2025-11-02 19:04:50.203 - ✓ Backup completed: Type=INCREMENTAL, File=tata_20251102_190450.txt.gz, Original=5 B, Compressed=25 B, Saved=-20 B, Efficiency=-400.0%, Duration=19ms
+2025-11-02 19:05:01.762 - Stopping all monitors...
+2025-11-02 19:05:18.513 - Stopping all monitors...
+2025-11-02 19:05:34.055 - Stopping all monitors...
+2025-11-02 19:05:37.109 - Stopping all monitors...
+2025-11-02 20:05:58.104 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 20:05:58.109 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 20:09:03.458 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 20:09:03.458 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 20:15:42.110 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 20:15:42.114 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 20:22:44.685 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 20:22:44.687 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 20:28:25.387 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 20:28:25.393 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 20:28:25.540 - === ADDING MONITOR PATH ===
+2025-11-02 20:28:25.540 -   Name: Project Backup
+2025-11-02 20:28:25.540 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-02 20:28:25.540 -   Type: LOCAL
+2025-11-02 20:28:25.540 -   Method: JAVA_WATCH
+2025-11-02 20:28:25.541 - ===========================
+2025-11-02 20:28:25.541 -   → Starting JAVA_WATCH monitoring...
+2025-11-02 20:28:25.541 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-02 20:28:25.545 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-02 20:28:25.546 - Starting all monitors (1 paths)
+2025-11-02 20:28:25.554 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-02 20:28:25.566 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-02 20:28:25.572 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-02 20:29:05.587 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-02 20:29:05.659 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251102_202905.txt.gz
+2025-11-02 20:29:05.659 - FULL: Creating compressed backup
+2025-11-02 20:29:05.718 - ✓ Backup completed: Type=FULL, File=New Text Document_20251102_202905.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=66ms
+2025-11-02 20:29:10.595 - [Project Backup] [JAVA_WATCH] CREATE → hello.txt (0 B)
+2025-11-02 20:29:10.600 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-02 20:29:10.605 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 20:29:20.620 - [Project Backup] [JAVA_WATCH] MODIFY → hello.txt (5 B)
+2025-11-02 20:29:20.644 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\hello.txt, Destination=D:\Pragadeesh_D\TestBackup\hello_20251102_202920.txt.gz
+2025-11-02 20:29:20.644 - INCREMENTAL: Creating delta backup for modified file
+2025-11-02 20:29:20.651 - ✓ Backup completed: Type=INCREMENTAL, File=hello_20251102_202920.txt.gz, Original=5 B, Compressed=25 B, Saved=-20 B, Efficiency=-400.0%, Duration=16ms
+2025-11-02 20:29:50.635 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-02 20:29:50.644 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 20:29:55.641 - [Project Backup] [JAVA_WATCH] CREATE → tata.txt (0 B)
+2025-11-02 20:29:55.646 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-02 20:29:55.651 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 20:30:00.650 - [Project Backup] [JAVA_WATCH] MODIFY → tata.txt (4 B)
+2025-11-02 20:30:00.667 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\tata.txt, Destination=D:\Pragadeesh_D\TestBackup\tata_20251102_203000.txt.gz
+2025-11-02 20:30:00.667 - INCREMENTAL: Creating delta backup for modified file
+2025-11-02 20:30:00.675 - ✓ Backup completed: Type=INCREMENTAL, File=tata_20251102_203000.txt.gz, Original=4 B, Compressed=24 B, Saved=-20 B, Efficiency=-500.0%, Duration=2ms
+2025-11-02 20:30:15.959 - Stopping all monitors...
+2025-11-02 20:30:19.272 - Stopping all monitors...
+2025-11-02 20:42:02.011 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-02 20:42:02.015 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-02 20:42:02.051 - === ADDING MONITOR PATH ===
+2025-11-02 20:42:02.051 -   Name: Project Backup
+2025-11-02 20:42:02.051 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-02 20:42:02.051 -   Type: LOCAL
+2025-11-02 20:42:02.051 -   Method: JAVA_WATCH
+2025-11-02 20:42:02.052 - ===========================
+2025-11-02 20:42:02.052 -   → Starting JAVA_WATCH monitoring...
+2025-11-02 20:42:02.052 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-02 20:42:02.054 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-02 20:42:02.055 - Starting all monitors (1 paths)
+2025-11-02 20:42:02.066 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-02 20:42:02.093 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-02 20:42:02.096 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-02 20:42:22.104 - [Project Backup] [JAVA_WATCH] CREATE → hello.txt (0 B)
+2025-11-02 20:42:22.208 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\hello.txt, Destination=D:\Pragadeesh_D\TestBackup\hello_20251102_204222.txt.gz
+2025-11-02 20:42:22.208 - FULL: Creating compressed backup
+2025-11-02 20:42:22.284 - ✓ Backup completed: Type=FULL, File=hello_20251102_204222.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=102ms
+2025-11-02 20:42:27.110 - [Project Backup] [JAVA_WATCH] MODIFY → hello.txt (5 B)
+2025-11-02 20:42:27.119 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\hello.txt, Destination=D:\Pragadeesh_D\TestBackup\hello_20251102_204227.txt.gz
+2025-11-02 20:42:27.119 - INCREMENTAL: Creating delta backup for modified file
+2025-11-02 20:42:27.126 - ✓ Backup completed: Type=INCREMENTAL, File=hello_20251102_204227.txt.gz, Original=5 B, Compressed=25 B, Saved=-20 B, Efficiency=-400.0%, Duration=4ms
+2025-11-02 20:43:12.126 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-02 20:43:12.134 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 20:43:17.131 - [Project Backup] [JAVA_WATCH] CREATE → praga.txt (0 B)
+2025-11-02 20:43:17.137 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-02 20:43:17.140 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 20:43:27.148 - [Project Backup] [JAVA_WATCH] MODIFY → praga.txt (12 B)
+2025-11-02 20:43:27.179 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\praga.txt, Destination=D:\Pragadeesh_D\TestBackup\praga_20251102_204327.txt.gz
+2025-11-02 20:43:27.180 - INCREMENTAL: Creating delta backup for modified file
+2025-11-02 20:43:27.188 - ✓ Backup completed: Type=INCREMENTAL, File=praga_20251102_204327.txt.gz, Original=12 B, Compressed=32 B, Saved=-20 B, Efficiency=-166.7%, Duration=12ms
+2025-11-02 20:44:27.181 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-02 20:44:27.190 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 20:44:37.188 - [Project Backup] [JAVA_WATCH] CREATE → aloha.txt (0 B)
+2025-11-02 20:44:37.192 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-02 20:44:37.195 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-02 20:44:47.878 - Stopping all monitors...
