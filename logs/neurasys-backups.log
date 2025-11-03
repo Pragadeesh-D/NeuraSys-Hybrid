@@ -99,3 +99,29 @@
 2025-11-03 11:45:05.012 - Stopping all monitors...
 2025-11-03 11:45:28.101 - Stopping all monitors...
 2025-11-03 11:45:32.998 - Stopping all monitors...
+2025-11-03 13:01:50.592 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 13:01:50.608 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 13:01:50.638 - === ADDING MONITOR PATH ===
+2025-11-03 13:01:50.638 -   Name: Project Backup
+2025-11-03 13:01:50.640 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 13:01:50.640 -   Type: LOCAL
+2025-11-03 13:01:50.640 -   Method: JAVA_WATCH
+2025-11-03 13:01:50.640 - ===========================
+2025-11-03 13:01:50.641 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 13:01:50.641 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 13:01:50.655 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 13:01:50.655 - Starting all monitors (1 paths)
+2025-11-03 13:01:50.668 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 13:01:50.707 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 13:01:50.710 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 13:02:05.720 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 13:02:05.824 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_130205.txt.gz
+2025-11-03 13:02:05.824 - FULL: Creating compressed backup
+2025-11-03 13:02:05.907 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_130205.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=102ms
+2025-11-03 13:02:10.725 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 13:02:10.734 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 13:02:10.739 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 13:02:27.598 - Stopping all monitors...
+2025-11-03 13:03:26.450 - Stopping all monitors...
+2025-11-03 13:04:47.678 - Stopping all monitors...
+2025-11-03 13:04:49.795 - Stopping all monitors...
