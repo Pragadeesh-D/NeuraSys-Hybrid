@@ -1,0 +1,850 @@
+2025-11-03 09:30:09.095 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 09:30:09.111 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 09:30:09.114 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 09:30:09.116 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 09:30:09.479 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 09:30:09.487 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 09:30:09.487 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 09:30:09.488 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-03 09:30:09.488 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+2025-11-03 09:30:09.596 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 40 entries
+2025-11-03 09:30:09.597 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 09:30:23.744 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ All event logs cleared from database
+2025-11-03 09:30:23.749 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-03 09:30:23.750 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ All logs cleared
+2025-11-03 09:31:04.941 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global monitoring method updated: NATIVE
+2025-11-03 09:31:07.235 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global monitoring method updated: POLLING
+2025-11-03 09:31:09.951 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global monitoring method updated: JAVA_WATCH
+2025-11-03 09:31:20.439 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 09:31:20.464 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 09:31:20.464 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 09:32:03.927 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 09:32:03.945 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 09:32:03.945 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 09:32:03.952 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 09:32:03.953 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762142523952
+2025-11-03 09:32:03.953 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Resolved DEFAULT to: JAVA_WATCH
+2025-11-03 09:32:03.960 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 09:32:03.970 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 09:32:03.971 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 09:32:03.972 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 09:32:03.972 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 09:32:03.973 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 09:32:03.973 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 09:32:03.974 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 09:32:03.974 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 09:32:03.974 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 09:32:03.974 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 09:32:03.977 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 09:32:03.978 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Added monitoring for: Project Backup with method: JAVA_WATCH
+2025-11-03 09:32:03.979 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 09:32:03.992 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 09:32:04.014 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 09:32:04.016 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 61ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 09:32:04.019 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 67ms): sample3.ppt
+2025-11-03 09:32:04.019 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 09:32:04.026 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 74ms): test.txt
+2025-11-03 09:32:34.036 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 09:32:34.056 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 09:32:34.240 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_093234 (FULL - {:.1f}%, 0.0ms)
+2025-11-03 09:32:34.259 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 14 files, 26 B original, 0.0% savings
+2025-11-03 09:32:34.275 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 09:32:39.052 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 09:32:39.058 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 09:32:39.062 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 09:32:39.075 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_093239 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 09:32:39.082 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 15 files, 26 B original, 0.0% savings
+2025-11-03 09:32:39.084 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 09:32:39.090 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 09:32:39.091 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 15 files, 26 B original, 0.0% savings
+2025-11-03 09:32:39.092 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 09:32:49.081 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 09:32:49.090 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 09:32:49.115 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_093249 (INCREMENTAL - {:.1f}%, -400.0ms)
+2025-11-03 09:32:49.120 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 16 files, 31 B original, 0.0% savings
+2025-11-03 09:32:49.123 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 09:33:59.110 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 09:33:59.118 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 09:33:59.126 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_093359 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 09:33:59.130 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 17 files, 31 B original, 0.0% savings
+2025-11-03 09:33:59.131 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 09:34:04.116 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hi.txt (0 B)
+2025-11-03 09:34:04.123 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 09:34:04.127 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 09:34:04.134 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_093404 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 09:34:04.140 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 18 files, 31 B original, 0.0% savings
+2025-11-03 09:34:04.141 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 09:34:04.146 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 09:34:04.149 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 18 files, 31 B original, 0.0% savings
+2025-11-03 09:34:04.150 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 09:34:09.129 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] MODIFY → Hi.txt (2 B)
+2025-11-03 09:34:09.145 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 09:34:09.164 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to log version
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'compression_ratio' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:?]
+	at com.neurasys.service.DatabaseManager.logFileVersion(DatabaseManager.java:258) ~[classes/:?]
+	at com.neurasys.service.BackupManager.createOptimizedBackup(BackupManager.java:122) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$onFileEvent$13(MainController.java:712) ~[classes/:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-03 09:34:09.191 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 18 files, 31 B original, 0.0% savings
+2025-11-03 09:34:09.191 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 09:34:18.591 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global monitoring method updated: NATIVE
+2025-11-03 09:34:18.592 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === UPDATING MONITORING METHOD TO: NATIVE ===
+2025-11-03 09:34:18.592 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Stopping all active monitors...
+2025-11-03 09:34:18.592 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 10:41:35.136 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=32m54s842ms600µs700ns).
+2025-11-03 10:41:45.851 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=32m54s829ms407µs700ns).
+2025-11-03 10:41:59.287 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=32m54s838ms911µs400ns).
+2025-11-03 11:28:09.425 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 11:28:09.433 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 11:28:09.435 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 11:28:09.436 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 11:28:09.814 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 11:28:09.823 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 11:28:09.823 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 11:28:09.823 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-03 11:28:09.824 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+2025-11-03 11:28:09.834 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring method set to default: JAVA_WATCH
+2025-11-03 11:28:09.964 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 19 entries
+2025-11-03 11:28:09.965 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 11:28:25.108 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 11:28:25.109 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: JAVA_WATCH | New: NATIVE
+2025-11-03 11:28:25.111 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: NATIVE
+2025-11-03 11:28:27.735 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 11:28:27.735 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: NATIVE | New: JAVA_WATCH
+2025-11-03 11:28:27.736 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: JAVA_WATCH
+2025-11-03 11:29:15.225 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 11:29:15.267 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 11:29:15.268 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 11:29:21.605 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ New monitor path added with method: DEFAULT (will use: JAVA_WATCH)
+2025-11-03 11:30:02.263 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ All event logs cleared from database
+2025-11-03 11:30:02.283 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-03 11:30:02.283 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ All logs cleared
+2025-11-03 11:31:18.067 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 11:31:18.101 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 11:31:18.101 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 11:31:18.141 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 11:31:18.141 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762149678141
+2025-11-03 11:31:18.142 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup': DEFAULT resolved to JAVA_WATCH
+2025-11-03 11:31:18.160 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 11:31:18.174 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 11:31:18.175 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 11:31:18.176 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 11:31:18.176 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 11:31:18.176 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 11:31:18.176 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 11:31:18.176 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 11:31:18.176 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 11:31:18.176 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 11:31:18.177 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 11:31:18.200 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 11:31:18.201 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup (Method: JAVA_WATCH)
+2025-11-03 11:31:18.202 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 11:31:18.227 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 11:31:18.249 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 11:31:18.255 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 11:31:18.253 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 108ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 11:31:18.255 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 114ms): sample3.ppt
+2025-11-03 11:31:18.258 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 117ms): test.txt
+2025-11-03 11:31:43.268 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:31:43.292 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:31:43.623 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to log version
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'overall_savings_percent' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:?]
+	at com.neurasys.service.DatabaseManager.logFileVersion(DatabaseManager.java:258) ~[classes/:?]
+	at com.neurasys.service.BackupManager.createOptimizedBackup(BackupManager.java:122) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$onFileEvent$12(MainController.java:695) ~[classes/:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-03 11:31:43.675 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 18 files, 31 B original, 0.0% savings
+2025-11-03 11:31:43.720 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:31:48.286 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 11:31:48.292 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:31:48.296 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:31:48.305 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_113148 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 11:31:48.310 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 19 files, 31 B original, 0.0% savings
+2025-11-03 11:31:48.313 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:31:48.318 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:31:48.320 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 19 files, 31 B original, 0.0% savings
+2025-11-03 11:31:48.321 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:31:53.302 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 11:31:53.319 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:31:53.332 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_113153 (INCREMENTAL - {:.1f}%, -400.0ms)
+2025-11-03 11:31:53.340 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 20 files, 36 B original, 0.0% savings
+2025-11-03 11:31:53.341 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:32:07.680 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' now uses specific method: NATIVE
+2025-11-03 11:32:23.326 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:32:23.344 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:32:23.351 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_113223 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 11:32:23.356 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 21 files, 36 B original, 0.0% savings
+2025-11-03 11:32:23.357 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:32:28.342 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hi.txt (0 B)
+2025-11-03 11:32:28.355 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:32:28.359 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:32:28.366 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_113228 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 11:32:28.370 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 22 files, 36 B original, 0.0% savings
+2025-11-03 11:32:28.372 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:32:28.380 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:32:28.382 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 22 files, 36 B original, 0.0% savings
+2025-11-03 11:32:28.383 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:32:49.323 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 11:32:49.323 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: JAVA_WATCH | New: NATIVE
+2025-11-03 11:32:49.324 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: NATIVE
+2025-11-03 11:33:08.373 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:33:08.392 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:33:08.398 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_113308 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 11:33:08.404 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 23 files, 36 B original, 0.0% savings
+2025-11-03 11:33:08.405 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:33:13.391 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Tata.txt (0 B)
+2025-11-03 11:33:13.405 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:33:13.408 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:33:13.417 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_113313 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 11:33:13.422 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 24 files, 36 B original, 0.0% savings
+2025-11-03 11:33:13.423 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:33:13.427 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:33:13.430 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 24 files, 36 B original, 0.0% savings
+2025-11-03 11:33:13.431 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:42:02.135 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 11:42:02.144 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 11:42:02.145 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 11:42:02.147 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 11:42:02.513 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 11:42:02.521 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 11:42:02.521 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 11:42:02.522 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-03 11:42:02.522 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+2025-11-03 11:42:02.531 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring method set to default: JAVA_WATCH
+2025-11-03 11:42:02.638 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 23 entries
+2025-11-03 11:42:02.639 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 11:42:24.423 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 11:42:24.454 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 11:42:24.454 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 11:42:29.558 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ New monitor path added with method: DEFAULT (will use: JAVA_WATCH)
+2025-11-03 11:43:11.495 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 11:43:11.523 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 11:43:11.523 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 11:43:11.530 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 11:43:11.530 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762150391530
+2025-11-03 11:43:11.531 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup': DEFAULT resolved to JAVA_WATCH
+2025-11-03 11:43:11.543 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 11:43:11.558 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 11:43:11.558 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 11:43:11.559 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 11:43:11.559 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 11:43:11.559 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 11:43:11.559 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 11:43:11.559 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 11:43:11.559 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 11:43:11.560 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 11:43:11.560 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 11:43:11.565 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 11:43:11.565 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup (Method: JAVA_WATCH)
+2025-11-03 11:43:11.566 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 11:43:11.581 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 11:43:11.623 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 11:43:11.627 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 93ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 11:43:11.629 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 11:43:11.629 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 99ms): sample3.ppt
+2025-11-03 11:43:11.633 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 103ms): test.txt
+2025-11-03 11:43:26.641 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:43:26.660 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:43:26.803 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_114326 (FULL - {:.1f}%, 0.0ms)
+2025-11-03 11:43:26.824 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 25 files, 36 B original, 0.0% savings
+2025-11-03 11:43:26.845 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:43:56.666 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:43:56.686 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:43:56.687 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 25 files, 36 B original, 0.0% savings
+2025-11-03 11:43:56.689 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:44:16.688 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:44:16.699 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:44:16.708 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_114416 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 11:44:16.715 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 26 files, 36 B original, 0.0% savings
+2025-11-03 11:44:16.717 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:44:21.698 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 11:44:21.711 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:44:21.715 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:44:21.723 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_114421 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 11:44:21.729 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 27 files, 36 B original, 0.0% savings
+2025-11-03 11:44:21.730 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:44:21.740 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 11:44:21.743 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 27 files, 36 B original, 0.0% savings
+2025-11-03 11:44:21.744 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 11:44:32.890 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed from DEFAULT to NATIVE
+2025-11-03 11:44:32.890 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 11:44:32.890 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 11:44:32.891 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 11:45:05.011 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed from NATIVE to POLLING
+2025-11-03 11:45:05.012 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 11:45:05.012 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 11:45:05.012 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 11:45:28.099 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 11:45:28.100 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: JAVA_WATCH | New: NATIVE
+2025-11-03 11:45:28.101 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: NATIVE
+2025-11-03 11:45:28.101 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting with new method...
+2025-11-03 11:45:28.101 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 11:45:28.101 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 11:45:32.997 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed to DEFAULT
+2025-11-03 11:45:32.997 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 11:45:32.998 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 11:45:32.998 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 13:00:52.091 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 13:00:52.151 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 13:00:52.153 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 13:00:52.156 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 13:00:52.548 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 13:00:52.557 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 13:00:52.557 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 13:00:52.558 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-03 13:00:52.558 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+2025-11-03 13:00:52.567 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring method set to default: JAVA_WATCH
+2025-11-03 13:00:52.703 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 36 entries
+2025-11-03 13:00:52.704 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 13:01:12.129 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 13:01:12.148 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 13:01:12.148 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 13:01:16.970 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ New monitor path added with method: DEFAULT (will use: JAVA_WATCH)
+2025-11-03 13:01:50.574 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 13:01:50.591 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 13:01:50.591 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 13:01:50.608 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 13:01:50.608 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762155110608
+2025-11-03 13:01:50.609 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup': DEFAULT resolved to JAVA_WATCH
+2025-11-03 13:01:50.621 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 13:01:50.638 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 13:01:50.638 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 13:01:50.638 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 13:01:50.638 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 13:01:50.640 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 13:01:50.640 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 13:01:50.640 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 13:01:50.640 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 13:01:50.641 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 13:01:50.641 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 13:01:50.655 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 13:01:50.655 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup (Method: JAVA_WATCH)
+2025-11-03 13:01:50.655 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 13:01:50.668 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 13:01:50.707 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 13:01:50.709 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 97ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 13:01:50.710 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 13:01:50.713 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 104ms): sample3.ppt
+2025-11-03 13:01:50.716 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 108ms): test.txt
+2025-11-03 13:02:05.720 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 13:02:05.727 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 13:02:05.880 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to log version
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'overall_savings_percent' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:?]
+	at com.neurasys.service.DatabaseManager.logFileVersion(DatabaseManager.java:258) ~[classes/:?]
+	at com.neurasys.service.BackupManager.createOptimizedBackup(BackupManager.java:122) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$onFileEvent$12(MainController.java:712) ~[classes/:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-03 13:02:05.917 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 27 files, 36 B original, 0.0% savings
+2025-11-03 13:02:05.941 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 13:02:10.725 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 13:02:10.734 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 13:02:10.738 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 13:02:10.750 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_130210 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 13:02:10.756 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 28 files, 36 B original, 0.0% savings
+2025-11-03 13:02:10.758 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 13:02:10.769 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 13:02:10.773 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 28 files, 36 B original, 0.0% savings
+2025-11-03 13:02:10.774 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 13:02:27.597 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed from DEFAULT to NATIVE
+2025-11-03 13:02:27.598 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 13:02:27.598 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 13:02:27.598 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 13:03:26.450 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed to DEFAULT
+2025-11-03 13:03:26.450 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 13:03:26.450 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 13:03:26.450 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 13:04:47.676 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 13:04:47.677 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: JAVA_WATCH | New: NATIVE
+2025-11-03 13:04:47.678 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: NATIVE
+2025-11-03 13:04:47.678 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting with new method...
+2025-11-03 13:04:47.678 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 13:04:47.678 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 13:04:49.792 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 13:04:49.793 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: NATIVE | New: JAVA_WATCH
+2025-11-03 13:04:49.793 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: JAVA_WATCH
+2025-11-03 13:04:49.793 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting with new method...
+2025-11-03 13:04:49.793 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 13:04:49.795 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 19:00:08.537 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 19:00:08.546 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 19:00:08.547 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 19:00:08.548 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 19:00:08.882 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 19:00:08.887 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 19:00:08.887 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 19:00:08.889 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-03 19:00:08.889 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+2025-11-03 19:00:08.895 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring method set to default: JAVA_WATCH
+2025-11-03 19:00:08.989 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 45 entries
+2025-11-03 19:00:08.990 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 19:00:44.138 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 19:00:44.167 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 19:00:44.167 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 19:00:54.488 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ New monitor path added with method: DEFAULT (will use: JAVA_WATCH)
+2025-11-03 19:02:20.491 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 19:02:20.512 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 19:02:20.513 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 19:02:20.517 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 19:02:20.517 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762176740517
+2025-11-03 19:02:20.518 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup': DEFAULT resolved to JAVA_WATCH
+2025-11-03 19:02:20.534 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 19:02:20.548 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 19:02:20.548 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 19:02:20.549 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 19:02:20.549 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 19:02:20.549 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 19:02:20.549 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 19:02:20.549 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 19:02:20.549 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 19:02:20.550 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 19:02:20.550 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 19:02:20.552 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 19:02:20.553 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup (Method: JAVA_WATCH)
+2025-11-03 19:02:20.554 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 19:02:20.575 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 19:02:20.614 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 19:02:20.620 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 96ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 19:02:20.620 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 19:02:20.620 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 103ms): sample3.ppt
+2025-11-03 19:02:20.625 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 107ms): test.txt
+2025-11-03 19:02:45.633 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 19:02:45.652 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 19:02:45.840 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to log version
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'overall_savings_percent' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:?]
+	at com.neurasys.service.DatabaseManager.logFileVersion(DatabaseManager.java:258) ~[classes/:?]
+	at com.neurasys.service.BackupManager.createOptimizedBackup(BackupManager.java:122) ~[classes/:?]
+	at com.neurasys.controller.MainController.lambda$onFileEvent$12(MainController.java:712) ~[classes/:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457) ~[javafx.graphics.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-03 19:02:45.889 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 28 files, 36 B original, 0.0% savings
+2025-11-03 19:02:45.910 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 19:02:50.647 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 19:02:50.663 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 19:02:50.666 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 19:02:50.677 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_190250 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 19:02:50.682 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 29 files, 36 B original, 0.0% savings
+2025-11-03 19:02:50.683 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 19:02:50.689 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 19:02:50.692 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 29 files, 36 B original, 0.0% savings
+2025-11-03 19:02:50.693 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 19:03:10.682 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 19:03:10.701 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 19:03:10.712 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_190310 (INCREMENTAL - {:.1f}%, -400.0ms)
+2025-11-03 19:03:10.720 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 30 files, 41 B original, 0.0% savings
+2025-11-03 19:03:10.722 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 19:03:25.702 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → Hello.txt (0 B)
+2025-11-03 19:03:25.710 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 19:03:25.713 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 30 files, 41 B original, 0.0% savings
+2025-11-03 19:03:25.714 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 19:03:46.088 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed from DEFAULT to NATIVE
+2025-11-03 19:03:46.088 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 19:03:46.088 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 19:03:46.089 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 19:04:42.311 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed to DEFAULT
+2025-11-03 19:04:42.313 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 19:04:42.313 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 19:04:42.313 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 19:04:48.038 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 19:04:48.038 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: JAVA_WATCH | New: NATIVE
+2025-11-03 19:04:48.041 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: NATIVE
+2025-11-03 19:04:48.041 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting with new method...
+2025-11-03 19:04:48.041 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 19:04:48.041 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 19:06:35.363 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed to DEFAULT
+2025-11-03 19:06:35.363 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 19:06:35.363 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 19:06:35.363 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 19:10:05.959 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed from DEFAULT to JAVA_WATCH
+2025-11-03 19:10:05.959 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 19:10:05.959 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 19:10:05.959 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 19:12:44.947 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed to DEFAULT
+2025-11-03 19:12:44.947 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 19:12:44.947 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 19:12:44.947 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 19:13:31.390 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 19:13:31.391 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: NATIVE | New: JAVA_WATCH
+2025-11-03 19:13:31.391 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: JAVA_WATCH
+2025-11-03 19:13:31.391 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting with new method...
+2025-11-03 19:13:31.391 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 19:13:31.391 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:22:42.918 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=31m20s614ms728µs800ns).
+2025-11-03 20:23:00.254 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=31m20s600ms242µs200ns).
+2025-11-03 20:23:05.237 [NeuraSysHybridPool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - NeuraSysHybridPool - Thread starvation or clock leap detected (housekeeper delta=31m20s599ms559µs400ns).
+2025-11-03 20:41:46.781 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 20:41:46.856 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 20:41:46.858 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 20:41:46.859 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 20:41:47.259 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 20:41:47.268 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 20:41:47.269 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 20:41:47.317 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'backup_location' in 'field list'
+2025-11-03 20:41:47.324 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring method set to default: JAVA_WATCH
+2025-11-03 20:41:47.410 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 58 entries
+2025-11-03 20:41:47.411 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 20:42:33.918 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 20:42:33.939 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 20:42:33.939 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 20:42:40.312 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ New monitor path added with method: DEFAULT (will use: JAVA_WATCH)
+2025-11-03 20:43:57.814 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 20:43:57.839 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 20:43:57.840 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 20:43:57.862 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 20:43:57.862 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762182837862
+2025-11-03 20:43:57.863 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup': DEFAULT resolved to JAVA_WATCH
+2025-11-03 20:43:57.880 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 20:43:57.897 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 20:43:57.898 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 20:43:57.899 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 20:43:57.899 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 20:43:57.899 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 20:43:57.899 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 20:43:57.899 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 20:43:57.899 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 20:43:57.899 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 20:43:57.899 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 20:43:57.921 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 20:43:57.922 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup (Method: JAVA_WATCH)
+2025-11-03 20:43:57.922 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 20:43:57.944 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 20:43:57.984 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 20:43:57.987 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 122ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 20:43:57.990 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 20:43:57.989 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 127ms): sample3.ppt
+2025-11-03 20:43:57.993 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 131ms): test.txt
+2025-11-03 20:44:07.998 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 20:44:08.007 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 20:44:08.195 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_204408 (FULL - {:.1f}%, 0.0ms)
+2025-11-03 20:44:08.220 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 31 files, 41 B original, 0.0% savings
+2025-11-03 20:44:08.254 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 20:44:13.005 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 20:44:13.019 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 20:44:13.022 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 20:44:13.036 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_204413 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 20:44:13.045 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 32 files, 41 B original, 0.0% savings
+2025-11-03 20:44:13.046 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 20:44:13.051 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 20:44:13.053 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 32 files, 41 B original, 0.0% savings
+2025-11-03 20:44:13.055 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 20:44:28.037 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 20:44:28.057 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 20:44:28.083 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_204428 (INCREMENTAL - {:.1f}%, -400.0ms)
+2025-11-03 20:44:28.090 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 33 files, 46 B original, 0.0% savings
+2025-11-03 20:44:28.091 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 20:44:45.872 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed from DEFAULT to NATIVE
+2025-11-03 20:44:45.872 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 20:44:45.873 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 20:44:45.873 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:45:49.092 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed to DEFAULT
+2025-11-03 20:45:49.092 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 20:45:49.092 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 20:45:49.092 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:45:59.973 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 20:45:59.973 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: JAVA_WATCH | New: NATIVE
+2025-11-03 20:45:59.974 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: NATIVE
+2025-11-03 20:45:59.974 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting with new method...
+2025-11-03 20:45:59.974 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 20:45:59.975 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:46:34.309 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === SETTINGS TAB: Monitoring method changed ===
+2025-11-03 20:46:34.310 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Old: NATIVE | New: JAVA_WATCH
+2025-11-03 20:46:34.310 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global method is now: JAVA_WATCH
+2025-11-03 20:46:34.310 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting with new method...
+2025-11-03 20:46:34.311 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 20:46:34.311 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:09.515 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:14.565 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:20.793 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:21.667 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:22.056 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:22.277 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:24.553 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:30.652 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:33.210 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:34.538 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 20:53:35.932 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:07:01.814 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 21:07:01.822 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 21:07:01.823 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 21:07:01.825 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:07:02.231 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:07:02.240 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:07:02.240 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 21:07:02.285 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'backup_location' in 'field list'
+2025-11-03 21:07:02.291 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring method set to default: JAVA_WATCH
+2025-11-03 21:07:02.385 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 69 entries
+2025-11-03 21:07:02.386 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 21:07:37.651 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:07:37.670 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:07:37.670 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:07:43.970 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ New monitor path added with method: DEFAULT (will use: JAVA_WATCH)
+2025-11-03 21:08:23.518 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:08:23.542 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:08:23.542 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:08:23.549 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 21:08:23.550 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762184303550
+2025-11-03 21:08:23.550 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup': DEFAULT resolved to JAVA_WATCH
+2025-11-03 21:08:23.560 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 21:08:23.575 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 21:08:23.576 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 21:08:23.576 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 21:08:23.576 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 21:08:23.576 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 21:08:23.577 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 21:08:23.577 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 21:08:23.577 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 21:08:23.577 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 21:08:23.578 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 21:08:23.583 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 21:08:23.583 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup (Method: JAVA_WATCH)
+2025-11-03 21:08:23.584 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 21:08:23.602 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 21:08:23.643 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 21:08:23.647 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 92ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 21:08:23.649 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 99ms): sample3.ppt
+2025-11-03 21:08:23.649 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 21:08:23.654 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 104ms): test.txt
+2025-11-03 21:08:38.661 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 21:08:38.678 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:08:38.824 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_210838 (FULL - {:.1f}%, 0.0ms)
+2025-11-03 21:08:38.845 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 34 files, 46 B original, 0.0% savings
+2025-11-03 21:08:38.863 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:08:43.676 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → hello.txt (0 B)
+2025-11-03 21:08:43.689 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 21:08:43.694 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:08:43.702 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_210843 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 21:08:43.706 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 35 files, 46 B original, 0.0% savings
+2025-11-03 21:08:43.708 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:08:43.713 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:08:43.716 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 35 files, 46 B original, 0.0% savings
+2025-11-03 21:08:43.717 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:08:56.732 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed from DEFAULT to NATIVE
+2025-11-03 21:08:56.733 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 21:08:56.733 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 21:08:56.733 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:16.584 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:18.533 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:21.061 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:22.249 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:30.876 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed to DEFAULT
+2025-11-03 21:09:30.876 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 21:09:30.877 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 21:09:30.877 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:45.428 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:47.598 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:48.068 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:48.314 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:48.565 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:48.735 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:48.910 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:49.090 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:49.269 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:49.456 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:49.630 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:51.042 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:51.229 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:51.395 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:51.610 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:52.704 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:52.910 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:53.064 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:53.338 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:54.946 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:09:55.393 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:11:01.457 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 21:11:01.462 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 21:11:01.465 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 21:11:01.466 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:11:01.766 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:11:01.773 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:11:01.773 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 21:11:01.807 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'backup_location' in 'field list'
+2025-11-03 21:11:01.815 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring method set to default: JAVA_WATCH
+2025-11-03 21:11:01.869 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 78 entries
+2025-11-03 21:11:01.870 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 21:11:21.048 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:11:21.070 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:11:21.071 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:11:27.027 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ New monitor path added with method: DEFAULT (will use: JAVA_WATCH)
+2025-11-03 21:11:57.969 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:11:57.989 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:11:57.989 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:11:57.993 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 21:11:57.994 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762184517994
+2025-11-03 21:11:57.995 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup': DEFAULT resolved to JAVA_WATCH
+2025-11-03 21:11:58.002 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 21:11:58.007 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 21:11:58.008 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 21:11:58.008 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 21:11:58.008 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 21:11:58.008 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 21:11:58.009 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 21:11:58.009 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 21:11:58.009 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 21:11:58.009 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 21:11:58.009 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 21:11:58.011 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 21:11:58.012 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup (Method: JAVA_WATCH)
+2025-11-03 21:11:58.013 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 21:11:58.033 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 21:11:58.049 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 21:11:58.056 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 21:11:58.056 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 55ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 21:11:58.057 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 63ms): sample3.ppt
+2025-11-03 21:11:58.059 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 65ms): test.txt
+2025-11-03 21:12:38.075 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 21:12:38.094 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:12:38.218 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_211238 (FULL - {:.1f}%, 0.0ms)
+2025-11-03 21:12:38.260 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 36 files, 46 B original, 0.0% savings
+2025-11-03 21:12:38.274 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:12:43.092 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 21:12:43.099 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 21:12:43.102 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:12:43.113 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_211243 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 21:12:43.119 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 37 files, 46 B original, 0.0% savings
+2025-11-03 21:12:43.121 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:12:43.127 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:12:43.129 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 37 files, 46 B original, 0.0% savings
+2025-11-03 21:12:43.131 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:12:48.109 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 21:12:48.128 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:12:48.142 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_211248 (INCREMENTAL - {:.1f}%, -400.0ms)
+2025-11-03 21:12:48.149 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 38 files, 51 B original, 0.0% savings
+2025-11-03 21:12:48.151 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:12:55.814 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:12:57.848 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:12:58.073 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:13:00.003 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:13:00.223 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:13:00.356 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:13:00.584 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:13:01.225 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:13:01.446 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:13:01.676 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:13:02.648 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:27:00.115 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-03 21:27:00.124 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-03 21:27:00.127 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-03 21:27:00.128 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:27:00.581 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:27:00.590 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:27:00.591 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-03 21:27:00.654 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'backup_location' in 'field list'
+2025-11-03 21:27:00.662 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring method set to default: JAVA_WATCH
+2025-11-03 21:27:00.759 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 89 entries
+2025-11-03 21:27:00.760 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-03 21:27:08.310 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:27:08.341 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:27:08.342 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:27:14.067 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ New monitor path added with method: DEFAULT (will use: JAVA_WATCH)
+2025-11-03 21:27:43.309 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-03 21:27:43.335 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-03 21:27:43.336 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-03 21:27:43.341 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 21:27:43.343 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762185463341
+2025-11-03 21:27:43.343 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup': DEFAULT resolved to JAVA_WATCH
+2025-11-03 21:27:43.359 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Path 'Project Backup' already exists (ID: 5). Updating...
+2025-11-03 21:27:43.372 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path updated successfully (ID: 5)
+2025-11-03 21:27:43.373 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 5
+2025-11-03 21:27:43.373 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-03 21:27:43.373 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup
+2025-11-03 21:27:43.373 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 21:27:43.373 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-03 21:27:43.374 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: JAVA_WATCH
+2025-11-03 21:27:43.374 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-03 21:27:43.374 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting JAVA_WATCH monitoring...
+2025-11-03 21:27:43.374 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 21:27:43.379 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 21:27:43.379 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup (Method: JAVA_WATCH)
+2025-11-03 21:27:43.380 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (1 paths)
+2025-11-03 21:27:43.399 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 21:27:43.443 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 21:27:43.447 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 102ms): Phase_2_Data_Wrangling_and_Analysis.docx
+2025-11-03 21:27:43.448 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 107ms): sample3.ppt
+2025-11-03 21:27:43.448 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 21:27:43.453 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Ignoring pre-startup event (age: 112ms): test.txt
+2025-11-03 21:27:58.460 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 21:27:58.482 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:27:58.641 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_212758 (FULL - {:.1f}%, 0.0ms)
+2025-11-03 21:27:58.666 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 39 files, 51 B original, 0.0% savings
+2025-11-03 21:27:58.686 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:28:03.479 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] CREATE → hello.txt (0 B)
+2025-11-03 21:28:03.496 [pool-3-thread-1] INFO  com.neurasys.service.MultiPathMonitor - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 21:28:03.499 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:28:03.509 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Logged backup: 20251103_212803 (DEDUPLICATED - {:.1f}%, 100.0ms)
+2025-11-03 21:28:03.515 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 40 files, 51 B original, 0.0% savings
+2025-11-03 21:28:03.516 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:28:03.521 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ File event logged to database (source: JAVA_WATCH)
+2025-11-03 21:28:03.524 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 40 files, 51 B original, 0.0% savings
+2025-11-03 21:28:03.525 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Dashboard updated with latest backup stats
+2025-11-03 21:28:12.225 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup' method changed from DEFAULT to NATIVE
+2025-11-03 21:28:12.225 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Monitoring is active, restarting to apply path method change...
+2025-11-03 21:28:12.225 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === RESTARTING MONITORING WITH UPDATED METHODS ===
+2025-11-03 21:28:12.225 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:37.935 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:40.405 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:41.265 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:41.463 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:41.688 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:43.070 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:43.371 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:43.570 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-03 21:28:48.054 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...

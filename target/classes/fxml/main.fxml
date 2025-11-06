@@ -366,6 +366,14 @@
                                 <ProgressBar fx:id="pbIncremental" progress="0" prefWidth="200"/>
                             </VBox>
 
+                            <VBox styleClass="analytics-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <padding>
+                                    <Insets top="15" right="15" bottom="15" left="15"/>
+                                </padding>
+                                <Label text="Refresh Backup Stats" styleClass="analytics-label"/>
+                                <Button text="🔄 Refresh Stats" onAction="#handleRefreshStats" prefWidth="200"/>
+                            </VBox>
+
                             <VBox styleClass="analytics-card analytics-card-total" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <padding>
                                     <Insets top="15" right="15" bottom="15" left="15"/>

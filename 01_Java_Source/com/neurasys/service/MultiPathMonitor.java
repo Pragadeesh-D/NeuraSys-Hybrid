@@ -1,14 +1,18 @@
 package com.neurasys.service;
 
 import com.neurasys.bridge.NativeFileMonitor;
+import com.neurasys.model.FileEvent;
 import com.neurasys.model.MonitorConfig;
+import com.neurasys.monitor.PollingFileMonitor;
 import com.neurasys.util.Logger;
+import javafx.application.Platform;
 
 import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.function.Consumer;
 
 /**
  * ✅ HYBRID MultiPathMonitor - Orchestrates multi-method file monitoring
@@ -27,30 +31,36 @@ import java.util.concurrent.*;
 public class MultiPathMonitor {
     private static final Logger logger = Logger.getLogger(MultiPathMonitor.class);
     private String globalMonitorMethod = "JAVA_WATCH";
-
     private final DatabaseManager dbManager;
+    private final Consumer<FileEvent> eventConsumer;
     private final NativeFileMonitor nativeMonitor;  // NEW: C DLL integration
-    private final FileEventListener eventListener;
     private final Map<Integer, MonitorTask> activeTasks = new ConcurrentHashMap<>();
-    private final ExecutorService executorService = Executors.newFixedThreadPool(5);
+    private final Map<String, Long> recentEventTimestamps = new ConcurrentHashMap<>();
+    private final ExecutorService executorService = Executors.newCachedThreadPool();
     private final DateTimeFormatter timestampFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
+    @FunctionalInterface
+    public interface FileEventCallback {
+        void onFileEvent(MonitorConfig config, File file, String action, String source);
+    }
+
     public interface FileEventListener {
-        void onFileEvent(FileEventData event);
+        void onFileEvent(FileEvent event);
     }
 
     // NEW: Constructor with NativeFileMonitor
-    public MultiPathMonitor(DatabaseManager dbManager, NativeFileMonitor nativeMonitor, FileEventListener listener, String globalMethod) {
+    public MultiPathMonitor(DatabaseManager dbManager, NativeFileMonitor nativeMonitor,
+                            Consumer<FileEvent> eventConsumer, String globalMethod) {
         this.dbManager = dbManager;
         this.nativeMonitor = nativeMonitor;
-        this.eventListener = listener;
+        this.eventConsumer = eventConsumer;
         this.globalMonitorMethod = globalMethod;
         logger.info("✓ MultiPathMonitor initialized with global method: " + globalMethod);
     }
 
     // BACKWARD COMPATIBILITY: Old constructor
-    public MultiPathMonitor(DatabaseManager dbManager, NativeFileMonitor nativeMonitor, FileEventListener listener) {
-        this(dbManager, nativeMonitor, listener, "JAVA_WATCH");
+    public MultiPathMonitor(DatabaseManager dbManager, NativeFileMonitor nativeMonitor, Consumer<FileEvent> eventConsumer) {
+        this(dbManager, nativeMonitor, eventConsumer, "JAVA_WATCH");
     }
 
     /**
@@ -73,36 +83,43 @@ public class MultiPathMonitor {
         logger.info("  Method: " + monitorMethod);
         logger.info("===========================");
 
-        // Resolve DEFAULT
+        // 🧠 Resolve DEFAULT only for execution, not for storage
+        String resolvedMethod = "DEFAULT".equalsIgnoreCase(monitorMethod)
+                ? globalMonitorMethod
+                : monitorMethod;
+
         if ("DEFAULT".equalsIgnoreCase(monitorMethod)) {
-            monitorMethod = globalMonitorMethod;
-            logger.info("  → Resolved DEFAULT to: " + monitorMethod);
+            logger.info("  → Resolved DEFAULT to: " + resolvedMethod);
         }
 
-        // Route based on monitor method
-        switch (monitorMethod) {
+        // 🔁 Route based on resolved method
+        switch (resolvedMethod.toUpperCase()) {
             case "NATIVE":
                 logger.info("  → Starting NATIVE monitoring...");
                 startNativeMonitoring(config);
                 break;
+
             case "JAVA_WATCH":
                 logger.info("  → Starting JAVA_WATCH monitoring...");
                 startJavaWatchMonitoring(config);
                 break;
+
             case "POLLING":
                 logger.info("  → Starting POLLING monitoring...");
                 startPollingMonitoring(config);
                 break;
+
+            case "ONEDRIVE":
+                logger.info("  → Starting ONEDRIVE monitoring...");
+                startOneDriveMonitoring(config);
+                break;
+
             default:
-                logger.warn("Unknown monitor method: " + monitorMethod + ", using fallback");
-                // Fallback
-                if ("LOCAL".equals(pathType)) {
-                    startNativeMonitoring(config);
-                } else {
-                    startJavaWatchMonitoring(config);
-                }
+                logger.warn("⚠ Unknown monitor method: " + resolvedMethod + " — using fallback JAVA_WATCH");
+                startJavaWatchMonitoring(config);
         }
     }
+
 
 
     /**
@@ -130,19 +147,21 @@ public class MultiPathMonitor {
                         config.getId(),
                         config.getPathLocation(),
                         (monitorPathId, fullPath, fileName, action, fileSize, timestamp) -> {
+                            File file = new File(config.getPathLocation(), fileName);
                             // Callback from C DLL
                             if (shouldBackupFile(fileName)) {
-                                onFileEvent(new FileEventData(
-                                        monitorPathId,
-                                        config.getPathName(),
-                                        config.getPathLocation(),
-                                        fullPath,
-                                        fileName,
-                                        action,
-                                        fileSize,
-                                        "NATIVE",  // NEW: Event source
-                                        timestamp
-                                ));
+                                onFileEvent(new FileEvent(
+                                                0,                            // id placeholder
+                                        config.getId(),               // monitorPathId
+                                        config.getPathName(),         // monitorPathName
+                                        file.getName(),               // fileName
+                                        file.getAbsolutePath(),       // filePath
+                                        "CREATE",                     // action
+                                        file.length(),                // fileSize
+                                        LocalDateTime.now(),          // timestamp as LocalDateTime
+                                        "NATIVE"                  // eventSource
+                                        )
+                                );
                             }
                         }
                 );
@@ -172,6 +191,24 @@ public class MultiPathMonitor {
             Map<String, Long> previousState = new HashMap<>();
             long lastCheckTime = System.currentTimeMillis();
 
+            // Initialize snapshot to prevent treating existing files as CREATE on startup
+            try {
+                File watchPath = new File(config.getPathLocation());
+                if (watchPath.exists()) {
+                    File[] startFiles = watchPath.listFiles();
+                    if (startFiles != null) {
+                        for (File f : startFiles) {
+                            if (f.isFile()) {
+                                previousState.put(f.getName(), f.length());
+                            }
+                        }
+                        logger.info("Initialized snapshot for " + config.getPathName() + " with " + previousState.size() + " files");
+                    }
+                }
+            } catch (Exception e) {
+                logger.warn("Failed to initialize snapshot for java watch: " + e.getMessage());
+            }
+
             while (task.isRunning()) {
                 try {
                     File watchPath = new File(config.getPathLocation());
@@ -184,60 +221,61 @@ public class MultiPathMonitor {
                     // Poll path for changes
                     File[] files = watchPath.listFiles();
                     if (files != null) {
+                        Set<String> currentFileNames = new HashSet<>();
                         for (File file : files) {
                             if (!file.isFile()) continue;
 
                             String fileKey = file.getName();
                             long currentSize = file.length();
+                            currentFileNames.add(fileKey);
 
                             if (!previousState.containsKey(fileKey)) {
                                 // NEW FILE
-                                onFileEvent(new FileEventData(
+                                onFileEvent(new FileEvent(
+                                        0,
                                         config.getId(),
                                         config.getPathName(),
-                                        config.getPathLocation(),
-                                        file.getAbsolutePath(),
                                         file.getName(),
+                                        file.getAbsolutePath(),
                                         "CREATE",
                                         currentSize,
-                                        "JAVA_WATCH",  // NEW: Event source
-                                        LocalDateTime.now().format(timestampFormatter)
+                                        LocalDateTime.now(),
+                                        "JAVA_WATCH"
                                 ));
                                 previousState.put(fileKey, currentSize);
                             } else if (previousState.get(fileKey) != currentSize) {
                                 // FILE MODIFIED
-                                onFileEvent(new FileEventData(
+                                onFileEvent(new FileEvent(
+                                        0,
                                         config.getId(),
                                         config.getPathName(),
-                                        config.getPathLocation(),
-                                        file.getAbsolutePath(),
                                         file.getName(),
+                                        file.getAbsolutePath(),
                                         "MODIFY",
                                         currentSize,
-                                        "JAVA_WATCH",  // NEW: Event source
-                                        LocalDateTime.now().format(timestampFormatter)
+                                        LocalDateTime.now(),
+                                        "JAVA_WATCH"
                                 ));
                                 previousState.put(fileKey, currentSize);
                             }
                         }
 
                         // CHECK FOR DELETED FILES
-                        Set<String> currentFiles = new HashSet<>(Arrays.asList(
-                                watchPath.list((dir, name) -> new File(dir, name).isFile())
-                        ));
                         for (String previousFile : new HashSet<>(previousState.keySet())) {
-                            if (!currentFiles.contains(previousFile)) {
+                            if (!currentFileNames.contains(previousFile)) {
+                                File file = new File(config.getPathLocation(), previousFile);
+                                String fullPath = file.getAbsolutePath();
                                 // FILE DELETED
-                                onFileEvent(new FileEventData(
+                                onFileEvent(new FileEvent(
+                                        0,
                                         config.getId(),
                                         config.getPathName(),
-                                        config.getPathLocation(),
-                                        new File(config.getPathLocation(), previousFile).getAbsolutePath(),
                                         previousFile,
+                                        fullPath,
                                         "DELETE",
                                         0,
-                                        "JAVA_WATCH",  // NEW: Event source
-                                        LocalDateTime.now().format(timestampFormatter)
+                                        LocalDateTime.now(),
+                                        "JAVA_WATCH"
                                 ));
                                 previousState.remove(previousFile);
                             }
@@ -258,72 +296,71 @@ public class MultiPathMonitor {
         logger.info("✓ JAVA_WATCH monitor started for: " + config.getPathName());
     }
 
+
     /**
      * ✅ POLLING MONITORING
      * Scheduled polling for ONEDRIVE/CLOUD paths
      * Useful when real-time APIs unavailable
      */
     private void startPollingMonitoring(MonitorConfig config) {
-        logger.info("Starting POLLING monitoring: " + config.getPathName() +
-                " (Cloud/OneDrive path)");
+        PollingFileMonitor monitor = new PollingFileMonitor(config, 3000, eventConsumer);
+        Thread pollingThread = new Thread(monitor);
+        pollingThread.setDaemon(true);
+        pollingThread.start();
 
         MonitorTask task = new MonitorTask(config.getId(), config.getPathName(),
                 config.getPathLocation(), "POLLING");
-
-        executorService.submit(() -> {
-            Map<String, Long> previousState = new HashMap<>();
-
-            while (task.isRunning()) {
-                try {
-                    // For OneDrive/Cloud, would integrate with Microsoft Graph API here
-                    // For now, simulate polling
-                    logger.debug("Polling " + config.getPathName() + "...");
-
-                    // TODO: Implement actual OneDrive/Cloud monitoring
-                    // This is placeholder for cloud integration
-
-                    Thread.sleep(30000); // Poll every 30 seconds for cloud
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    break;
-                } catch (Exception e) {
-                    logger.error("Polling monitoring error", e);
-                }
-            }
-        });
-
         activeTasks.put(config.getId(), task);
-        logger.info("✓ POLLING monitor started for: " + config.getPathName());
     }
 
+    private void startOneDriveMonitoring(MonitorConfig config) {
+        logger.warn("⚠ OneDrive monitoring is not yet implemented for: " + config.getPathName());
+        // Future: connect Microsoft Graph API to sync OneDrive folder changes
+    }
+
+    private boolean isDuplicateEvent(FileEvent e) {
+        String key = e.getMonitorPathId() + "|" + e.getFileName() + "|" + e.getAction();
+        long now = System.currentTimeMillis();
+        Long prev = recentEventTimestamps.get(key);
+        if (prev != null && (now - prev) < 1000) {
+            return true; // duplicate within 1s
+        }
+        recentEventTimestamps.put(key, now);
+        return false;
+    }
     /**
      * Handle file event from any monitoring source
      * Routes to database and UI listener
      */
-    private void onFileEvent(FileEventData event) {
+    private void onFileEvent(FileEvent event) {
+        if (isDuplicateEvent(event)) {
+            logger.debug("Ignored duplicate event: " + event);
+            return;
+        }
+
         logger.info("[" + event.getMonitorPathName() + "] [" + event.getEventSource() +
                 "] " + event.getAction() + " → " + event.getFileName() +
                 " (" + formatBytes(event.getFileSize()) + ")");
 
         try {
-            // Log to database with event source
             dbManager.logFileEvent(
                     event.getMonitorPathId(),
-                    event.getFullPath(),
+                    event.getFilePath(),       // ✅ updated
                     event.getFileName(),
                     event.getAction(),
                     event.getFileSize(),
-                    event.getEventSource()  // NEW: Include event source
+                    event.getEventSource()
             );
 
-            // Notify UI listener
-            if (eventListener != null) {
-                eventListener.onFileEvent(event);
+            if (eventConsumer != null) {
+                eventConsumer.accept(event);  // ✅ now valid
             }
+
         } catch (Exception e) {
             logger.error("Failed to handle file event", e);
         }
     }
+
 
     private boolean shouldBackupFile(String fileName) {
         // Skip temporary and system files
@@ -348,26 +385,22 @@ public class MultiPathMonitor {
         // Tasks are already started when added, this is for compatibility
     }
 
+    // Stop all monitors and recreate executor
     public void stopAll() {
         logger.info("Stopping all monitors...");
-        for (Map.Entry<Integer, MonitorTask> entry : activeTasks.entrySet()) {
+        for (Map.Entry<Integer, MonitorTask> entry : new HashMap<>(activeTasks).entrySet()) {
             entry.getValue().stop();
             try {
                 nativeMonitor.stopMonitoring(entry.getKey());
             } catch (Exception e) {
                 logger.debug("Could not stop native monitor: " + e.getMessage());
             }
+            activeTasks.remove(entry.getKey());
         }
-        executorService.shutdown();
-        try {
-            if (!executorService.awaitTermination(10, TimeUnit.SECONDS)) {
-                executorService.shutdownNow();
-            }
-        } catch (InterruptedException e) {
-            executorService.shutdownNow();
-        }
-        logger.info("✓ All monitors stopped");
+        // Do NOT shutdown the executorService here. Keep it alive so we can restart tasks.
+        logger.info("✓ All monitors requested to stop (executor remains active)");
     }
+
 
     public void restartWithMethod(String newMethod) {
         logger.info("Restarting monitors with method: " + newMethod);
@@ -390,11 +423,65 @@ public class MultiPathMonitor {
             logger.error("Failed to restart monitoring paths", e);
         }
     }
+
+    public void removeMonitorPath(int pathId) {
+        MonitorTask t = activeTasks.remove(pathId);
+        if (t != null) {
+            t.stop();
+        }
+        try {
+            nativeMonitor.stopMonitoring(pathId);
+        } catch (Exception e) {
+            logger.debug("Could not stop native monitor for id " + pathId + ": " + e.getMessage());
+        }
+        logger.info("Removed monitor path ID: " + pathId);
+    }
+
+    public void stopAllMonitoring() {
+        logger.info("🛑 Stopping all active monitor threads...");
+        try {
+            stopJavaWatchService();
+            stopNativeWatchService();
+            stopPollingService();
+            stopOneDriveService(); // future
+
+            logger.info("✓ All monitoring stopped successfully.");
+        } catch (Exception e) {
+            logger.error("❌ Error while stopping monitoring: ", e);
+        }
+    }
+
+    private void stopJavaWatchService() {
+        logger.info("→ Java Watch service stopped.");
+        stopAll(); // ✅ This already stops JavaWatch threads and executor
+    }
+
+    private void stopNativeWatchService() {
+        logger.info("→ Native monitoring service stopped.");
+        for (Integer id : activeTasks.keySet()) {
+            try {
+                nativeMonitor.stopMonitoring(id);
+            } catch (Exception e) {
+                logger.debug("Native stop failed for id " + id + ": " + e.getMessage());
+            }
+        }
+    }
+
+    private void stopPollingService() {
+        logger.info("→ Polling monitoring service stopped.");
+        stopAll(); // ✅ Same executor handles polling threads
+    }
+
+    private void stopOneDriveService() {
+        logger.info("→ OneDrive monitoring service stopped.");
+        // Placeholder for future Graph API integration
+    }
+
     /**
      * ✅ HYBRID FileEventData - Complete file event information
      * Includes event_source for tracking monitoring method
      */
-    public static class FileEventData {
+    /*public static class FileEventData {
         private final int monitorPathId;
         private final String monitorPathName;
         private final String monitorPath;
@@ -443,7 +530,7 @@ public class MultiPathMonitor {
             return String.format("FileEventData[path=%d, file=%s, action=%s, source=%s]",
                     monitorPathId, fileName, action, eventSource);
         }
-    }
+    }*/
 
     /**
      * Monitor task tracking

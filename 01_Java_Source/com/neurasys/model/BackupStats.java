@@ -23,6 +23,14 @@ public class BackupStats {
     private final int deduplicatedFiles;
     private final int nativeMonitoredPaths;
     private final double avgCompressionRatio;
+    private int uniqueFiles;
+    private int nativePaths;
+    private int dedupCount;
+    private double avgCompression;
+    private long compressionSaved;
+    private long deduplicationSaved;
+    private long incrementalSaved;
+
 
     public BackupStats(int totalBackups, long totalOriginalSize, long totalDiskUsed,
                        double savingsPercent, int filesMonitored, String lastBackupTime) {
@@ -73,6 +81,34 @@ public class BackupStats {
 
     public String getSpaceSavedFormatted() {
         return FileUtils.byteCountToDisplaySize(totalSpaceSaved);
+    }
+
+    public int getUniqueFiles() {
+        return uniqueFiles;
+    }
+
+    public int getNativePaths() {
+        return nativePaths;
+    }
+
+    public int getDedupCount() {
+        return dedupCount;
+    }
+
+    public double getAvgCompression() {
+        return avgCompression;
+    }
+
+    public long getCompressionSaved() {
+        return compressionSaved;
+    }
+
+    public long getDeduplicationSaved() {
+        return deduplicationSaved;
+    }
+
+    public long getIncrementalSaved() {
+        return incrementalSaved;
     }
 
     @Override

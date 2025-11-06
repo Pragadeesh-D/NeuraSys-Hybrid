@@ -13,7 +13,7 @@ public class Main extends Application {
 
     private static final String WINDOW_TITLE = "NeuraSys - Intelligent Backup System";
     private static final String FXML_RESOURCE = "/fxml/main.fxml";
-    private static final String CSS_RESOURCE = "/css/application.css";
+    private static final String CSS_RESOURCE = "/css/application.css"; // ✅ Matches your folder structure
 
     private static final double DEFAULT_WIDTH = 1400;
     private static final double DEFAULT_HEIGHT = 900;
@@ -26,7 +26,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
 
-        loadStylesheet(scene);
+        loadStylesheet(scene); // ✅ Loads application.css from /css/
 
         configurePrimaryStage(primaryStage, scene);
 
@@ -48,23 +48,18 @@ public class Main extends Application {
     }
 
     private void configurePrimaryStage(Stage primaryStage, Scene scene) {
-        // Ensure native OS window decorations
         primaryStage.initStyle(StageStyle.DECORATED);
-
         primaryStage.setTitle(WINDOW_TITLE);
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         primaryStage.setMinWidth(MIN_WIDTH);
         primaryStage.setMinHeight(MIN_HEIGHT);
 
-        // Adjust window size to fit screen if smaller than default
         Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
         double width = Math.min(DEFAULT_WIDTH, bounds.getWidth() * 0.95);
         double height = Math.min(DEFAULT_HEIGHT, bounds.getHeight() * 0.95);
         primaryStage.setWidth(width);
         primaryStage.setHeight(height);
-
-        // Center window on screen
         primaryStage.setX((bounds.getWidth() - width) / 2);
         primaryStage.setY((bounds.getHeight() - height) / 2);
 

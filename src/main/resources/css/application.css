@@ -216,6 +216,18 @@
     -fx-pref-width: 300;
 }
 
+.analytics-card Button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 6;
+}
+
+.analytics-card Button:hover {
+    -fx-background-color: #2980b9;
+}
+
 .analytics-card-total {
     -fx-background-color: linear-gradient(to bottom right, #27ae60, #229954);
 }
