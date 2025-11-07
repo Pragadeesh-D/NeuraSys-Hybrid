@@ -3,6 +3,7 @@ package com.neurasys.service;
 import com.neurasys.bridge.NativeFileMonitor;
 import com.neurasys.model.FileEvent;
 import com.neurasys.model.MonitorConfig;
+import com.neurasys.monitor.OneDriveMonitor;
 import com.neurasys.monitor.PollingFileMonitor;
 import com.neurasys.util.Logger;
 import javafx.application.Platform;
@@ -31,6 +32,7 @@ import java.util.function.Consumer;
 public class MultiPathMonitor {
     private static final Logger logger = Logger.getLogger(MultiPathMonitor.class);
     private String globalMonitorMethod = "JAVA_WATCH";
+    private OneDriveMonitor oneDriveMonitor;
     private final DatabaseManager dbManager;
     private final Consumer<FileEvent> eventConsumer;
     private final NativeFileMonitor nativeMonitor;  // NEW: C DLL integration
@@ -111,7 +113,7 @@ public class MultiPathMonitor {
 
             case "ONEDRIVE":
                 logger.info("  → Starting ONEDRIVE monitoring...");
-                startOneDriveMonitoring(config);
+                enableOneDriveMonitoring();;
                 break;
 
             default:
@@ -120,8 +122,31 @@ public class MultiPathMonitor {
         }
     }
 
+    // call to enable
+    public void enableOneDriveMonitoring() {
+        if (oneDriveMonitor == null) {
+            oneDriveMonitor = new OneDriveMonitor();
+            oneDriveMonitor.addListener(new OneDriveMonitor.Listener() {
+                @Override
+                public void onEvent(FileEvent event) {
+                    System.out.println("OneDrive event: " + event.getFilePath() + " [" + event.getAction() + "]");
+                    // TODO: route to backup queue, logger, or analytics
+                }
 
+                @Override
+                public void onError(String message) {
+                    System.err.println("OneDriveMonitor error: " + message);
+                }
+            });
+        }
+        oneDriveMonitor.startMonitoring();
+    }
 
+    public void disableOneDriveMonitoring() {
+        if (oneDriveMonitor != null) {
+            oneDriveMonitor.stopMonitoring();
+        }
+    }
     /**
      * ✅ NATIVE MONITORING (C DLL with Windows API)
      * Uses FileMonitor.dll with ReadDirectoryChangesW for real-time detection

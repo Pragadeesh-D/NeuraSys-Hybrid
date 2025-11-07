@@ -188,15 +188,22 @@ public class MainController {
         cmbMonitorMethod.getItems().clear();
         cmbMonitorMethod.getItems().addAll("NATIVE", "JAVA_WATCH", "POLLING");
 
-        // ✅ Platform-aware default selection
+        // ✅ Platform-aware default selection with OneDrive support
+        // when initialising or when platform decision is made
         String osName = System.getProperty("os.name").toLowerCase();
-        if (osName.contains("win")) {
-            cmbMonitorMethod.setValue("NATIVE"); // best for Windows
+        if (osName.contains("win") || osName.contains("mac")) {
+            cmbMonitorMethod.getItems().add("ONEDRIVE");
+            cmbMonitorMethod.setValue("NATIVE");
             globalMonitorMethod = "NATIVE";
+            // enable OneDrive monitoring through your service
+            if (multiPathMonitor != null) {
+                multiPathMonitor.enableOneDriveMonitoring();
+            }
         } else {
-            cmbMonitorMethod.setValue("JAVA_WATCH"); // fallback for Linux/macOS
+            cmbMonitorMethod.setValue("JAVA_WATCH");
             globalMonitorMethod = "JAVA_WATCH";
         }
+
 
         cmbMonitorMethod.valueProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null && !newVal.equals(oldVal)) {
@@ -210,7 +217,7 @@ public class MainController {
         // ============================================================
         tblMonitorPaths.setEditable(true); // ✅ make table editable
 
-        colMonitorMethod.setCellFactory(ComboBoxTableCell.forTableColumn("DEFAULT", "JAVA_WATCH", "NATIVE", "POLLING"));
+        colMonitorMethod.setCellFactory(ComboBoxTableCell.forTableColumn("DEFAULT", "JAVA_WATCH", "NATIVE", "POLLING", "ONEDRIVE"));
         colMonitorMethod.setOnEditCommit(event -> {
             MonitorConfig config = event.getRowValue();
             String newMethod = event.getNewValue();
