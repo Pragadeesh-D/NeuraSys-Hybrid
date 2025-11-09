@@ -6,7 +6,6 @@ import com.neurasys.model.MonitorConfig;
 import com.neurasys.monitor.OneDriveMonitor;
 import com.neurasys.monitor.PollingFileMonitor;
 import com.neurasys.util.Logger;
-import javafx.application.Platform;
 
 import java.io.File;
 import java.time.LocalDateTime;
@@ -424,6 +423,32 @@ public class MultiPathMonitor {
         }
         // Do NOT shutdown the executorService here. Keep it alive so we can restart tasks.
         logger.info("✓ All monitors requested to stop (executor remains active)");
+    }
+
+    public void restartMonitorPath(MonitorConfig config) {
+        try {
+            int pathId = config.getId();
+
+            MonitorTask existingTask = activeTasks.get(pathId);
+            if (existingTask != null) {
+                existingTask.stop();
+                activeTasks.remove(pathId);
+                logger.info("✓ Stopped monitor for path ID: " + pathId);
+            }
+
+            String methodToUse = config.getMonitorMethod();
+            if ("DEFAULT".equalsIgnoreCase(methodToUse)) {
+                methodToUse = globalMonitorMethod;
+                logger.info("→ Resolved DEFAULT to: " + methodToUse);
+            }
+
+            config.setMonitorMethod(methodToUse);
+            addMonitorPath(config);
+
+            logger.info("✓ Restarted monitor for path ID: " + pathId + " with method: " + methodToUse);
+        } catch (Exception e) {
+            logger.error("✗ Failed to restart monitor for path ID: " + config.getId(), e);
+        }
     }
 
 

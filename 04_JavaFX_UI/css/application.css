@@ -213,29 +213,9 @@
     -fx-background-color: white;
     -fx-background-radius: 10;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-padding: 15;
+    -fx-spacing: 10;
     -fx-pref-width: 300;
-}
-
-.analytics-card Button {
-    -fx-background-color: #3498db;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-background-radius: 6;
-}
-
-.analytics-card Button:hover {
-    -fx-background-color: #2980b9;
-}
-
-.analytics-card-total {
-    -fx-background-color: linear-gradient(to bottom right, #27ae60, #229954);
-}
-
-.analytics-card-total .analytics-label,
-.analytics-card-total .analytics-value-large,
-.analytics-card-total .analytics-subtitle {
-    -fx-text-fill: white;
 }
 
 .analytics-label {
@@ -244,21 +224,68 @@
     -fx-font-weight: bold;
 }
 
-.analytics-value {
-    -fx-text-fill: #2c3e50;
-    -fx-font-size: 28px;
-    -fx-font-weight: bold;
-}
-
 .analytics-value-large {
-    -fx-text-fill: #2c3e50;
+    -fx-text-fill: white;
     -fx-font-size: 48px;
     -fx-font-weight: bold;
 }
 
 .analytics-subtitle {
-    -fx-text-fill: #95a5a6;
+    -fx-text-fill: white;
     -fx-font-size: 11px;
+}
+
+.section-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.analytics-card-total {
+    -fx-background-color: linear-gradient(to bottom right, #2ecc71, #27ae60);
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 12, 0, 0, 3);
+    -fx-border-color: #1abc9c;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.analytics-card-total .analytics-label,
+.analytics-card-total .analytics-value-large,
+.analytics-card-total .analytics-subtitle {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.analytics-separator {
+    -fx-background-color: #dfe6e9;
+    -fx-pref-height: 1;
+    -fx-max-width: 200;
+    -fx-opacity: 0.6;
+}
+
+.btn-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+
+.btn-success:hover {
+    -fx-background-color: #229954;
+}
+
+.btn-secondary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #2980b9;
 }
 
 /* ================================================

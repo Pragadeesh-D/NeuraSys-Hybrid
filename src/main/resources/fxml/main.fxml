@@ -326,95 +326,77 @@
             <!-- ========================================== -->
             <Tab text="📈 Analytics">
                 <ScrollPane fitToWidth="true" fitToHeight="true">
-                    <VBox spacing="20" styleClass="analytics-container">
+                    <VBox spacing="30" styleClass="analytics-container">
                         <padding>
                             <Insets top="20" right="20" bottom="20" left="20"/>
                         </padding>
 
+                        <!-- Section Header -->
                         <Label text="Space Optimization Analytics" styleClass="section-header">
                             <font>
                                 <Font name="System Bold" size="18"/>
                             </font>
                         </Label>
 
-                        <!-- Space Savings Breakdown -->
-                        <GridPane hgap="20" vgap="15">
-                            <VBox styleClass="analytics-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                                <padding>
-                                    <Insets top="15" right="15" bottom="15" left="15"/>
-                                </padding>
+                        <!-- Space Savings Cards -->
+                        <HBox spacing="30">
+                            <VBox styleClass="analytics-card" spacing="10">
                                 <Label text="Compression Savings" styleClass="analytics-label"/>
                                 <Label fx:id="lblCompressionSavings" text="0 GB" styleClass="analytics-value"/>
                                 <ProgressBar fx:id="pbCompression" progress="0" prefWidth="200"/>
+                                <Separator styleClass="analytics-separator"/>
                             </VBox>
 
-                            <VBox styleClass="analytics-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                                <padding>
-                                    <Insets top="15" right="15" bottom="15" left="15"/>
-                                </padding>
+                            <VBox styleClass="analytics-card" spacing="10">
                                 <Label text="Deduplication Savings" styleClass="analytics-label"/>
                                 <Label fx:id="lblDeduplicationSavings" text="0 GB" styleClass="analytics-value"/>
                                 <ProgressBar fx:id="pbDeduplication" progress="0" prefWidth="200"/>
+                                <Separator styleClass="analytics-separator"/>
                             </VBox>
 
-                            <VBox styleClass="analytics-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                                <padding>
-                                    <Insets top="15" right="15" bottom="15" left="15"/>
-                                </padding>
+                            <VBox styleClass="analytics-card" spacing="10">
                                 <Label text="Incremental Savings" styleClass="analytics-label"/>
                                 <Label fx:id="lblIncrementalSavings" text="0 GB" styleClass="analytics-value"/>
                                 <ProgressBar fx:id="pbIncremental" progress="0" prefWidth="200"/>
+                                <Separator styleClass="analytics-separator"/>
                             </VBox>
+                        </HBox>
 
-                            <VBox styleClass="analytics-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                <padding>
-                                    <Insets top="15" right="15" bottom="15" left="15"/>
-                                </padding>
-                                <Label text="Refresh Backup Stats" styleClass="analytics-label"/>
-                                <Button text="🔄 Refresh Stats" onAction="#handleRefreshStats" prefWidth="200"/>
-                            </VBox>
+                        <!-- Total Savings Block -->
+                        <VBox styleClass="analytics-card analytics-card-total" spacing="10">
+                            <Label text="Total Savings" styleClass="analytics-label"/>
+                            <Label fx:id="lblTotalSavings" text="98.0%" styleClass="analytics-value-large"/>
+                            <Label fx:id="lblTotalSavingsDetails" text="0 GB saved from 0 GB" styleClass="analytics-subtitle"/>
+                        </VBox>
 
-                            <VBox styleClass="analytics-card analytics-card-total" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                <padding>
-                                    <Insets top="15" right="15" bottom="15" left="15"/>
-                                </padding>
-                                <Label text="Total Savings" styleClass="analytics-label"/>
-                                <Label fx:id="lblTotalSavings" text="98.0%" styleClass="analytics-value-large"/>
-                                <Label fx:id="lblTotalSavingsDetails" text="0 GB saved from 0 GB" styleClass="analytics-subtitle"/>
-                            </VBox>
-                        </GridPane>
+                        <!-- Refresh Button -->
+                        <HBox alignment="CENTER_RIGHT">
+                            <Button text="🔄 Refresh Stats" onAction="#handleRefreshStats" styleClass="btn-secondary" prefWidth="150"/>
+                        </HBox>
 
-                        <!-- Restore Backup Section -->
                         <Separator/>
 
+                        <!-- Restore Backup Section -->
                         <Label text="Restore Backup" styleClass="section-header">
                             <font>
                                 <Font name="System Bold" size="18"/>
                             </font>
                         </Label>
 
-                        <VBox styleClass="analytics-card" spacing="10">
-                            <padding>
-                                <Insets top="15" right="15" bottom="15" left="15"/>
-                            </padding>
-
+                        <VBox styleClass="analytics-card" spacing="15">
                             <Label text="Select Backup File" styleClass="analytics-label"/>
                             <HBox spacing="10">
-                                <TextField fx:id="txtBackupFilePath" promptText="Select backup file..."
-                                           style="-fx-pref-width: 400;" />
-                                <Button fx:id="btnBrowseBackup" text="Browse" onAction="#handleBrowseBackup"
-                                        styleClass="btn-secondary" />
+                                <TextField fx:id="txtBackupFilePath" promptText="Select backup file..." style="-fx-pref-width: 400;" />
+                                <Button fx:id="btnBrowseBackup" text="Browse" onAction="#handleBrowseBackup" styleClass="btn-secondary" />
                             </HBox>
 
                             <Label text="Select Restore Location" styleClass="analytics-label"/>
                             <HBox spacing="10">
-                                <TextField fx:id="txtRestoreLocation" promptText="Restore to location..."
-                                           style="-fx-pref-width: 400;" />
-                                <Button fx:id="btnBrowseRestore" text="Browse" onAction="#handleBrowseRestore"
-                                        styleClass="btn-secondary" />
+                                <TextField fx:id="txtRestoreLocation" promptText="Restore to location..." style="-fx-pref-width: 400;" />
+                                <Button fx:id="btnBrowseRestore" text="Browse" onAction="#handleBrowseRestore" styleClass="btn-secondary" />
                             </HBox>
 
-                            <Button fx:id="btnRestoreBackup" text="✓ Restore Backup" onAction="#handleRestoreBackup"
+                            <Button fx:id="btnRestoreBackup" text="+ Restore Backup" onAction="#handleRestoreBackup"
                                     styleClass="btn-success" style="-fx-font-size: 14; -fx-padding: 10;" />
 
                             <Label fx:id="lblRestoreStatus" text="" style="-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 12;" />
@@ -422,7 +404,6 @@
                     </VBox>
                 </ScrollPane>
             </Tab>
-
         </TabPane>
     </center>
 

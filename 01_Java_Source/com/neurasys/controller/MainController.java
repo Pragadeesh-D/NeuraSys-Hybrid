@@ -322,6 +322,33 @@ public class MainController {
         }
     }
 
+    private void applyGlobalMethodToDefaultPaths(String newGlobalMethod) {
+        if (multiPathMonitor == null || !isMonitoring) {
+            logger.warn("Monitoring not active. Global method will apply on next start.");
+            return;
+        }
+
+        logger.info("Applying global method to DEFAULT paths: " + newGlobalMethod);
+
+        for (MonitorConfig config : monitorPaths) {
+            if (config.isEnabled() && "DEFAULT".equalsIgnoreCase(config.getMonitorMethod())) {
+                MonitorConfig updatedConfig = new MonitorConfig();
+                updatedConfig.setId(config.getId());
+                updatedConfig.setPathName(config.getPathName());
+                updatedConfig.setPathLocation(config.getPathLocation());
+                updatedConfig.setBackupLocation(config.getBackupLocation());
+                updatedConfig.setPathType(config.getPathType());
+                updatedConfig.setMonitorMethod(newGlobalMethod);
+                updatedConfig.setEnabled(true);
+
+                multiPathMonitor.restartMonitorPath(updatedConfig);
+                logger.info("✓ Restarted DEFAULT path with new method: " + newGlobalMethod);
+            }
+        }
+
+        updateStatus("Global method applied to DEFAULT paths");
+        addActivityLog("✓ DEFAULT paths updated with method: " + newGlobalMethod, "SUCCESS");
+    }
 
     // Placeholder method to get current monitoring method (can retrieve from config or DB)
     private String getCurrentMonitoringMethod() {

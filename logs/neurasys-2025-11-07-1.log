@@ -1,3 +1,14 @@
+2025-11-07 19:17:13.500 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:17:13.977 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:17:13.998 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:17:15.552 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-07 19:17:15.611 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-07 19:17:15.613 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-07 19:17:15.614 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:17:15.630 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:17:15.630 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:17:15.630 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-07 19:17:15.630 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
 2025-11-07 19:17:15.679 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to load monitor paths from database
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -29,6 +40,18 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 19:17:15.699 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'enabled' in 'field list'
+2025-11-07 19:19:38.499 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:19:38.862 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:19:38.881 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:19:39.464 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-07 19:19:39.467 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-07 19:19:39.468 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-07 19:19:39.469 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:19:39.484 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:19:39.485 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:19:39.485 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-07 19:19:39.485 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
 2025-11-07 19:19:39.537 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to load monitor paths from database
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -60,6 +83,21 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 19:19:39.552 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'enabled' in 'field list'
+2025-11-07 19:19:39.656 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 98 entries
+2025-11-07 19:19:39.657 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-07 19:19:39.707 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 40 files, 51 B original, 0.0% savings
+2025-11-07 19:28:46.292 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:28:46.625 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:28:46.639 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:28:47.210 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-07 19:28:47.214 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-07 19:28:47.216 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-07 19:28:47.216 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:28:47.227 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:28:47.227 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:28:47.227 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-07 19:28:47.227 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
 2025-11-07 19:28:47.268 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to load monitor paths from database
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -91,6 +129,21 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 19:28:47.283 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'enabled' in 'field list'
+2025-11-07 19:28:47.354 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 98 entries
+2025-11-07 19:28:47.355 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-07 19:28:47.389 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 40 files, 51 B original, 0.0% savings
+2025-11-07 19:30:59.683 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:30:59.986 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:31:00.003 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:31:00.524 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-07 19:31:00.527 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-07 19:31:00.529 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-07 19:31:00.529 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:31:00.538 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:31:00.538 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:31:00.538 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-07 19:31:00.539 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
 2025-11-07 19:31:00.578 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to load monitor paths from database
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -122,6 +175,21 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 19:31:00.590 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'enabled' in 'field list'
+2025-11-07 19:31:00.671 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 98 entries
+2025-11-07 19:31:00.672 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-07 19:31:00.702 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 40 files, 51 B original, 0.0% savings
+2025-11-07 19:44:46.793 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:44:47.210 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:44:47.221 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:44:47.838 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-07 19:44:48.034 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-07 19:44:48.035 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-07 19:44:48.035 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:44:48.055 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:44:48.057 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:44:48.057 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-07 19:44:48.057 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
 2025-11-07 19:44:48.103 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to load monitor paths from database
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -153,6 +221,21 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 19:44:48.119 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'enabled' in 'field list'
+2025-11-07 19:44:48.214 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 98 entries
+2025-11-07 19:44:48.215 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-07 19:44:48.247 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 40 files, 51 B original, 0.0% savings
+2025-11-07 19:50:01.920 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:50:02.309 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:50:02.319 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:50:02.831 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-07 19:50:02.833 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-07 19:50:02.834 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-07 19:50:02.835 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:50:02.846 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:50:02.846 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:50:02.846 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-07 19:50:02.846 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
 2025-11-07 19:50:02.897 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to load monitor paths from database
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -184,6 +267,19 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 19:50:02.912 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Could not load monitor paths: Unknown column 'enabled' in 'field list'
+2025-11-07 19:50:02.987 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 98 entries
+2025-11-07 19:50:02.988 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-07 19:50:03.030 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 40 files, 51 B original, 0.0% savings
+2025-11-07 19:50:19.102 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:50:19.117 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:50:19.117 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:58:43.006 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 19:58:43.036 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 19:58:43.036 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 19:58:43.103 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-07 19:58:43.104 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762525723104
+2025-11-07 19:58:43.105 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup_1': DEFAULT resolved to NATIVE
 2025-11-07 19:58:43.121 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to add/update monitor path
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -320,6 +416,7 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 19:58:43.129 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup_2': DEFAULT resolved to NATIVE
 2025-11-07 19:58:43.134 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to add/update monitor path
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -456,6 +553,7 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 19:58:43.141 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup_3': DEFAULT resolved to NATIVE
 2025-11-07 19:58:43.144 [JavaFX Application Thread] ERROR com.neurasys.service.DatabaseManager - Failed to add/update monitor path
 java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
@@ -592,3 +690,20 @@ java.sql.SQLSyntaxErrorException: Unknown column 'enabled' in 'field list'
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx.graphics.jar:?]
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx.graphics.jar:?]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-07 20:15:08.082 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 20:15:08.431 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 20:15:08.451 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 20:15:09.055 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-07 20:15:09.059 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-07 20:15:09.060 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-07 20:15:09.061 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-07 20:15:09.071 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-07 20:15:09.071 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-07 20:15:09.071 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-07 20:15:09.071 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-07 20:15:09.125 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Loaded path #1: Project Backup
+2025-11-07 20:15:09.126 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Total paths loaded: 1
+2025-11-07 20:15:09.126 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Loaded 1 monitor paths from database
+2025-11-07 20:15:09.182 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 98 entries
+2025-11-07 20:15:09.184 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-07 20:15:09.228 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 40 files, 51 B original, 0.0% savings

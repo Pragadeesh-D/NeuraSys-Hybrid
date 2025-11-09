@@ -1,0 +1,320 @@
+2025-11-03 09:32:03.946 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 09:32:03.952 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 09:32:03.972 - === ADDING MONITOR PATH ===
+2025-11-03 09:32:03.972 -   Name: Project Backup
+2025-11-03 09:32:03.973 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 09:32:03.973 -   Type: LOCAL
+2025-11-03 09:32:03.974 -   Method: JAVA_WATCH
+2025-11-03 09:32:03.974 - ===========================
+2025-11-03 09:32:03.974 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 09:32:03.974 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 09:32:03.977 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 09:32:03.979 - Starting all monitors (1 paths)
+2025-11-03 09:32:03.992 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 09:32:04.014 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 09:32:04.019 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 09:32:34.036 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 09:32:34.164 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_093234.txt.gz
+2025-11-03 09:32:34.164 - FULL: Creating compressed backup
+2025-11-03 09:32:34.255 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_093234.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=113ms
+2025-11-03 09:32:39.052 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 09:32:39.058 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 09:32:39.063 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 09:32:49.081 - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 09:32:49.106 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Hello.txt, Destination=D:\Pragadeesh_D\TestBackup\Hello_20251103_093249.txt.gz
+2025-11-03 09:32:49.106 - INCREMENTAL: Creating delta backup for modified file
+2025-11-03 09:32:49.118 - ✓ Backup completed: Type=INCREMENTAL, File=Hello_20251103_093249.txt.gz, Original=5 B, Compressed=25 B, Saved=-20 B, Efficiency=-400.0%, Duration=17ms
+2025-11-03 09:33:59.110 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 09:33:59.118 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 09:34:04.116 - [Project Backup] [JAVA_WATCH] CREATE → Hi.txt (0 B)
+2025-11-03 09:34:04.123 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 09:34:04.129 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 09:34:09.129 - [Project Backup] [JAVA_WATCH] MODIFY → Hi.txt (2 B)
+2025-11-03 09:34:09.147 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Hi.txt, Destination=D:\Pragadeesh_D\TestBackup\Hi_20251103_093409.txt.gz
+2025-11-03 09:34:09.148 - INCREMENTAL: Creating delta backup for modified file
+2025-11-03 09:34:09.188 - ✓ Backup completed: Type=INCREMENTAL, File=Hi_20251103_093409.txt.gz, Original=2 B, Compressed=22 B, Saved=-20 B, Efficiency=-1000.0%, Duration=4ms
+2025-11-03 09:34:18.592 - Stopping all monitors...
+2025-11-03 11:31:18.113 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 11:31:18.141 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 11:31:18.176 - === ADDING MONITOR PATH ===
+2025-11-03 11:31:18.176 -   Name: Project Backup
+2025-11-03 11:31:18.176 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 11:31:18.176 -   Type: LOCAL
+2025-11-03 11:31:18.176 -   Method: JAVA_WATCH
+2025-11-03 11:31:18.176 - ===========================
+2025-11-03 11:31:18.176 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 11:31:18.177 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 11:31:18.200 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 11:31:18.202 - Starting all monitors (1 paths)
+2025-11-03 11:31:18.227 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 11:31:18.249 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 11:31:18.255 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 11:31:43.268 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:31:43.558 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_113143.txt.gz
+2025-11-03 11:31:43.558 - FULL: Creating compressed backup
+2025-11-03 11:31:43.660 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_113143.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=278ms
+2025-11-03 11:31:48.286 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 11:31:48.292 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:31:48.297 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 11:31:53.302 - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 11:31:53.324 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Hello.txt, Destination=D:\Pragadeesh_D\TestBackup\Hello_20251103_113153.txt.gz
+2025-11-03 11:31:53.325 - INCREMENTAL: Creating delta backup for modified file
+2025-11-03 11:31:53.336 - ✓ Backup completed: Type=INCREMENTAL, File=Hello_20251103_113153.txt.gz, Original=5 B, Compressed=25 B, Saved=-20 B, Efficiency=-400.0%, Duration=7ms
+2025-11-03 11:32:23.326 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:32:23.346 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 11:32:28.342 - [Project Backup] [JAVA_WATCH] CREATE → Hi.txt (0 B)
+2025-11-03 11:32:28.355 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:32:28.361 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 11:33:08.373 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:33:08.394 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 11:33:13.391 - [Project Backup] [JAVA_WATCH] CREATE → Tata.txt (0 B)
+2025-11-03 11:33:13.405 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:33:13.410 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 11:43:11.523 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 11:43:11.530 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 11:43:11.559 - === ADDING MONITOR PATH ===
+2025-11-03 11:43:11.559 -   Name: Project Backup
+2025-11-03 11:43:11.559 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 11:43:11.559 -   Type: LOCAL
+2025-11-03 11:43:11.559 -   Method: JAVA_WATCH
+2025-11-03 11:43:11.559 - ===========================
+2025-11-03 11:43:11.560 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 11:43:11.560 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 11:43:11.565 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 11:43:11.566 - Starting all monitors (1 paths)
+2025-11-03 11:43:11.581 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 11:43:11.623 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 11:43:11.629 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 11:43:26.641 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:43:26.760 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_114326.txt.gz
+2025-11-03 11:43:26.762 - FULL: Creating compressed backup
+2025-11-03 11:43:26.817 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_114326.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=109ms
+2025-11-03 11:43:56.666 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:44:16.688 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 11:44:16.701 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 11:44:21.698 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 11:44:21.711 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 11:44:21.715 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 11:44:32.891 - Stopping all monitors...
+2025-11-03 11:45:05.012 - Stopping all monitors...
+2025-11-03 11:45:28.101 - Stopping all monitors...
+2025-11-03 11:45:32.998 - Stopping all monitors...
+2025-11-03 13:01:50.592 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 13:01:50.608 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 13:01:50.638 - === ADDING MONITOR PATH ===
+2025-11-03 13:01:50.638 -   Name: Project Backup
+2025-11-03 13:01:50.640 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 13:01:50.640 -   Type: LOCAL
+2025-11-03 13:01:50.640 -   Method: JAVA_WATCH
+2025-11-03 13:01:50.640 - ===========================
+2025-11-03 13:01:50.641 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 13:01:50.641 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 13:01:50.655 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 13:01:50.655 - Starting all monitors (1 paths)
+2025-11-03 13:01:50.668 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 13:01:50.707 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 13:01:50.710 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 13:02:05.720 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 13:02:05.824 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_130205.txt.gz
+2025-11-03 13:02:05.824 - FULL: Creating compressed backup
+2025-11-03 13:02:05.907 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_130205.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=102ms
+2025-11-03 13:02:10.725 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 13:02:10.734 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 13:02:10.739 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 13:02:27.598 - Stopping all monitors...
+2025-11-03 13:03:26.450 - Stopping all monitors...
+2025-11-03 13:04:47.678 - Stopping all monitors...
+2025-11-03 13:04:49.795 - Stopping all monitors...
+2025-11-03 19:02:20.513 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 19:02:20.517 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 19:02:20.549 - === ADDING MONITOR PATH ===
+2025-11-03 19:02:20.549 -   Name: Project Backup
+2025-11-03 19:02:20.549 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 19:02:20.549 -   Type: LOCAL
+2025-11-03 19:02:20.549 -   Method: JAVA_WATCH
+2025-11-03 19:02:20.549 - ===========================
+2025-11-03 19:02:20.550 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 19:02:20.550 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 19:02:20.552 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 19:02:20.554 - Starting all monitors (1 paths)
+2025-11-03 19:02:20.575 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 19:02:20.614 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 19:02:20.620 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 19:02:45.633 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 19:02:45.757 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_190245.txt.gz
+2025-11-03 19:02:45.757 - FULL: Creating compressed backup
+2025-11-03 19:02:45.878 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_190245.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=112ms
+2025-11-03 19:02:50.647 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 19:02:50.663 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 19:02:50.668 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 19:03:10.682 - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 19:03:10.704 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Hello.txt, Destination=D:\Pragadeesh_D\TestBackup\Hello_20251103_190310.txt.gz
+2025-11-03 19:03:10.705 - INCREMENTAL: Creating delta backup for modified file
+2025-11-03 19:03:10.716 - ✓ Backup completed: Type=INCREMENTAL, File=Hello_20251103_190310.txt.gz, Original=5 B, Compressed=25 B, Saved=-20 B, Efficiency=-400.0%, Duration=6ms
+2025-11-03 19:03:25.702 - [Project Backup] [JAVA_WATCH] DELETE → Hello.txt (0 B)
+2025-11-03 19:03:46.089 - Stopping all monitors...
+2025-11-03 19:04:42.313 - Stopping all monitors...
+2025-11-03 19:04:48.041 - Stopping all monitors...
+2025-11-03 19:06:35.363 - Stopping all monitors...
+2025-11-03 19:10:05.959 - Stopping all monitors...
+2025-11-03 19:12:44.947 - Stopping all monitors...
+2025-11-03 19:13:31.391 - Stopping all monitors...
+2025-11-03 20:43:57.841 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 20:43:57.862 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 20:43:57.899 - === ADDING MONITOR PATH ===
+2025-11-03 20:43:57.899 -   Name: Project Backup
+2025-11-03 20:43:57.899 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 20:43:57.899 -   Type: LOCAL
+2025-11-03 20:43:57.899 -   Method: JAVA_WATCH
+2025-11-03 20:43:57.899 - ===========================
+2025-11-03 20:43:57.899 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 20:43:57.899 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 20:43:57.921 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 20:43:57.922 - Starting all monitors (1 paths)
+2025-11-03 20:43:57.944 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 20:43:57.984 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 20:43:57.990 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 20:44:07.998 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 20:44:08.138 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_204408.txt.gz
+2025-11-03 20:44:08.139 - FULL: Creating compressed backup
+2025-11-03 20:44:08.212 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_204408.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=140ms
+2025-11-03 20:44:13.005 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 20:44:13.019 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 20:44:13.024 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 20:44:28.037 - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 20:44:28.074 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Hello.txt, Destination=D:\Pragadeesh_D\TestBackup\Hello_20251103_204428.txt.gz
+2025-11-03 20:44:28.075 - INCREMENTAL: Creating delta backup for modified file
+2025-11-03 20:44:28.088 - ✓ Backup completed: Type=INCREMENTAL, File=Hello_20251103_204428.txt.gz, Original=5 B, Compressed=25 B, Saved=-20 B, Efficiency=-400.0%, Duration=18ms
+2025-11-03 20:44:45.873 - Stopping all monitors...
+2025-11-03 20:45:49.092 - Stopping all monitors...
+2025-11-03 20:45:59.975 - Stopping all monitors...
+2025-11-03 20:46:34.311 - Stopping all monitors...
+2025-11-03 20:53:09.515 - Stopping all monitors...
+2025-11-03 20:53:14.565 - Stopping all monitors...
+2025-11-03 20:53:20.793 - Stopping all monitors...
+2025-11-03 20:53:21.667 - Stopping all monitors...
+2025-11-03 20:53:22.056 - Stopping all monitors...
+2025-11-03 20:53:22.277 - Stopping all monitors...
+2025-11-03 20:53:24.553 - Stopping all monitors...
+2025-11-03 20:53:30.652 - Stopping all monitors...
+2025-11-03 20:53:33.210 - Stopping all monitors...
+2025-11-03 20:53:34.538 - Stopping all monitors...
+2025-11-03 20:53:35.932 - Stopping all monitors...
+2025-11-03 21:08:23.543 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 21:08:23.549 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 21:08:23.576 - === ADDING MONITOR PATH ===
+2025-11-03 21:08:23.576 -   Name: Project Backup
+2025-11-03 21:08:23.576 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 21:08:23.577 -   Type: LOCAL
+2025-11-03 21:08:23.577 -   Method: JAVA_WATCH
+2025-11-03 21:08:23.577 - ===========================
+2025-11-03 21:08:23.577 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 21:08:23.578 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 21:08:23.583 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 21:08:23.584 - Starting all monitors (1 paths)
+2025-11-03 21:08:23.602 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 21:08:23.643 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 21:08:23.649 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 21:08:38.661 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 21:08:38.784 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_210838.txt.gz
+2025-11-03 21:08:38.784 - FULL: Creating compressed backup
+2025-11-03 21:08:38.838 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_210838.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=111ms
+2025-11-03 21:08:43.676 - [Project Backup] [JAVA_WATCH] CREATE → hello.txt (0 B)
+2025-11-03 21:08:43.689 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 21:08:43.695 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 21:08:56.733 - Stopping all monitors...
+2025-11-03 21:09:16.584 - Stopping all monitors...
+2025-11-03 21:09:18.533 - Stopping all monitors...
+2025-11-03 21:09:21.061 - Stopping all monitors...
+2025-11-03 21:09:22.249 - Stopping all monitors...
+2025-11-03 21:09:30.877 - Stopping all monitors...
+2025-11-03 21:09:45.428 - Stopping all monitors...
+2025-11-03 21:09:47.598 - Stopping all monitors...
+2025-11-03 21:09:48.068 - Stopping all monitors...
+2025-11-03 21:09:48.314 - Stopping all monitors...
+2025-11-03 21:09:48.565 - Stopping all monitors...
+2025-11-03 21:09:48.735 - Stopping all monitors...
+2025-11-03 21:09:48.910 - Stopping all monitors...
+2025-11-03 21:09:49.090 - Stopping all monitors...
+2025-11-03 21:09:49.269 - Stopping all monitors...
+2025-11-03 21:09:49.456 - Stopping all monitors...
+2025-11-03 21:09:49.630 - Stopping all monitors...
+2025-11-03 21:09:51.042 - Stopping all monitors...
+2025-11-03 21:09:51.229 - Stopping all monitors...
+2025-11-03 21:09:51.395 - Stopping all monitors...
+2025-11-03 21:09:51.610 - Stopping all monitors...
+2025-11-03 21:09:52.704 - Stopping all monitors...
+2025-11-03 21:09:52.910 - Stopping all monitors...
+2025-11-03 21:09:53.064 - Stopping all monitors...
+2025-11-03 21:09:53.338 - Stopping all monitors...
+2025-11-03 21:09:54.946 - Stopping all monitors...
+2025-11-03 21:09:55.393 - Stopping all monitors...
+2025-11-03 21:11:57.990 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 21:11:57.993 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 21:11:58.008 - === ADDING MONITOR PATH ===
+2025-11-03 21:11:58.008 -   Name: Project Backup
+2025-11-03 21:11:58.008 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 21:11:58.009 -   Type: LOCAL
+2025-11-03 21:11:58.009 -   Method: JAVA_WATCH
+2025-11-03 21:11:58.009 - ===========================
+2025-11-03 21:11:58.009 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 21:11:58.009 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 21:11:58.011 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 21:11:58.013 - Starting all monitors (1 paths)
+2025-11-03 21:11:58.033 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 21:11:58.049 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 21:11:58.056 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 21:12:38.075 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 21:12:38.193 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_211238.txt.gz
+2025-11-03 21:12:38.193 - FULL: Creating compressed backup
+2025-11-03 21:12:38.254 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_211238.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=103ms
+2025-11-03 21:12:43.092 - [Project Backup] [JAVA_WATCH] CREATE → Hello.txt (0 B)
+2025-11-03 21:12:43.099 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 21:12:43.104 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 21:12:48.109 - [Project Backup] [JAVA_WATCH] MODIFY → Hello.txt (5 B)
+2025-11-03 21:12:48.133 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\Hello.txt, Destination=D:\Pragadeesh_D\TestBackup\Hello_20251103_211248.txt.gz
+2025-11-03 21:12:48.133 - INCREMENTAL: Creating delta backup for modified file
+2025-11-03 21:12:48.147 - ✓ Backup completed: Type=INCREMENTAL, File=Hello_20251103_211248.txt.gz, Original=5 B, Compressed=25 B, Saved=-20 B, Efficiency=-400.0%, Duration=6ms
+2025-11-03 21:12:55.814 - Stopping all monitors...
+2025-11-03 21:12:57.848 - Stopping all monitors...
+2025-11-03 21:12:58.073 - Stopping all monitors...
+2025-11-03 21:13:00.003 - Stopping all monitors...
+2025-11-03 21:13:00.223 - Stopping all monitors...
+2025-11-03 21:13:00.356 - Stopping all monitors...
+2025-11-03 21:13:00.584 - Stopping all monitors...
+2025-11-03 21:13:01.225 - Stopping all monitors...
+2025-11-03 21:13:01.446 - Stopping all monitors...
+2025-11-03 21:13:01.676 - Stopping all monitors...
+2025-11-03 21:13:02.648 - Stopping all monitors...
+2025-11-03 21:27:43.336 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-03 21:27:43.341 - ✓ MultiPathMonitor initialized with global method: JAVA_WATCH
+2025-11-03 21:27:43.373 - === ADDING MONITOR PATH ===
+2025-11-03 21:27:43.373 -   Name: Project Backup
+2025-11-03 21:27:43.373 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-03 21:27:43.373 -   Type: LOCAL
+2025-11-03 21:27:43.374 -   Method: JAVA_WATCH
+2025-11-03 21:27:43.374 - ===========================
+2025-11-03 21:27:43.374 -   → Starting JAVA_WATCH monitoring...
+2025-11-03 21:27:43.374 - Starting JAVA_WATCH monitoring: Project Backup
+2025-11-03 21:27:43.379 - ✓ JAVA_WATCH monitor started for: Project Backup
+2025-11-03 21:27:43.380 - Starting all monitors (1 paths)
+2025-11-03 21:27:43.399 - [Project Backup] [JAVA_WATCH] CREATE → Phase_2_Data_Wrangling_and_Analysis.docx (458.56 KB)
+2025-11-03 21:27:43.443 - [Project Backup] [JAVA_WATCH] CREATE → sample3.ppt (991.50 KB)
+2025-11-03 21:27:43.448 - [Project Backup] [JAVA_WATCH] CREATE → test.txt (10 B)
+2025-11-03 21:27:58.460 - [Project Backup] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-03 21:27:58.593 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251103_212758.txt.gz
+2025-11-03 21:27:58.594 - FULL: Creating compressed backup
+2025-11-03 21:27:58.659 - ✓ Backup completed: Type=FULL, File=New Text Document_20251103_212758.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=118ms
+2025-11-03 21:28:03.479 - [Project Backup] [JAVA_WATCH] CREATE → hello.txt (0 B)
+2025-11-03 21:28:03.496 - [Project Backup] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
+2025-11-03 21:28:03.501 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-03 21:28:12.225 - Stopping all monitors...
+2025-11-03 21:28:37.935 - Stopping all monitors...
+2025-11-03 21:28:40.405 - Stopping all monitors...
+2025-11-03 21:28:41.265 - Stopping all monitors...
+2025-11-03 21:28:41.463 - Stopping all monitors...
+2025-11-03 21:28:41.688 - Stopping all monitors...
+2025-11-03 21:28:43.070 - Stopping all monitors...
+2025-11-03 21:28:43.371 - Stopping all monitors...
+2025-11-03 21:28:43.570 - Stopping all monitors...
+2025-11-03 21:28:48.054 - Stopping all monitors...
