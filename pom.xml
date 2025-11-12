@@ -116,9 +116,19 @@
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>${javafx.maven.plugin.version}</version>
+                <version>0.0.8</version>
                 <configuration>
                     <mainClass>com.neurasys.Main</mainClass>
+                    <options>
+                        <!-- JavaFX modules -->
+                        <option>--module-path</option>
+                        <option>C:/javafx-sdk-17.0.17/lib</option>
+                        <option>--add-modules</option>
+                        <option>javafx.controls,javafx.fxml</option>
+
+                        <!-- Native DLL path -->
+                        <option>-Djava.library.path=D:/Pragadeesh_D/Project/Neurasys/02_C_Source/Windows</option>
+                    </options>
                 </configuration>
             </plugin>
 

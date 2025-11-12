@@ -1,0 +1,62 @@
+2025-11-10 19:54:22.346 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-10 19:54:22.371 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-10 20:04:01.403 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-10 20:04:01.407 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-10 20:04:01.449 - === ADDING MONITOR PATH ===
+2025-11-10 20:04:01.449 -   Name: Project Backup_1
+2025-11-10 20:04:01.451 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_1
+2025-11-10 20:04:01.451 -   Type: LOCAL
+2025-11-10 20:04:01.451 -   Method: NATIVE
+2025-11-10 20:04:01.451 - ===========================
+2025-11-10 20:04:01.451 -   → Starting NATIVE monitoring...
+2025-11-10 20:04:01.452 - Starting NATIVE monitoring: Project Backup_1 (Local path with C DLL)
+2025-11-10 20:04:01.489 - ✓ NATIVE monitor started for: Project Backup_1
+2025-11-10 20:04:01.498 - === ADDING MONITOR PATH ===
+2025-11-10 20:04:01.498 -   Name: Project Backup_2
+2025-11-10 20:04:01.498 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_2
+2025-11-10 20:04:01.498 -   Type: LOCAL
+2025-11-10 20:04:01.498 -   Method: NATIVE
+2025-11-10 20:04:01.498 - ===========================
+2025-11-10 20:04:01.498 -   → Starting NATIVE monitoring...
+2025-11-10 20:04:01.498 - Starting NATIVE monitoring: Project Backup_2 (Local path with C DLL)
+2025-11-10 20:04:01.500 - ✓ NATIVE monitor started for: Project Backup_2
+2025-11-10 20:04:01.507 - === ADDING MONITOR PATH ===
+2025-11-10 20:04:01.508 -   Name: Project Backup_3
+2025-11-10 20:04:01.508 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-10 20:04:01.509 -   Type: LOCAL
+2025-11-10 20:04:01.509 -   Method: NATIVE
+2025-11-10 20:04:01.509 - ===========================
+2025-11-10 20:04:01.510 -   → Starting NATIVE monitoring...
+2025-11-10 20:04:01.510 - Starting NATIVE monitoring: Project Backup_3 (Local path with C DLL)
+2025-11-10 20:04:01.511 - ✓ NATIVE monitor started for: Project Backup_3
+2025-11-10 20:04:01.512 - Starting all monitors (3 paths)
+2025-11-10 20:04:01.497 - ✗ Native DLL error for Project Backup_1
+java.lang.UnsatisfiedLinkError: 'void com.neurasys.bridge.NativeFileMonitor.startMonitoring(int, java.lang.String, com.neurasys.bridge.NativeFileMonitor$NativeFileEventCallback)'
+	at com.neurasys.bridge.NativeFileMonitor.startMonitoring(Native Method) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.lambda$startNativeMonitoring$1(MultiPathMonitor.java:170) ~[classes/:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-10 20:04:01.503 - ✗ Native DLL error for Project Backup_2
+java.lang.UnsatisfiedLinkError: 'void com.neurasys.bridge.NativeFileMonitor.startMonitoring(int, java.lang.String, com.neurasys.bridge.NativeFileMonitor$NativeFileEventCallback)'
+	at com.neurasys.bridge.NativeFileMonitor.startMonitoring(Native Method) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.lambda$startNativeMonitoring$1(MultiPathMonitor.java:170) ~[classes/:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-10 20:04:01.514 - ✗ Native DLL error for Project Backup_3
+java.lang.UnsatisfiedLinkError: 'void com.neurasys.bridge.NativeFileMonitor.startMonitoring(int, java.lang.String, com.neurasys.bridge.NativeFileMonitor$NativeFileEventCallback)'
+	at com.neurasys.bridge.NativeFileMonitor.startMonitoring(Native Method) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.lambda$startNativeMonitoring$1(MultiPathMonitor.java:170) ~[classes/:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-10 20:06:13.470 - Stopping all monitors...
+2025-11-10 20:06:28.553 - Stopping all monitors...
+2025-11-10 20:06:31.104 - Stopping all monitors...

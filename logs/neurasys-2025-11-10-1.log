@@ -1,0 +1,191 @@
+2025-11-10 19:37:06.459 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 19:37:06.899 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 19:37:06.918 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 19:37:07.981 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-10 19:37:08.040 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-10 19:37:08.041 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-10 19:37:08.042 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 19:37:08.069 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 19:37:08.069 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 19:37:08.069 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-10 19:37:08.070 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-10 19:37:08.149 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Total paths loaded: 0
+2025-11-10 19:37:08.150 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - No monitor paths found in database
+2025-11-10 19:37:08.178 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-10 19:37:08.180 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-10 19:37:08.228 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 0 files, 0 B original, 0.0% savings
+2025-11-10 19:37:28.394 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 19:37:28.627 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 19:37:28.641 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 19:37:29.029 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-10 19:37:29.031 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-10 19:37:29.032 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-10 19:37:29.032 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 19:37:29.054 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 19:37:29.054 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 19:37:29.054 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-10 19:37:29.054 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-10 19:37:29.092 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Total paths loaded: 0
+2025-11-10 19:37:29.092 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - No monitor paths found in database
+2025-11-10 19:37:29.107 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-10 19:37:29.108 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-10 19:37:29.127 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 0 files, 0 B original, 0.0% savings
+2025-11-10 19:40:47.462 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 19:40:47.784 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 19:40:47.794 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 19:40:48.313 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-10 19:40:48.317 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-10 19:40:48.319 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-10 19:40:48.319 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 19:40:48.327 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 19:40:48.328 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 19:40:48.328 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-10 19:40:48.328 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-10 19:40:48.377 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Total paths loaded: 0
+2025-11-10 19:40:48.377 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - No monitor paths found in database
+2025-11-10 19:40:48.399 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-10 19:40:48.400 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-10 19:40:48.429 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 0 files, 0 B original, 0.0% savings
+2025-11-10 19:42:20.133 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 19:42:20.156 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 19:42:20.156 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 19:54:22.307 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 19:54:22.345 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 19:54:22.345 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 19:54:22.371 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-10 19:54:22.372 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762784662372
+2025-11-10 19:54:22.373 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - ✗ Monitor path does not exist: D:\Pragadeesh_D\TestMonitor_1
+2025-11-10 19:54:22.373 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - ✗ Monitor path does not exist: D:\Pragadeesh_D\TestMonitor_2
+2025-11-10 19:54:22.374 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - ✗ Monitor path does not exist: D:\Pragadeesh_D\TestMonitor_3
+2025-11-10 20:01:30.298 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 20:01:30.671 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 20:01:30.681 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 20:01:31.200 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-10 20:01:31.204 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-10 20:01:31.205 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-10 20:01:31.205 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 20:01:31.215 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 20:01:31.215 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 20:01:31.215 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-10 20:01:31.216 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-10 20:01:31.271 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Total paths loaded: 0
+2025-11-10 20:01:31.271 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - No monitor paths found in database
+2025-11-10 20:01:31.289 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-10 20:01:31.290 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-10 20:01:31.329 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 0 files, 0 B original, 0.0% savings
+2025-11-10 20:02:02.762 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 20:02:02.779 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 20:02:02.779 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 20:04:01.384 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 20:04:01.401 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 20:04:01.403 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 20:04:01.407 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-10 20:04:01.408 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring start timestamp recorded: 1762785241408
+2025-11-10 20:04:01.408 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup_1': DEFAULT resolved to NATIVE
+2025-11-10 20:04:01.448 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path added: Project Backup_1 (ID: 6, Method: DEFAULT)
+2025-11-10 20:04:01.449 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 6
+2025-11-10 20:04:01.449 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-10 20:04:01.449 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup_1
+2025-11-10 20:04:01.451 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_1
+2025-11-10 20:04:01.451 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-10 20:04:01.451 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: NATIVE
+2025-11-10 20:04:01.451 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-10 20:04:01.451 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting NATIVE monitoring...
+2025-11-10 20:04:01.452 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting NATIVE monitoring: Project Backup_1 (Local path with C DLL)
+2025-11-10 20:04:01.489 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ NATIVE monitor started for: Project Backup_1
+2025-11-10 20:04:01.490 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup_1 (Method: NATIVE)
+2025-11-10 20:04:01.490 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup_2': DEFAULT resolved to NATIVE
+2025-11-10 20:04:01.497 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path added: Project Backup_2 (ID: 7, Method: DEFAULT)
+2025-11-10 20:04:01.497 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 7
+2025-11-10 20:04:01.498 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-10 20:04:01.498 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup_2
+2025-11-10 20:04:01.498 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_2
+2025-11-10 20:04:01.498 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-10 20:04:01.498 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: NATIVE
+2025-11-10 20:04:01.498 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-10 20:04:01.498 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting NATIVE monitoring...
+2025-11-10 20:04:01.498 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting NATIVE monitoring: Project Backup_2 (Local path with C DLL)
+2025-11-10 20:04:01.500 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ NATIVE monitor started for: Project Backup_2
+2025-11-10 20:04:01.500 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup_2 (Method: NATIVE)
+2025-11-10 20:04:01.501 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController -   → Path 'Project Backup_3': DEFAULT resolved to NATIVE
+2025-11-10 20:04:01.506 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Monitor path added: Project Backup_3 (ID: 8, Method: DEFAULT)
+2025-11-10 20:04:01.507 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Path added to database with ID: 8
+2025-11-10 20:04:01.507 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - === ADDING MONITOR PATH ===
+2025-11-10 20:04:01.508 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Name: Project Backup_3
+2025-11-10 20:04:01.508 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-10 20:04:01.509 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Type: LOCAL
+2025-11-10 20:04:01.509 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   Method: NATIVE
+2025-11-10 20:04:01.509 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ===========================
+2025-11-10 20:04:01.510 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor -   → Starting NATIVE monitoring...
+2025-11-10 20:04:01.510 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting NATIVE monitoring: Project Backup_3 (Local path with C DLL)
+2025-11-10 20:04:01.511 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - ✓ NATIVE monitor started for: Project Backup_3
+2025-11-10 20:04:01.511 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Monitoring enabled for: Project Backup_3 (Method: NATIVE)
+2025-11-10 20:04:01.512 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Starting all monitors (3 paths)
+2025-11-10 20:04:01.497 [pool-3-thread-1] ERROR com.neurasys.service.MultiPathMonitor - ✗ Native DLL error for Project Backup_1
+java.lang.UnsatisfiedLinkError: 'void com.neurasys.bridge.NativeFileMonitor.startMonitoring(int, java.lang.String, com.neurasys.bridge.NativeFileMonitor$NativeFileEventCallback)'
+	at com.neurasys.bridge.NativeFileMonitor.startMonitoring(Native Method) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.lambda$startNativeMonitoring$1(MultiPathMonitor.java:170) ~[classes/:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-10 20:04:01.514 [pool-3-thread-3] ERROR com.neurasys.service.MultiPathMonitor - ✗ Native DLL error for Project Backup_3
+java.lang.UnsatisfiedLinkError: 'void com.neurasys.bridge.NativeFileMonitor.startMonitoring(int, java.lang.String, com.neurasys.bridge.NativeFileMonitor$NativeFileEventCallback)'
+	at com.neurasys.bridge.NativeFileMonitor.startMonitoring(Native Method) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.lambda$startNativeMonitoring$1(MultiPathMonitor.java:170) ~[classes/:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-10 20:04:01.503 [pool-3-thread-2] ERROR com.neurasys.service.MultiPathMonitor - ✗ Native DLL error for Project Backup_2
+java.lang.UnsatisfiedLinkError: 'void com.neurasys.bridge.NativeFileMonitor.startMonitoring(int, java.lang.String, com.neurasys.bridge.NativeFileMonitor$NativeFileEventCallback)'
+	at com.neurasys.bridge.NativeFileMonitor.startMonitoring(Native Method) ~[classes/:?]
+	at com.neurasys.service.MultiPathMonitor.lambda$startNativeMonitoring$1(MultiPathMonitor.java:170) ~[classes/:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-11-10 20:06:13.467 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global monitoring method changed: NATIVE -> JAVA_WATCH
+2025-11-10 20:06:13.468 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === UPDATING MONITORING METHOD TO: JAVA_WATCH ===
+2025-11-10 20:06:13.468 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Stopping all active monitors...
+2025-11-10 20:06:13.470 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-10 20:06:28.552 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global monitoring method changed: JAVA_WATCH -> POLLING
+2025-11-10 20:06:28.553 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === UPDATING MONITORING METHOD TO: POLLING ===
+2025-11-10 20:06:28.553 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Stopping all active monitors...
+2025-11-10 20:06:28.553 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-10 20:06:31.104 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global monitoring method changed: POLLING -> NATIVE
+2025-11-10 20:06:31.104 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === UPDATING MONITORING METHOD TO: NATIVE ===
+2025-11-10 20:06:31.104 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Stopping all active monitors...
+2025-11-10 20:06:31.104 [JavaFX Application Thread] INFO  com.neurasys.service.MultiPathMonitor - Stopping all monitors...
+2025-11-10 20:30:55.727 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 20:30:56.117 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 20:30:56.138 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 20:30:56.667 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Initializing MainController (Hybrid Version)...
+2025-11-10 20:30:56.671 [JavaFX Application Thread] INFO  com.neurasys.bridge.NativeFileMonitor - ✓ Native FileMonitor.dll loaded successfully (v14.2.0 - MSYS2 GCC)
+2025-11-10 20:30:56.673 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Native monitor status: ✓ Ready
+2025-11-10 20:30:56.673 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 20:30:56.686 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 20:30:56.686 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 20:30:56.687 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Initial database connection successful
+2025-11-10 20:30:56.687 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Executing query: SELECT id, path_name, path_location, backup_location, path_type, monitor_method, enabled FROM monitor_paths
+2025-11-10 20:30:56.759 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Loaded path #1: Project Backup_1
+2025-11-10 20:30:56.759 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Loaded path #2: Project Backup_2
+2025-11-10 20:30:56.759 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Loaded path #3: Project Backup_3
+2025-11-10 20:30:56.759 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Total paths loaded: 3
+2025-11-10 20:30:56.760 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Loaded 3 monitor paths from database
+2025-11-10 20:30:56.798 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ Logs table refreshed: 0 entries
+2025-11-10 20:30:56.798 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - ✓ MainController initialized (Hybrid mode)
+2025-11-10 20:30:56.856 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Backup stats loaded: 0 files, 0 B original, 0.0% savings
+2025-11-10 20:31:17.058 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - Initializing hybrid database...
+2025-11-10 20:31:17.076 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Database connection successful
+2025-11-10 20:31:17.076 [JavaFX Application Thread] INFO  com.neurasys.service.DatabaseManager - ✓ Hybrid database initialized
+2025-11-10 20:31:46.984 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Global monitoring method changed: NATIVE -> JAVA_WATCH
+2025-11-10 20:31:46.985 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === UPDATING MONITORING METHOD TO: JAVA_WATCH ===
+2025-11-10 20:31:46.985 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Monitoring not active. Method will apply on next monitoring start.
+2025-11-10 20:37:05.871 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - === UPDATING MONITORING METHOD TO: JAVA_WATCH ===
+2025-11-10 20:37:05.871 [JavaFX Application Thread] WARN  com.neurasys.controller.MainController - Monitoring not active. Method will apply on next monitoring start.
+2025-11-10 20:40:27.125 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup_1' method changed to: NATIVE
+2025-11-10 20:40:35.841 [JavaFX Application Thread] INFO  com.neurasys.controller.MainController - Path 'Project Backup_3' method changed to: POLLING

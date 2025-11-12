@@ -166,29 +166,29 @@ public class MultiPathMonitor {
 
         executorService.submit(() -> {
             try {
+                logger.info("→ Calling startMonitoringSafe(id=" + config.getId() + ", path=" + config.getPathLocation() + ")");
                 // Call native C function to start monitoring
-                nativeMonitor.startMonitoring(
+                nativeMonitor.startMonitoringSafe(
                         config.getId(),
                         config.getPathLocation(),
                         (monitorPathId, fullPath, fileName, action, fileSize, timestamp) -> {
                             File file = new File(config.getPathLocation(), fileName);
-                            // Callback from C DLL
                             if (shouldBackupFile(fileName)) {
                                 onFileEvent(new FileEvent(
-                                                0,                            // id placeholder
-                                        config.getId(),               // monitorPathId
-                                        config.getPathName(),         // monitorPathName
-                                        file.getName(),               // fileName
-                                        file.getAbsolutePath(),       // filePath
-                                        "CREATE",                     // action
-                                        file.length(),                // fileSize
-                                        LocalDateTime.now(),          // timestamp as LocalDateTime
-                                        "NATIVE"                  // eventSource
-                                        )
-                                );
+                                        0,
+                                        config.getId(),
+                                        config.getPathName(),
+                                        file.getName(),
+                                        file.getAbsolutePath(),
+                                        action,   // use actual action from native callback
+                                        fileSize,
+                                        LocalDateTime.now(),
+                                        "NATIVE"
+                                ));
                             }
                         }
                 );
+                logger.info("→ startMonitoringSafe submitted");
             } catch (UnsatisfiedLinkError e) {
                 logger.error("✗ Native DLL error for " + config.getPathName(), e);
             } catch (Exception e) {
@@ -415,7 +415,7 @@ public class MultiPathMonitor {
         for (Map.Entry<Integer, MonitorTask> entry : new HashMap<>(activeTasks).entrySet()) {
             entry.getValue().stop();
             try {
-                nativeMonitor.stopMonitoring(entry.getKey());
+                nativeMonitor.stopMonitoringSafe(entry.getKey());
             } catch (Exception e) {
                 logger.debug("Could not stop native monitor: " + e.getMessage());
             }
@@ -480,7 +480,7 @@ public class MultiPathMonitor {
             t.stop();
         }
         try {
-            nativeMonitor.stopMonitoring(pathId);
+            nativeMonitor.stopMonitoringSafe(pathId);
         } catch (Exception e) {
             logger.debug("Could not stop native monitor for id " + pathId + ": " + e.getMessage());
         }
@@ -510,7 +510,7 @@ public class MultiPathMonitor {
         logger.info("→ Native monitoring service stopped.");
         for (Integer id : activeTasks.keySet()) {
             try {
-                nativeMonitor.stopMonitoring(id);
+                nativeMonitor.stopMonitoringSafe(id);
             } catch (Exception e) {
                 logger.debug("Native stop failed for id " + id + ": " + e.getMessage());
             }

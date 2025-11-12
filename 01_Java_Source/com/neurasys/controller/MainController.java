@@ -1026,11 +1026,17 @@ public class MainController {
         try {
             logger.info("=== RESTARTING MONITORING WITH UPDATED METHODS ===");
 
+            // Stop all current monitors
             multiPathMonitor.stopAll();
             Thread.sleep(500); // allow native cleanup
 
             // Recreate monitor with current global method
-            multiPathMonitor = new MultiPathMonitor(dbManager, nativeMonitor, this::handleFileEvent, globalMonitorMethod);
+            multiPathMonitor = new MultiPathMonitor(
+                    dbManager,
+                    nativeMonitor,
+                    this::handleFileEvent,
+                    globalMonitorMethod
+            );
 
             int pathsReAdded = 0;
 
@@ -1054,11 +1060,18 @@ public class MainController {
                     resolvedConfig.setDeduplicationEnabled(config.isDeduplicationEnabled());
                     resolvedConfig.setIncrementalEnabled(config.isIncrementalEnabled());
 
+                    // Add back into monitor
                     multiPathMonitor.addMonitorPath(resolvedConfig);
                     pathsReAdded++;
+
+                    logger.info("→ Resolved {} to {} and re-added path: {}",
+                            config.getMonitorMethod(),
+                            methodToUse,
+                            config.getPathName());
                 }
             }
 
+            // Start all monitors again
             multiPathMonitor.startAll();
             updateStatus("Monitoring restarted with updated methods (" + pathsReAdded + " paths)");
             addActivityLog("✓ Monitoring restarted with updated methods (" + pathsReAdded + " paths)", "SUCCESS");
@@ -1069,6 +1082,7 @@ public class MainController {
             showError("Failed to restart monitoring: " + e.getMessage());
         }
     }
+
 
 
     // 📊 Dashboard Stats
@@ -1106,7 +1120,20 @@ public class MainController {
         pbCompression.setProgress(totalOriginal > 0 ? (double) compressionSaved / totalOriginal : 0);
         pbDeduplication.setProgress(totalOriginal > 0 ? (double) dedupSaved / totalOriginal : 0);
         pbIncremental.setProgress(totalOriginal > 0 ? (double) incrementalSaved / totalOriginal : 0);
+
+        // ✅ Native monitor health check
+        if (nativeMonitor.isMonitoringActive()) {
+            logger.info("✓ Native monitor is active");
+        } else {
+            logger.warn("✗ Native monitor not responding");
+        }
+
+        // ✅ Native monitor stats
+        String monitorStats = nativeMonitor.getMonitorStats();
+        logger.info("Monitor stats: " + monitorStats);
+        //analyticsPanel.updateStats(monitorStats);
     }
+
 
     // ==================== Backup/Restore ====================
 
