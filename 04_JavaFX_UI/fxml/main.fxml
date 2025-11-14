@@ -279,16 +279,20 @@
                     <HBox spacing="10" alignment="CENTER_LEFT">
                         <TextField fx:id="txtSearchLogs" promptText="Search logs..."
                                    HBox.hgrow="ALWAYS"/>
-                        <ComboBox fx:id="cmbFilterAction" promptText="Filter by action" prefWidth="120"/>
+
+                        <!-- Action Filter -->
+                        <Label text="Action:" style="-fx-font-weight: bold;"/>
+                        <ComboBox fx:id="cmbFilterAction" onAction="#handleFilterChange"
+                                  promptText="Filter by action" prefWidth="120"/>
 
                         <!-- NEW: Event Source Filter for Hybrid -->
                         <Label text="Source:" style="-fx-font-weight: bold;"/>
-                        <ComboBox fx:id="cmbFilterEventSource" promptText="NATIVE/JAVA/POLLING" prefWidth="130"/>
+                        <ComboBox fx:id="cmbFilterEventSource" onAction="#handleFilterChange"
+                                  promptText="NATIVE/JAVA/POLLING" prefWidth="130"/>
 
                         <Button text="🔄 Refresh" onAction="#handleRefreshLogs"/>
                         <Button text="🗑️ Clear All" onAction="#handleClearLogs" styleClass="btn-danger"/>
                     </HBox>
-
 
                     <!-- Logs Table -->
                     <TableView fx:id="tblLogs" VBox.vgrow="ALWAYS">
@@ -309,7 +313,6 @@
                         </columns>
                     </TableView>
 
-
                     <!-- Status Bar -->
                     <HBox spacing="15" alignment="CENTER_LEFT" styleClass="status-bar">
                         <Label text="Total Logs:"/>
@@ -320,6 +323,7 @@
                     </HBox>
                 </VBox>
             </Tab>
+
 
             <!-- ========================================== -->
             <!-- ANALYTICS TAB -->

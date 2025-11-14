@@ -43,6 +43,20 @@ public class FileEvent {
         this.eventSource.set(eventSource);
     }
 
+    // Constructor 3: Accept timestamp as String (for JNI callbacks)
+    public FileEvent(int id, int monitorPathId, String monitorPathName, String fileName,
+                     String filePath, String action, long fileSize, String timestamp, String eventSource) {
+        this.id.set(id);
+        this.monitorPathId.set(monitorPathId);
+        this.monitorPathName.set(monitorPathName);
+        this.fileName.set(fileName);
+        this.filePath.set(filePath);
+        this.action.set(action);
+        this.fileSize.set(fileSize);
+        this.timestamp.set(timestamp); // already formatted string
+        this.eventSource.set(eventSource);
+    }
+
     // ============ PROPERTIES ============
 
     public IntegerProperty idProperty() { return id; }

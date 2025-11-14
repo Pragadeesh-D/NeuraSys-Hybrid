@@ -1,5 +1,6 @@
 package com.neurasys.bridge;
 
+import com.neurasys.service.MultiPathMonitor;
 import com.neurasys.util.Logger;
 
 import java.nio.file.Files;
@@ -24,6 +25,8 @@ public class NativeFileMonitor {
 
     // Single-thread executor for safe native attach/detach off the JavaFX thread
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
+
+    private MultiPathMonitor.FileEventCallback callback;
 
     // Track DLL status
     private static boolean dllLoaded;
@@ -75,6 +78,10 @@ public class NativeFileMonitor {
      * - Executes native attach on background thread
      * - Catches exceptions and logs instead of crashing JVM
      */
+
+    // For test harness: direct native-triggered callback
+    public native void triggerTestCallback(int monitorPathId, String path, NativeFileEventCallback callback);
+    public native String getNativeMonitorStats();
     public void startMonitoringSafe(int monitorPathId, String rawPath, NativeFileEventCallback callback) {
         // DLL must be loaded
         if (!dllLoaded) {
@@ -149,7 +156,6 @@ public class NativeFileMonitor {
         }
     }
 
-    private native String getNativeMonitorStats();
 
     /**
      * Utility: Check if FileMonitor.dll is properly loaded

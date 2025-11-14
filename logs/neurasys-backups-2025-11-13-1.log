@@ -1,0 +1,61 @@
+2025-11-13 12:38:48.056 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-13 12:38:48.065 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-13 12:38:48.137 - === ADDING MONITOR PATH ===
+2025-11-13 12:38:48.137 -   Name: Project Backup_1
+2025-11-13 12:38:48.137 -   Location: \\LAPTOP-IE90LGGN\NetworkTest
+2025-11-13 12:38:48.137 -   Type: NETWORK
+2025-11-13 12:38:48.137 -   Method: NATIVE
+2025-11-13 12:38:48.138 - ===========================
+2025-11-13 12:38:48.138 -   → Starting NATIVE monitoring...
+2025-11-13 12:38:48.138 - Starting NATIVE monitoring: Project Backup_1 (Local path with C DLL)
+2025-11-13 12:38:48.141 - ✓ NATIVE monitor started for: Project Backup_1
+2025-11-13 12:38:48.141 - → Calling startMonitoringSafe(id=22, path=\\LAPTOP-IE90LGGN\NetworkTest)
+2025-11-13 12:38:48.148 - === ADDING MONITOR PATH ===
+2025-11-13 12:38:48.148 -   Name: Project Backup_2
+2025-11-13 12:38:48.148 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_2
+2025-11-13 12:38:48.148 -   Type: LOCAL
+2025-11-13 12:38:48.149 -   Method: JAVA_WATCH
+2025-11-13 12:38:48.149 - ===========================
+2025-11-13 12:38:48.149 -   → Starting JAVA_WATCH monitoring...
+2025-11-13 12:38:48.149 - Starting JAVA_WATCH monitoring: Project Backup_2
+2025-11-13 12:38:48.151 - → startMonitoringSafe submitted
+2025-11-13 12:38:48.151 - ✓ JAVA_WATCH monitor started for: Project Backup_2
+2025-11-13 12:38:48.154 - Initialized snapshot for Project Backup_2 with 4 files
+2025-11-13 12:38:48.158 - === ADDING MONITOR PATH ===
+2025-11-13 12:38:48.158 -   Name: Project Backup_3
+2025-11-13 12:38:48.158 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-13 12:38:48.158 -   Type: LOCAL
+2025-11-13 12:38:48.158 -   Method: NATIVE
+2025-11-13 12:38:48.159 - ===========================
+2025-11-13 12:38:48.159 -   → Starting NATIVE monitoring...
+2025-11-13 12:38:48.159 - Starting NATIVE monitoring: Project Backup_3 (Local path with C DLL)
+2025-11-13 12:38:48.159 - ✓ NATIVE monitor started for: Project Backup_3
+2025-11-13 12:38:48.159 - → Calling startMonitoringSafe(id=24, path=D:\Pragadeesh_D\TestMonitor\TestMonitor_3)
+2025-11-13 12:38:48.160 - → startMonitoringSafe submitted
+2025-11-13 12:38:48.165 - === ADDING MONITOR PATH ===
+2025-11-13 12:38:48.165 -   Name: Project Backup_4
+2025-11-13 12:38:48.165 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-13 12:38:48.165 -   Type: LOCAL
+2025-11-13 12:38:48.165 -   Method: POLLING
+2025-11-13 12:38:48.165 - ===========================
+2025-11-13 12:38:48.165 -   → Starting POLLING monitoring...
+2025-11-13 12:38:48.175 - === ADDING MONITOR PATH ===
+2025-11-13 12:38:48.175 -   Name: Project Backup_5
+2025-11-13 12:38:48.175 -   Location: C:\Users\dkish\OneDrive\NeuraSysTest
+2025-11-13 12:38:48.175 -   Type: CLOUD
+2025-11-13 12:38:48.176 -   Method: ONEDRIVE
+2025-11-13 12:38:48.176 - ===========================
+2025-11-13 12:38:48.176 -   → Starting ONEDRIVE monitoring...
+2025-11-13 12:38:48.189 - Starting all monitors (4 paths)
+2025-11-13 12:39:38.214 - [Project Backup_2] [JAVA_WATCH] DELETE → test_2.txt (0 B)
+2025-11-13 12:40:56.112 - [Project Backup_1] [NATIVE] DELETE → Test_1.txt (0 B)
+2025-11-13 19:11:21.743 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-13 19:11:21.766 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-13 19:12:57.365 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-13 19:12:57.368 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-13 19:24:22.207 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-13 19:24:22.234 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-13 19:59:16.850 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-13 19:59:16.872 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-13 20:04:14.327 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-13 20:04:14.331 - ✓ MultiPathMonitor initialized with global method: NATIVE

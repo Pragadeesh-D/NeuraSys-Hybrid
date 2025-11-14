@@ -1,0 +1,115 @@
+2025-11-12 00:49:02.219 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-12 00:49:02.234 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-12 00:49:02.295 - === ADDING MONITOR PATH ===
+2025-11-12 00:49:02.296 -   Name: Project Backup_3
+2025-11-12 00:49:02.296 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-12 00:49:02.296 -   Type: LOCAL
+2025-11-12 00:49:02.296 -   Method: NATIVE
+2025-11-12 00:49:02.296 - ===========================
+2025-11-12 00:49:02.296 -   → Starting NATIVE monitoring...
+2025-11-12 00:49:02.297 - Starting NATIVE monitoring: Project Backup_3 (Local path with C DLL)
+2025-11-12 00:49:02.301 - ✓ NATIVE monitor started for: Project Backup_3
+2025-11-12 00:49:02.303 - Starting all monitors (1 paths)
+2025-11-12 00:50:13.482 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-12 00:50:13.486 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-12 00:50:13.515 - === ADDING MONITOR PATH ===
+2025-11-12 00:50:13.516 -   Name: Project Backup_3
+2025-11-12 00:50:13.516 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-12 00:50:13.516 -   Type: LOCAL
+2025-11-12 00:50:13.516 -   Method: NATIVE
+2025-11-12 00:50:13.516 - ===========================
+2025-11-12 00:50:13.517 -   → Starting NATIVE monitoring...
+2025-11-12 00:50:13.517 - Starting NATIVE monitoring: Project Backup_3 (Local path with C DLL)
+2025-11-12 00:50:13.519 - ✓ NATIVE monitor started for: Project Backup_3
+2025-11-12 00:50:13.521 - Starting all monitors (1 paths)
+2025-11-12 00:51:01.948 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-12 00:51:01.952 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-12 00:51:01.973 - === ADDING MONITOR PATH ===
+2025-11-12 00:51:01.973 -   Name: Project Backup_3
+2025-11-12 00:51:01.973 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-12 00:51:01.974 -   Type: LOCAL
+2025-11-12 00:51:01.974 -   Method: JAVA_WATCH
+2025-11-12 00:51:01.974 - ===========================
+2025-11-12 00:51:01.974 -   → Starting JAVA_WATCH monitoring...
+2025-11-12 00:51:01.974 - Starting JAVA_WATCH monitoring: Project Backup_3
+2025-11-12 00:51:01.977 - ✓ JAVA_WATCH monitor started for: Project Backup_3
+2025-11-12 00:51:01.979 - Starting all monitors (1 paths)
+2025-11-12 00:51:01.979 - Initialized snapshot for Project Backup_3 with 0 files
+2025-11-12 01:43:08.839 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-12 01:43:08.864 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-12 01:43:08.891 - === ADDING MONITOR PATH ===
+2025-11-12 01:43:08.891 -   Name: Project Backup_3
+2025-11-12 01:43:08.891 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-12 01:43:08.891 -   Type: LOCAL
+2025-11-12 01:43:08.891 -   Method: NATIVE
+2025-11-12 01:43:08.891 - ===========================
+2025-11-12 01:43:08.891 -   → Starting NATIVE monitoring...
+2025-11-12 01:43:08.891 - Starting NATIVE monitoring: Project Backup_3 (Local path with C DLL)
+2025-11-12 01:43:08.913 - ✓ NATIVE monitor started for: Project Backup_3
+2025-11-12 01:43:08.914 - Starting all monitors (1 paths)
+2025-11-12 01:50:24.858 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-12 01:50:24.864 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-12 01:50:24.887 - === ADDING MONITOR PATH ===
+2025-11-12 01:50:24.887 -   Name: Project Backup_3
+2025-11-12 01:50:24.887 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-12 01:50:24.887 -   Type: LOCAL
+2025-11-12 01:50:24.887 -   Method: NATIVE
+2025-11-12 01:50:24.888 - ===========================
+2025-11-12 01:50:24.888 -   → Starting NATIVE monitoring...
+2025-11-12 01:50:24.888 - Starting NATIVE monitoring: Project Backup_3 (Local path with C DLL)
+2025-11-12 01:50:24.908 - ✓ NATIVE monitor started for: Project Backup_3
+2025-11-12 01:50:24.910 - → Calling startMonitoringSafe(id=20, path=D:\Pragadeesh_D\TestMonitor\TestMonitor_3)
+2025-11-12 01:50:24.911 - Starting all monitors (1 paths)
+2025-11-12 01:50:24.918 - → startMonitoringSafe submitted
+2025-11-12 21:03:35.931 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-12 21:03:35.946 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-12 21:03:36.074 - === ADDING MONITOR PATH ===
+2025-11-12 21:03:36.074 -   Name: Project Backup_1
+2025-11-12 21:03:36.074 -   Location: \\LAPTOP-IE90LGGN\NetworkTest
+2025-11-12 21:03:36.074 -   Type: NETWORK
+2025-11-12 21:03:36.075 -   Method: NATIVE
+2025-11-12 21:03:36.075 - ===========================
+2025-11-12 21:03:36.075 -   → Starting NATIVE monitoring...
+2025-11-12 21:03:36.075 - Starting NATIVE monitoring: Project Backup_1 (Local path with C DLL)
+2025-11-12 21:03:36.080 - ✓ NATIVE monitor started for: Project Backup_1
+2025-11-12 21:03:36.081 - → Calling startMonitoringSafe(id=22, path=\\LAPTOP-IE90LGGN\NetworkTest)
+2025-11-12 21:03:36.092 - === ADDING MONITOR PATH ===
+2025-11-12 21:03:36.093 -   Name: Project Backup_2
+2025-11-12 21:03:36.093 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_2
+2025-11-12 21:03:36.093 -   Type: LOCAL
+2025-11-12 21:03:36.093 -   Method: JAVA_WATCH
+2025-11-12 21:03:36.093 - ===========================
+2025-11-12 21:03:36.094 -   → Starting JAVA_WATCH monitoring...
+2025-11-12 21:03:36.094 - Starting JAVA_WATCH monitoring: Project Backup_2
+2025-11-12 21:03:36.095 - ✓ JAVA_WATCH monitor started for: Project Backup_2
+2025-11-12 21:03:36.098 - → startMonitoringSafe submitted
+2025-11-12 21:03:36.098 - Initialized snapshot for Project Backup_2 with 3 files
+2025-11-12 21:03:36.105 - === ADDING MONITOR PATH ===
+2025-11-12 21:03:36.105 -   Name: Project Backup_3
+2025-11-12 21:03:36.105 -   Location: D:\Pragadeesh_D\TestMonitor\TestMonitor_3
+2025-11-12 21:03:36.105 -   Type: LOCAL
+2025-11-12 21:03:36.105 -   Method: NATIVE
+2025-11-12 21:03:36.105 - ===========================
+2025-11-12 21:03:36.105 -   → Starting NATIVE monitoring...
+2025-11-12 21:03:36.106 - Starting NATIVE monitoring: Project Backup_3 (Local path with C DLL)
+2025-11-12 21:03:36.106 - ✓ NATIVE monitor started for: Project Backup_3
+2025-11-12 21:03:36.106 - → Calling startMonitoringSafe(id=24, path=D:\Pragadeesh_D\TestMonitor\TestMonitor_3)
+2025-11-12 21:03:36.107 - → startMonitoringSafe submitted
+2025-11-12 21:03:36.116 - === ADDING MONITOR PATH ===
+2025-11-12 21:03:36.117 -   Name: Project Backup_4
+2025-11-12 21:03:36.117 -   Location: D:\Pragadeesh_D\TestMonitor
+2025-11-12 21:03:36.117 -   Type: LOCAL
+2025-11-12 21:03:36.117 -   Method: POLLING
+2025-11-12 21:03:36.117 - ===========================
+2025-11-12 21:03:36.118 -   → Starting POLLING monitoring...
+2025-11-12 21:03:36.158 - === ADDING MONITOR PATH ===
+2025-11-12 21:03:36.158 -   Name: Project Backup_5
+2025-11-12 21:03:36.158 -   Location: C:\Users\dkish\OneDrive\NeuraSysTest
+2025-11-12 21:03:36.158 -   Type: CLOUD
+2025-11-12 21:03:36.158 -   Method: ONEDRIVE
+2025-11-12 21:03:36.159 - ===========================
+2025-11-12 21:03:36.159 -   → Starting ONEDRIVE monitoring...
+2025-11-12 21:03:36.268 - Starting all monitors (4 paths)
+2025-11-12 21:10:36.246 - [Project Backup_2] [JAVA_WATCH] CREATE → New Text Document.txt (0 B)
+2025-11-12 21:10:41.280 - [Project Backup_2] [JAVA_WATCH] CREATE → test_2.txt (0 B)
+2025-11-12 21:10:41.301 - [Project Backup_2] [JAVA_WATCH] DELETE → New Text Document.txt (0 B)
