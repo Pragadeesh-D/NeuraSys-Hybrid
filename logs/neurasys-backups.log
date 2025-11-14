@@ -15,3 +15,16 @@
 2025-11-14 09:04:26.695 - ✓ Backup completed: Type=INCREMENTAL, File=Test_3_20251114_090426.txt.gz, Original=13 B, Compressed=31 B, Saved=-18 B, Efficiency=-138.5%, Duration=18ms
 2025-11-14 09:05:39.035 - Stopping all monitors...
 2025-11-14 09:05:39.035 - ✓ All monitors requested to stop (executor remains active)
+2025-11-14 09:12:17.071 - BackupManager initialized (Hybrid version with performance tracking)
+2025-11-14 09:12:17.076 - ✓ MultiPathMonitor initialized with global method: NATIVE
+2025-11-14 09:12:17.093 - Starting all monitors (0 paths)
+2025-11-14 09:12:28.753 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\TestMonitor_3\New Text Document.txt, Destination=D:\Pragadeesh_D\TestBackup\New Text Document_20251114_091228.txt.gz
+2025-11-14 09:12:28.753 - FULL: Creating compressed backup
+2025-11-14 09:12:28.827 - ✓ Backup completed: Type=FULL, File=New Text Document_20251114_091228.txt.gz, Original=0 B, Compressed=20 B, Saved=-20 B, Efficiency=0.0%, Duration=129ms
+2025-11-14 09:12:34.834 - Source file not valid: New Text Document.txt
+2025-11-14 09:12:34.846 - ✓ DEDUPLICATION: File already backed up (100% space saved)
+2025-11-14 09:13:01.980 - Creating optimized backup: Source=D:\Pragadeesh_D\TestMonitor\TestMonitor_3\test_3.txt, Destination=D:\Pragadeesh_D\TestBackup\test_3_20251114_091301.txt.gz
+2025-11-14 09:13:01.980 - INCREMENTAL: Creating delta backup for modified file
+2025-11-14 09:13:01.993 - ✓ Backup completed: Type=INCREMENTAL, File=test_3_20251114_091301.txt.gz, Original=15 B, Compressed=31 B, Saved=-16 B, Efficiency=-106.7%, Duration=23ms
+2025-11-14 09:14:08.896 - Stopping all monitors...
+2025-11-14 09:14:08.896 - ✓ All monitors requested to stop (executor remains active)
