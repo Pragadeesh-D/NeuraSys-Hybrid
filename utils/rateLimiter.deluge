@@ -1,0 +1,53 @@
+// Rate limiter to prevent spam floods in a channel
+// Usage: pass channel_id and message timestamp
+
+channel_id = input.channel_id;
+now = zoho.currenttime.toLong();
+
+// Initialize rate limiter state if not present
+if(!state.containsKey("rateLimiter"))
+{
+    state.put("rateLimiter", map());
+}
+
+rateLimiter = state.get("rateLimiter");
+
+// Get channel-specific tracker
+channelTracker = rateLimiter.get(channel_id);
+if(channelTracker == null)
+{
+    channelTracker = map();
+    channelTracker.put("count", 0);
+    channelTracker.put("windowStart", now);
+    rateLimiter.put(channel_id, channelTracker);
+}
+
+// Configurable limits
+windowSize = 60000; // 60 seconds
+maxMessages = 20;   // Max messages allowed per window
+
+// Check window
+windowStart = channelTracker.get("windowStart");
+count = channelTracker.get("count");
+
+if((now - windowStart) > windowSize)
+{
+    // Reset window
+    channelTracker.put("windowStart", now);
+    channelTracker.put("count", 1);
+    rateLimiter.put(channel_id, channelTracker);
+    return {"allowed": true, "reason": "new_window"};
+}
+else
+{
+    if(count >= maxMessages)
+    {
+        return {"allowed": false, "reason": "rate_limited"};
+    }
+    else
+    {
+        channelTracker.put("count", count + 1);
+        rateLimiter.put(channel_id, channelTracker);
+        return {"allowed": true, "reason": "within_limit"};
+    }
+}

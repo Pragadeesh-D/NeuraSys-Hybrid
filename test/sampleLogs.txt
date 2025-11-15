@@ -1,0 +1,10 @@
+INFO 2025-11-15 07:45:12 User login successful
+INFO 2025-11-15 07:45:13 User login successful
+INFO 2025-11-15 07:45:14 User login successful
+ERROR 2025-11-15 07:45:15 Database connection failed at 192.168.1.10
+WARN 2025-11-15 07:45:16 Token abc123xyz expired
+INFO 2025-11-15 07:45:17 User login successful
+INFO 2025-11-15 07:45:18 User login successful
+DEBUG 2025-11-15 07:45:19 File path: /home/pragadeesh/projects/cliq/logs/error.txt
+ERROR 2025-11-15 07:45:20 Database connection failed at 192.168.1.10
+ERROR 2025-11-15 07:45:21 Database connection failed at 192.168.1.10

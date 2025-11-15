@@ -1,0 +1,27 @@
+// Command handler for /toggleFilter
+
+channel_id = input.channel_id;
+args = input.args.toLowerCase();
+
+// Initialize filter state map if not present
+if(!state.containsKey("filterState"))
+{
+    state.put("filterState", map());
+}
+
+filterState = state.get("filterState");
+
+if(args == "on")
+{
+    filterState.put(channel_id, true);
+    return {"message": "✅ Log filtering enabled for this channel."};
+}
+else if(args == "off")
+{
+    filterState.put(channel_id, false);
+    return {"message": "🚫 Log filtering disabled for this channel."};
+}
+else
+{
+    return {"message": "Usage: /toggleFilter on | off"};
+}

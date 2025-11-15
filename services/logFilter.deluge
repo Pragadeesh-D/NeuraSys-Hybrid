@@ -1,0 +1,62 @@
+// Deduplication and anomaly detection logic for log messages
+
+message = input.message;
+channel_id = input.channel_id;
+now = zoho.currenttime.toLong();
+
+// Initialize state maps if not present
+if(!state.containsKey("dedupMap"))
+{
+    state.put("dedupMap", map());
+}
+if(!state.containsKey("freqMap"))
+{
+    state.put("freqMap", map());
+}
+
+// Get maps
+dedupMap = state.get("dedupMap");
+freqMap = state.get("freqMap");
+
+// Deduplication check
+lastSeen = dedupMap.get(message);
+if(lastSeen != null && (now - lastSeen) < 60000) // 60 sec window
+{
+    return {
+        "action": "suppress",
+        "reason": "duplicate",
+        "message": message
+    };
+}
+else
+{
+    dedupMap.put(message, now);
+}
+
+// Frequency tracking
+count = freqMap.get(message);
+if(count == null)
+{
+    freqMap.put(message, 1);
+}
+else
+{
+    freqMap.put(message, count + 1);
+}
+
+// Anomaly detection
+if(freqMap.get(message) >= 5) // Threshold for anomaly
+{
+    return {
+        "action": "highlight",
+        "reason": "anomaly",
+        "message": message
+    };
+}
+
+// Default pass
+return {
+    "action": "pass",
+    "reason": "new",
+    "message": message
+};

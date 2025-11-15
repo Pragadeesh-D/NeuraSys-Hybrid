@@ -1,0 +1,44 @@
+// Command handler for /configFilter
+// Usage: /configFilter window=60 threshold=5
+
+channel_id = input.channel_id;
+args = input.args;
+
+// Initialize config map if not present
+if(!state.containsKey("filterConfig"))
+{
+    state.put("filterConfig", map());
+}
+
+filterConfig = state.get("filterConfig");
+
+// Default values
+dedup_window = 60;
+anomaly_threshold = 5;
+
+// Parse arguments
+for each arg in args.split(" ")
+{
+    if(arg.contains("window="))
+    {
+        dedup_window = arg.replaceAll("window=", "").toLong();
+    }
+    if(arg.contains("threshold="))
+    {
+        anomaly_threshold = arg.replaceAll("threshold=", "").toLong();
+    }
+}
+
+// Save config for this channel
+channelConfig = map();
+channelConfig.put("dedup_window", dedup_window);
+channelConfig.put("anomaly_threshold", anomaly_threshold);
+
+filterConfig.put(channel_id, channelConfig);
+
+// Return confirmation
+return {
+    "message": "⚙️ Filter configuration updated for this channel.\n" +
+               "Deduplication window: " + dedup_window + " seconds\n" +
+               "Anomaly threshold: " + anomaly_threshold + " repeats"
+};

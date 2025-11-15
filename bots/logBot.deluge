@@ -1,0 +1,52 @@
+// Bot handler for filtering log messages in real time
+
+message = input.message;
+channel_id = input.channel_id;
+
+// Apply privacy masking
+masked_message = invokeUrl
+[
+    url :"utils/maskSensitive.deluge"
+    type : "POST"
+    parameters : {"log": message}
+];
+
+// Apply deduplication and anomaly detection
+filter_result = invokeUrl
+[
+    url :"services/logFilter.deluge"
+    type : "POST"
+    parameters : {
+        "message": masked_message,
+        "channel_id": channel_id
+    }
+];
+
+// Decide action based on filter result
+action = filter_result.get("action");
+reason = filter_result.get("reason");
+final_message = filter_result.get("message");
+
+if(action == "suppress")
+{
+    // Do not post anything
+    info "Duplicate log suppressed: " + final_message;
+}
+else if(action == "highlight")
+{
+    // Post with anomaly tag
+    postToChannel
+    [
+        channel : channel_id
+        message : "[ANOMALY] " + final_message
+    ];
+}
+else
+{
+    // Normal pass-through
+    postToChannel
+    [
+        channel : channel_id
+        message : final_message
+    ];
+}

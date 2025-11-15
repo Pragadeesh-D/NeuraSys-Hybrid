@@ -1,0 +1,32 @@
+{
+  "name": "Cliqtrix Log Filter",
+  "description": "Zoho Cliq extension to filter noisy logs and highlight anomalies",
+  "version": "1.0",
+  "author": "Pragadeesh",
+  "platform": "Cliq",
+  "components": {
+    "bots": [
+      {
+        "name": "logBot",
+        "handler": "bots/logBot.deluge"
+      }
+    ],
+    "commands": [
+      {
+        "name": "toggleFilter",
+        "handler": "commands/toggleFilter.deluge"
+      },
+      {
+        "name": "configFilter",
+        "handler": "commands/configFilter.deluge"
+      }
+    ]
+  },
+  "utils": [
+    "utils/maskSensitive.deluge",
+    "utils/rateLimiter.deluge"
+  ],
+  "services": [
+    "services/logFilter.deluge"
+  ]
+}
