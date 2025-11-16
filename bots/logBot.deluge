@@ -1,9 +1,23 @@
-// Bot handler for filtering log messages in real time
+// Passive bot with masking, filtering, scoring, and rate limiting
 
 message = input.message;
 channel_id = input.channel_id;
 
-// Apply privacy masking
+// Rate limiting
+rateCheck = invokeUrl
+[
+    url :"utils/rateLimiter.deluge"
+    type : "POST"
+    parameters : {"channel_id": channel_id}
+];
+
+if(rateCheck.get("allowed") == false)
+{
+    info "Rate limited: " + message;
+    return;
+}
+
+// Mask sensitive info
 masked_message = invokeUrl
 [
     url :"utils/maskSensitive.deluge"
@@ -11,7 +25,7 @@ masked_message = invokeUrl
     parameters : {"log": message}
 ];
 
-// Apply deduplication and anomaly detection
+// Filter + score
 filter_result = invokeUrl
 [
     url :"services/logFilter.deluge"
@@ -22,19 +36,15 @@ filter_result = invokeUrl
     }
 ];
 
-// Decide action based on filter result
 action = filter_result.get("action");
-reason = filter_result.get("reason");
 final_message = filter_result.get("message");
 
 if(action == "suppress")
 {
-    // Do not post anything
-    info "Duplicate log suppressed: " + final_message;
+    info "Duplicate suppressed: " + final_message;
 }
 else if(action == "highlight")
 {
-    // Post with anomaly tag
     postToChannel
     [
         channel : channel_id
@@ -43,7 +53,6 @@ else if(action == "highlight")
 }
 else
 {
-    // Normal pass-through
     postToChannel
     [
         channel : channel_id
