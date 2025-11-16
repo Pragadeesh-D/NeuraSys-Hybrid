@@ -1,5 +1,5 @@
 // Command handler for /configFilter
-// Usage: /configFilter window=60 threshold=5
+// Usage: /configFilter window=60 threshold=5 keywordBoost=2 recencyWindow=5
 
 channel_id = input.channel_id;
 args = input.args;
@@ -12,33 +12,31 @@ if(!state.containsKey("filterConfig"))
 
 filterConfig = state.get("filterConfig");
 
-// Default values
+// Defaults
 dedup_window = 60;
 anomaly_threshold = 5;
+keyword_boost = 2;
+recency_window = 5;
 
 // Parse arguments
 for each arg in args.split(" ")
 {
-    if(arg.contains("window="))
-    {
-        dedup_window = arg.replaceAll("window=", "").toLong();
-    }
-    if(arg.contains("threshold="))
-    {
-        anomaly_threshold = arg.replaceAll("threshold=", "").toLong();
-    }
+    if(arg.contains("window=")) dedup_window = arg.replaceAll("window=", "").toLong();
+    if(arg.contains("threshold=")) anomaly_threshold = arg.replaceAll("threshold=", "").toLong();
+    if(arg.contains("keywordBoost=")) keyword_boost = arg.replaceAll("keywordBoost=", "").toLong();
+    if(arg.contains("recencyWindow=")) recency_window = arg.replaceAll("recencyWindow=", "").toLong();
 }
 
-// Save config for this channel
+// Save config
 channelConfig = map();
 channelConfig.put("dedup_window", dedup_window);
 channelConfig.put("anomaly_threshold", anomaly_threshold);
+channelConfig.put("keyword_boost", keyword_boost);
+channelConfig.put("recency_window", recency_window);
 
 filterConfig.put(channel_id, channelConfig);
 
-// Return confirmation
 return {
-    "message": "⚙️ Filter configuration updated for this channel.\n" +
-               "Deduplication window: " + dedup_window + " seconds\n" +
-               "Anomaly threshold: " + anomaly_threshold + " repeats"
+    "message": "⚙️ Config updated:\nWindow=" + dedup_window + "s, Threshold=" + anomaly_threshold +
+               ", KeywordBoost=" + keyword_boost + ", RecencyWindow=" + recency_window + "m"
 };

@@ -1,0 +1,20 @@
+// AI-based scoring for logs
+
+scoreLog = (log) =>
+{
+    severityWeight = {"INFO":1, "WARN":2, "ERROR":3};
+    score = severityWeight.get(log.get("level"), 0);
+
+    if(log.get("message").toLowerCase().containsAny(["exception","fail","timeout","crash"]))
+    {
+        score = score + 2;
+    }
+
+    ageMinutes = (zoho.currenttime.toLong() - log.get("timestamp").toLong()) / 60000;
+    if(ageMinutes < 5)
+    {
+        score = score + 1;
+    }
+
+    return score;
+};

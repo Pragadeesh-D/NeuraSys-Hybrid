@@ -1,6 +1,9 @@
 const fs = require("fs");
 
-// Simple JS versions of your Deluge functions for local testing
+let dedupMap = new Map();
+let freqMap = new Map();
+let rateLimiter = { count: 0, windowStart: Date.now() };
+
 function maskSensitive(log) {
   return log
     .replace(/(Bearer|Token)\s+[A-Za-z0-9\-\._]+/gi, "[REDACTED_TOKEN]")
@@ -10,13 +13,45 @@ function maskSensitive(log) {
     .replace(/(\/[\w\-.]+)+/g, "[REDACTED_PATH]");
 }
 
-let dedupMap = new Map();
-let freqMap = new Map();
+function scoreLog(log) {
+  let score = 0;
+  if (log.includes("ERROR")) score += 3;
+  else if (log.includes("WARN")) score += 2;
+  else if (log.includes("INFO")) score += 1;
+
+  if (/exception|fail|timeout|crash/i.test(log)) score += 2;
+
+  const ageMinutes = 0; // Simulate recent logs
+  if (ageMinutes < 5) score += 1;
+
+  return score;
+}
+
+function rateLimit() {
+  const now = Date.now();
+  if (now - rateLimiter.windowStart > 60000) {
+    rateLimiter.windowStart = now;
+    rateLimiter.count = 1;
+    return true;
+  } else {
+    if (rateLimiter.count >= 20) return false;
+    rateLimiter.count++;
+    return true;
+  }
+}
 
 function logFilter(message) {
   const now = Date.now();
 
-  // Deduplication
+  // Frequency tracking first
+  const count = (freqMap.get(message) || 0) + 1;
+  freqMap.set(message, count);
+
+  if (count >= 5) {
+    return { action: "highlight", reason: "anomaly", message };
+  }
+
+  // Deduplication second
   if (dedupMap.has(message)) {
     const lastSeen = dedupMap.get(message);
     if (now - lastSeen < 60000) {
@@ -25,14 +60,7 @@ function logFilter(message) {
   }
   dedupMap.set(message, now);
 
-  // Frequency tracking
-  const count = (freqMap.get(message) || 0) + 1;
-  freqMap.set(message, count);
-
-  if (count >= 5) {
-    return { action: "highlight", reason: "anomaly", message };
-  }
-
+  // Default pass
   return { action: "pass", reason: "new", message };
 }
 
@@ -41,6 +69,15 @@ const logs = fs.readFileSync("test/sampleLogs.txt", "utf-8").split("\n");
 
 logs.forEach((log) => {
   const masked = maskSensitive(log);
+  const score = scoreLog(masked); // always calculate score
+
+  const displayMessage = masked.length > 0 ? masked : "[EMPTY LOG AFTER MASKING]";
+
+  if (!rateLimit()) {
+    console.log(`[RATE LIMITED] | Score: ${score} | ${displayMessage}`);
+    return;
+  }
+
   const result = logFilter(masked);
-  console.log(`[${result.action.toUpperCase()}] ${result.reason}: ${result.message}`);
+  console.log(`[${result.action.toUpperCase()}] ${result.reason} | Score: ${score} | ${displayMessage}`);
 });

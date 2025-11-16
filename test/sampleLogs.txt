@@ -1,10 +1,52 @@
-INFO 2025-11-15 07:45:12 User login successful
-INFO 2025-11-15 07:45:13 User login successful
-INFO 2025-11-15 07:45:14 User login successful
-ERROR 2025-11-15 07:45:15 Database connection failed at 192.168.1.10
-WARN 2025-11-15 07:45:16 Token abc123xyz expired
-INFO 2025-11-15 07:45:17 User login successful
-INFO 2025-11-15 07:45:18 User login successful
-DEBUG 2025-11-15 07:45:19 File path: /home/pragadeesh/projects/cliq/logs/error.txt
-ERROR 2025-11-15 07:45:20 Database connection failed at 192.168.1.10
-ERROR 2025-11-15 07:45:21 Database connection failed at 192.168.1.10
+# --- Masking Tests ---
+ERROR 2025-11-16 Failed to authenticate user with Bearer token abc123xyz
+INFO 2025-11-16 User email pragadeesh@example.com logged in
+ERROR 2025-11-16 Database connection failed at 192.168.1.10
+WARN 2025-11-16 Timeout while connecting to https://api.example.com/v1/data
+DEBUG 2025-11-16 File path: /home/pragadeesh/projects/cliq/logs/error.txt
+
+# --- Deduplication Test ---
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful   # duplicate within 60s
+
+# --- Anomaly Detection Test ---
+ERROR 2025-11-16 Database connection failed at 192.168.1.10
+ERROR 2025-11-16 Database connection failed at 192.168.1.10
+ERROR 2025-11-16 Database connection failed at 192.168.1.10
+ERROR 2025-11-16 Database connection failed at 192.168.1.10
+ERROR 2025-11-16 Database connection failed at 192.168.1.10   # anomaly trigger
+ERROR 2025-11-16 Database connection failed at 192.168.1.10   # anomaly trigger again
+
+# --- AI Scoring Test ---
+INFO 2025-11-16 User login successful
+WARN 2025-11-16 Disk space low on /var/logs/system
+ERROR 2025-11-16 Crash detected in PaymentService
+ERROR 2025-11-16 Exception: NullPointerException in module AuthService
+WARN 2025-11-16 Timeout while connecting to https://secure.example.com/api
+
+# --- Rate Limiting Test (25+ logs in <60s) ---
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful
+INFO 2025-11-16 User login successful   # rate limit triggers here

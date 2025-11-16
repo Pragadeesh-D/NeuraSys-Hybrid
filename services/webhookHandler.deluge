@@ -1,0 +1,17 @@
+// Handles incoming logs via webhook
+
+handleWebhook = (context) =>
+{
+    logs = context.get("request_body").get("logs");
+    scoredLogs = list();
+
+    for each log in logs
+    {
+        log.put("score", scoreLog(log));
+        scoredLogs.add(log);
+    }
+
+    sortedLogs = scoredLogs.sortDescending("score");
+
+    context.sendMessage(formatLogs(sortedLogs));
+};
